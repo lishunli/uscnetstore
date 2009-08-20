@@ -6,7 +6,7 @@
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<property name="url"
-			value="jdbc:mysql://210.43.118.160:3306/netstore?useUnicode=true&amp;characterEncoding=gbk"></property>
+			value="jdbc:mysql://210.43.118.160:3306/netstore?useUnicode=true&amp;characterEncoding=utf-8"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="lishunli"></property>
 		<property name="maxActive" value="100"></property>
@@ -68,8 +68,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="UcurrencydetailDAO"
-		class="com.usc.daos.UcurrencydetailDAO">
+	<bean id="UcurrencydetailDAO" class="com.usc.daos.UcurrencydetailDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -94,8 +93,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="ConsumptiondetailDAO"
-		class="com.usc.daos.ConsumptiondetailDAO">
+	<bean id="ConsumptiondetailDAO" class="com.usc.daos.ConsumptiondetailDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -130,8 +128,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="BenefitsdetailDAO"
-		class="com.usc.daos.BenefitsdetailDAO">
+	<bean id="BenefitsdetailDAO" class="com.usc.daos.BenefitsdetailDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -141,8 +138,7 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
-	<bean id="LatencyorderformDAO"
-		class="com.usc.daos.LatencyorderformDAO">
+	<bean id="LatencyorderformDAO" class="com.usc.daos.LatencyorderformDAO">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
@@ -176,4 +172,5 @@
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
-	</bean></beans>
+	</bean>
+</beans>
