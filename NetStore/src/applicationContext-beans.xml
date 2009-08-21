@@ -135,6 +135,7 @@
 	
 	
 	<!--后台管理Beans	-->
+	<!-- 后台管理员实现 -->
 	<bean id="MangerImpl" class="com.usc.services.back.Impl.MangerImpl">
 		<property name="operDao" ref="OperatorDAO"></property>
 	</bean>

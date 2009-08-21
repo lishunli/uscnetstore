@@ -51,7 +51,10 @@ public class loginAction extends ActionSupport
 			return INPUT;
 		}
 		else
+		{
+			ActionContext.getContext().getSession().put("manger", operator.getOperatorName());
 			return SUCCESS;
+		}
 //		System.out.println("execute");
 		// TODO Auto-generated method stub
 		

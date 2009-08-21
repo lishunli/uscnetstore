@@ -15,6 +15,7 @@
 	
 	
 	<!--后台管理Action	-->
+	<!-- 后台管理员登陆 -->
 	<bean id="BackLoginAction" class="com.usc.actions.back.loginAction" scope="prototype">
 		<property name="manger" ref="MangerImpl"></property>
 	</bean>
