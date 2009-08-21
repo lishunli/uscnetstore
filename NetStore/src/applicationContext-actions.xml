@@ -8,4 +8,8 @@
 	<bean id="LoginAction" class="com.usc.actions.back.loginAction" scope="prototype">
 		<property name="manger" ref="MangerImpl"></property>
 	</bean>
+	
+	<bean id="BeforeAction" class="com.usc.actions.custom.BeforeAction">
+	</bean>
+	
 </beans>

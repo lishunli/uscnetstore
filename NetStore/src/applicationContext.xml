@@ -173,7 +173,12 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+
+	
+
+
 <!--	<bean id="LoginAction" class="com.usc.actions.back.loginAction">-->
 <!--		<property name="operDao" ref="OperatorDAO"></property>-->
 <!--	</bean>-->
+
 </beans>
