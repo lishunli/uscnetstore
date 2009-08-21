@@ -16,7 +16,7 @@
             </column>
         </property>
         <property name="operatorPass" type="java.lang.String">
-            <column name="operatorPass" length="20" not-null="true" />
+            <column name="operatorPass" length="48" not-null="true" />
         </property>
         <property name="operatorSex" type="java.lang.String">
             <column name="operatorSex" length="2" not-null="true">
