@@ -23,7 +23,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
     This is my JSP page. <br>
 	<a href="backLogin.action">后台登陆</a><br>
-		<a href="BeforeAction.action">前台登陆</a>
+		<a href="customjsp/Login.jsp">前台登陆</a>
 	
   </body>
 </html>

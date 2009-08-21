@@ -5,13 +5,6 @@
 
 <struts>
 	<package name="user" extends="struts-default">
-		<!-- <action name="register" class="RegisterAction">
-			<result name="success">/index.jsp</result>
-			<result name="input">/register.jsp</result>
-		</action>
-		 -->
-		<action name="BeforeAction" class="BeforeAction">
-		<result name="success">/WEB-INF/jsp/custom/Login.jsp</result>
-		</action>
+
 	</package>
 </struts>
