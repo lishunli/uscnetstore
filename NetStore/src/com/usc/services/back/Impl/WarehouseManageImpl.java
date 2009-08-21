@@ -1,6 +1,7 @@
-package com.usc.services.back;
+package com.usc.services.back.Impl;
 
-import com.usc.services.back.Impl.IWarehouseManage;
+import com.usc.services.back.IWarehouseManage;
+
 
 
 /**

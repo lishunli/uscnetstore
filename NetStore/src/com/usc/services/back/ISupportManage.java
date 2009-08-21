@@ -1,4 +1,4 @@
-package com.usc.services.back.Impl;
+package com.usc.services.back;
 
 /**
  * ¿Í·þSupport staff

@@ -1,4 +1,4 @@
-package com.usc.services.back.Impl;
+package com.usc.services.back;
 
 /**
  * 配货管理员Distribution Manager

@@ -1,4 +1,4 @@
-package com.usc.services.back.Impl;
+package com.usc.services.back;
 
 /**
  * ≤÷ø‚π‹¿Ì‘±Warehouse Manager
