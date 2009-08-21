@@ -34,8 +34,8 @@
 					</tr>
 				</table>
 				<br>
-				<s:a href="/WEB-INF/jsp/custom/ForgetPassword.jsp">忘记密码？</s:a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:a
-					href="Register.jsp">注册新用户</s:a>
+				<s:a href="ForgetPassword.action">忘记密码？</s:a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<s:a
+					href="Register.action">注册新用户</s:a>
 			</s:form>
 		</center>
 	</body>
