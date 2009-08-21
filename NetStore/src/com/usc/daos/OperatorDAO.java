@@ -109,7 +109,7 @@ public class OperatorDAO extends HibernateDaoSupport
 		}
 	}
 
-	public List findByOperatorName(Object operatorName)
+	public List<Operator> findByOperatorName(Object operatorName)
 	{
 		return findByProperty(OPERATOR_NAME, operatorName);
 	}
