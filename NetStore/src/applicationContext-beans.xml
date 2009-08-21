@@ -129,7 +129,12 @@
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
+	<!--前台管理Beans	-->
 	
+	
+	
+	
+	<!--后台管理Beans	-->
 	<bean id="MangerImpl" class="com.usc.services.back.Impl.MangerImpl">
 		<property name="operDao" ref="OperatorDAO"></property>
 	</bean>

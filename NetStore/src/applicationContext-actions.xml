@@ -5,6 +5,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
+	<!--前台管理Action	-->
 	<bean id="BeforeAction" class="com.usc.actions.custom.BeforeAction">
 	</bean>
 	
@@ -13,8 +14,8 @@
 	
 	
 	
-	
-	<bean id="LoginAction" class="com.usc.actions.back.loginAction" scope="prototype">
+	<!--后台管理Action	-->
+	<bean id="BackLoginAction" class="com.usc.actions.back.loginAction" scope="prototype">
 		<property name="manger" ref="MangerImpl"></property>
 	</bean>
 	

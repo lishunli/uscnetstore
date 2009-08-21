@@ -9,7 +9,7 @@
 		<action name="backLogin">
 			<result>/WEB-INF/jsp/back/login.jsp</result>
 		</action>
-		<action name="login" class="LoginAction">
+		<action name="login" class="BackLoginAction">
 			<result name="success">/index.jsp</result>
 			<result name="input">/WEB-INF/jsp/back/login.jsp</result>
 		</action>
