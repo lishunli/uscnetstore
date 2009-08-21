@@ -76,7 +76,9 @@
             </column>
         </property>
         <property name="activeFlag" type="java.lang.Integer">
-            <column name="activeFlag" not-null="true" />
+            <column name="activeFlag" not-null="true">
+                <comment>激活标记位</comment>
+            </column>
         </property>
         <set name="consumptiondetails" inverse="true">
             <key>

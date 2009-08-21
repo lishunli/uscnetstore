@@ -3,111 +3,118 @@ package com.usc.daos;
 import java.util.HashSet;
 import java.util.Set;
 
-
 /**
  * Products entity. @author MyEclipse Persistence Tools
  */
 
-public class Products  implements java.io.Serializable {
+public class Products implements java.io.Serializable
+{
 
+	// Fields
 
-    // Fields    
+	private Integer productsId;
+	private Producttype producttype;
+	private Integer entityId;
+	private Set commodities = new HashSet(0);
+	private Set stockouts = new HashSet(0);
+	private Set stocks = new HashSet(0);
+	private Set stockins = new HashSet(0);
 
-     private Integer productsId;
-     private Producttype producttype;
-     private Integer entityId;
-     private Set commodities = new HashSet(0);
-     private Set stockouts = new HashSet(0);
-     private Set stocks = new HashSet(0);
-     private Set stockins = new HashSet(0);
+	// Constructors
 
-
-    // Constructors
-
-    /** default constructor */
-    public Products() {
-    }
+	/** default constructor */
+	public Products()
+	{
+	}
 
 	/** minimal constructor */
-    public Products(Integer entityId) {
-        this.entityId = entityId;
-    }
-    
-    /** full constructor */
-    public Products(Producttype producttype, Integer entityId, Set commodities, Set stockouts, Set stocks, Set stockins) {
-        this.producttype = producttype;
-        this.entityId = entityId;
-        this.commodities = commodities;
-        this.stockouts = stockouts;
-        this.stocks = stocks;
-        this.stockins = stockins;
-    }
+	public Products(Integer entityId)
+	{
+		this.entityId = entityId;
+	}
 
-   
-    // Property accessors
+	/** full constructor */
+	public Products(Producttype producttype, Integer entityId, Set commodities,
+			Set stockouts, Set stocks, Set stockins)
+	{
+		this.producttype = producttype;
+		this.entityId = entityId;
+		this.commodities = commodities;
+		this.stockouts = stockouts;
+		this.stocks = stocks;
+		this.stockins = stockins;
+	}
 
-    public Integer getProductsId() {
-        return this.productsId;
-    }
-    
-    public void setProductsId(Integer productsId) {
-        this.productsId = productsId;
-    }
+	// Property accessors
 
-    public Producttype getProducttype() {
-        return this.producttype;
-    }
-    
-    public void setProducttype(Producttype producttype) {
-        this.producttype = producttype;
-    }
+	public Integer getProductsId()
+	{
+		return this.productsId;
+	}
 
-    public Integer getEntityId() {
-        return this.entityId;
-    }
-    
-    public void setEntityId(Integer entityId) {
-        this.entityId = entityId;
-    }
+	public void setProductsId(Integer productsId)
+	{
+		this.productsId = productsId;
+	}
 
-    public Set getCommodities() {
-        return this.commodities;
-    }
-    
-    public void setCommodities(Set commodities) {
-        this.commodities = commodities;
-    }
+	public Producttype getProducttype()
+	{
+		return this.producttype;
+	}
 
-    public Set getStockouts() {
-        return this.stockouts;
-    }
-    
-    public void setStockouts(Set stockouts) {
-        this.stockouts = stockouts;
-    }
+	public void setProducttype(Producttype producttype)
+	{
+		this.producttype = producttype;
+	}
 
-    public Set getStocks() {
-        return this.stocks;
-    }
-    
-    public void setStocks(Set stocks) {
-        this.stocks = stocks;
-    }
+	public Integer getEntityId()
+	{
+		return this.entityId;
+	}
 
-    public Set getStockins() {
-        return this.stockins;
-    }
-    
-    public void setStockins(Set stockins) {
-        this.stockins = stockins;
-    }
-   
+	public void setEntityId(Integer entityId)
+	{
+		this.entityId = entityId;
+	}
 
+	public Set getCommodities()
+	{
+		return this.commodities;
+	}
 
+	public void setCommodities(Set commodities)
+	{
+		this.commodities = commodities;
+	}
 
+	public Set getStockouts()
+	{
+		return this.stockouts;
+	}
 
+	public void setStockouts(Set stockouts)
+	{
+		this.stockouts = stockouts;
+	}
 
+	public Set getStocks()
+	{
+		return this.stocks;
+	}
 
+	public void setStocks(Set stocks)
+	{
+		this.stocks = stocks;
+	}
 
+	public Set getStockins()
+	{
+		return this.stockins;
+	}
+
+	public void setStockins(Set stockins)
+	{
+		this.stockins = stockins;
+	}
 
 }

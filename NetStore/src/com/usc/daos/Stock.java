@@ -1,82 +1,82 @@
 package com.usc.daos;
 
-
-
 /**
  * Stock entity. @author MyEclipse Persistence Tools
  */
 
-public class Stock  implements java.io.Serializable {
+public class Stock implements java.io.Serializable
+{
 
+	// Fields
 
-    // Fields    
+	private Integer storageId;
+	private Products products;
+	private Integer stockQuantity;
+	private Integer factStockQuantity;
 
-     private Integer storageId;
-     private Products products;
-     private Integer stockQuantity;
-     private Integer factStockQuantity;
+	// Constructors
 
-
-    // Constructors
-
-    /** default constructor */
-    public Stock() {
-    }
+	/** default constructor */
+	public Stock()
+	{
+	}
 
 	/** minimal constructor */
-    public Stock(Integer stockQuantity, Integer factStockQuantity) {
-        this.stockQuantity = stockQuantity;
-        this.factStockQuantity = factStockQuantity;
-    }
-    
-    /** full constructor */
-    public Stock(Products products, Integer stockQuantity, Integer factStockQuantity) {
-        this.products = products;
-        this.stockQuantity = stockQuantity;
-        this.factStockQuantity = factStockQuantity;
-    }
+	public Stock(Integer stockQuantity, Integer factStockQuantity)
+	{
+		this.stockQuantity = stockQuantity;
+		this.factStockQuantity = factStockQuantity;
+	}
 
-   
-    // Property accessors
+	/** full constructor */
+	public Stock(Products products, Integer stockQuantity,
+			Integer factStockQuantity)
+	{
+		this.products = products;
+		this.stockQuantity = stockQuantity;
+		this.factStockQuantity = factStockQuantity;
+	}
 
-    public Integer getStorageId() {
-        return this.storageId;
-    }
-    
-    public void setStorageId(Integer storageId) {
-        this.storageId = storageId;
-    }
+	// Property accessors
 
-    public Products getProducts() {
-        return this.products;
-    }
-    
-    public void setProducts(Products products) {
-        this.products = products;
-    }
+	public Integer getStorageId()
+	{
+		return this.storageId;
+	}
 
-    public Integer getStockQuantity() {
-        return this.stockQuantity;
-    }
-    
-    public void setStockQuantity(Integer stockQuantity) {
-        this.stockQuantity = stockQuantity;
-    }
+	public void setStorageId(Integer storageId)
+	{
+		this.storageId = storageId;
+	}
 
-    public Integer getFactStockQuantity() {
-        return this.factStockQuantity;
-    }
-    
-    public void setFactStockQuantity(Integer factStockQuantity) {
-        this.factStockQuantity = factStockQuantity;
-    }
-   
+	public Products getProducts()
+	{
+		return this.products;
+	}
 
+	public void setProducts(Products products)
+	{
+		this.products = products;
+	}
 
+	public Integer getStockQuantity()
+	{
+		return this.stockQuantity;
+	}
 
+	public void setStockQuantity(Integer stockQuantity)
+	{
+		this.stockQuantity = stockQuantity;
+	}
 
+	public Integer getFactStockQuantity()
+	{
+		return this.factStockQuantity;
+	}
 
-
-
+	public void setFactStockQuantity(Integer factStockQuantity)
+	{
+		this.factStockQuantity = factStockQuantity;
+	}
 
 }

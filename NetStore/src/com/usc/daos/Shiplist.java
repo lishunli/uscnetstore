@@ -2,77 +2,75 @@ package com.usc.daos;
 
 import java.util.Date;
 
-
 /**
  * Shiplist entity. @author MyEclipse Persistence Tools
  */
 
-public class Shiplist  implements java.io.Serializable {
+public class Shiplist implements java.io.Serializable
+{
 
+	// Fields
 
-    // Fields    
+	private Integer shipListId;
+	private String shipperManager;
+	private Date shipTime;
+	private String shipListState;
 
-     private Integer shipListId;
-     private String shipperManager;
-     private Date shipTime;
-     private String shipListState;
+	// Constructors
 
+	/** default constructor */
+	public Shiplist()
+	{
+	}
 
-    // Constructors
+	/** full constructor */
+	public Shiplist(String shipperManager, Date shipTime, String shipListState)
+	{
+		this.shipperManager = shipperManager;
+		this.shipTime = shipTime;
+		this.shipListState = shipListState;
+	}
 
-    /** default constructor */
-    public Shiplist() {
-    }
+	// Property accessors
 
-    
-    /** full constructor */
-    public Shiplist(String shipperManager, Date shipTime, String shipListState) {
-        this.shipperManager = shipperManager;
-        this.shipTime = shipTime;
-        this.shipListState = shipListState;
-    }
+	public Integer getShipListId()
+	{
+		return this.shipListId;
+	}
 
-   
-    // Property accessors
+	public void setShipListId(Integer shipListId)
+	{
+		this.shipListId = shipListId;
+	}
 
-    public Integer getShipListId() {
-        return this.shipListId;
-    }
-    
-    public void setShipListId(Integer shipListId) {
-        this.shipListId = shipListId;
-    }
+	public String getShipperManager()
+	{
+		return this.shipperManager;
+	}
 
-    public String getShipperManager() {
-        return this.shipperManager;
-    }
-    
-    public void setShipperManager(String shipperManager) {
-        this.shipperManager = shipperManager;
-    }
+	public void setShipperManager(String shipperManager)
+	{
+		this.shipperManager = shipperManager;
+	}
 
-    public Date getShipTime() {
-        return this.shipTime;
-    }
-    
-    public void setShipTime(Date shipTime) {
-        this.shipTime = shipTime;
-    }
+	public Date getShipTime()
+	{
+		return this.shipTime;
+	}
 
-    public String getShipListState() {
-        return this.shipListState;
-    }
-    
-    public void setShipListState(String shipListState) {
-        this.shipListState = shipListState;
-    }
-   
+	public void setShipTime(Date shipTime)
+	{
+		this.shipTime = shipTime;
+	}
 
+	public String getShipListState()
+	{
+		return this.shipListState;
+	}
 
-
-
-
-
-
+	public void setShipListState(String shipListState)
+	{
+		this.shipListState = shipListState;
+	}
 
 }
