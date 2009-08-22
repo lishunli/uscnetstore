@@ -28,7 +28,7 @@ body {
   </tr>
   <tr>
     <th bgcolor="#B9C8EC" scope="col" ><div align="left">欢迎您光临南华大学电子商务平台 </div></th>
-    <td bgcolor="#B9C8EC" scope="col" >当前时间：<div align="left" id="bgclock"></div></td>
+    <td bgcolor="#B9C8EC" scope="col" ><div align="left" id="bgclock"></div></td>
   </tr>
   <tr>
     <td colspan="2" background="images/custom/Log.jpg"  alt="x" width="987" height="50" hspace="0" vspace="0" border="0" ></td>
