@@ -5,8 +5,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>后台</title>
+<script type="text/javascript">
+function BackExit()
+{
+
+	if(confirm("你真的想退出吗？"))
+	{
+		return true;
+	}
+	else 
+	{
+		return false;
+	}
+}
+
+</script>
 </head>
 <body>
-
+<h1>欢迎您：<%=session.getAttribute("manger") %></h1><br>
+<a href="backExit.action" onclick ="return BackExit()">退出</a><br>
+<a href="updatePass.action">修改密码</a><br>
 </body>
 </html>

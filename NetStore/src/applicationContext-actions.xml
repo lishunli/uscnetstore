@@ -18,7 +18,12 @@
 	<bean id="BackLoginAction" class="com.usc.actions.back.loginAction" scope="prototype">
 		<property name="manger" ref="MangerImpl"></property>
 	</bean>
-	
-	
+	<!-- 后台退出 -->
+	<bean id="BackExitAction" class="com.usc.actions.back.BackExitAction" scope="prototype">
+	</bean>
+	<!-- 后台修改密码 -->
+	<bean id="UpdatePassAction" class="com.usc.actions.back.UpdatePassAction" scope="prototype">
+		<property name="manger" ref="MangerImpl"></property>
+	</bean>
 	
 </beans>

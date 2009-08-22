@@ -39,4 +39,30 @@ public class MangerImpl implements IManger
 		return false;
 	}
 
+	/**
+	 * 修改密码
+	 */
+	public boolean updatePass(Operator operator, String newPass)
+	{
+		if (!operDao.findByOperatorName(operator.getOperatorName().trim())
+				.isEmpty())
+		{
+			// 遍历此姓名的管理员，是否密码匹配（重名现象了）
+			for (Operator oper : operDao.findByOperatorName(operator
+					.getOperatorName().trim()))
+			{
+				if (oper.getOperatorPass().equals(operator.getOperatorPass()))
+				{
+					operDao.delete(oper);
+					operator.setOperatorPass(newPass);
+					operator.setOperatorSex(oper.getOperatorSex());
+					operator.setOperatorType(oper.getOperatorType());//设置operator
+					operDao.merge(operator);//插入新的用户
+					return true;//修改成功，返回真
+				}
+			}
+		}
+		return false;
+	}
+
 }

@@ -10,4 +10,5 @@ import com.usc.daos.Operator;
 public interface IManger
 {
 	boolean checkManger(Operator operator);//检查管理员登录用户
+	boolean updatePass(Operator operator,String newPass);//修改密码
 }

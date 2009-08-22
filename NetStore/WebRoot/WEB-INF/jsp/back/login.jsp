@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="../../../css/error.css" type="text/css"></link>
 	</head>
 	<body>
-		<s:form action="login" method="post" theme="simple">
+		<s:form action="backLogin" method="post" theme="simple">
 			<table width="500" border="1" align="center">
 				<tr>
 					<td colspan="3">
