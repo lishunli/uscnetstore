@@ -18,19 +18,20 @@ body {
 }
 -->
 </style>
+<script src="js/Custom.js"></script>
 </head>
 
-<body>
+<body onload="CTime(bgclock)">
 <table width="80%" height="30%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <th colspan="2" bgcolor="#B9C8EC" scope="col" ><marquee direction=left>南华大学电子商务平台 为了您的生活更简单 我们真诚为您服务！</marquee></th> 
   </tr>
   <tr>
     <th bgcolor="#B9C8EC" scope="col" ><div align="left">欢迎您光临南华大学电子商务平台 </div></th>
-    <th bgcolor="#B9C8EC" scope="col" ><div align="left">现在时间：</div></th>
+    <td bgcolor="#B9C8EC" scope="col" ><div align="left" id="bgclock"></div></td>
   </tr>
   <tr>
-    <td colspan="2"><img src="images/custom/Log.jpg" alt="x" width="987" height="75" hspace="0" vspace="0" border="0" /></td>
+    <td colspan="2" background="images/custom/Log.jpg"  width="987" height="75"></td>
   </tr>
   <tr>
     <td width="542" height="0" bgcolor="#76946D"><span class="STYLE3">您好！欢迎光临南华大学电子商务平台</span><a href="Login.jsp">【登录】</a><a href="Register.jsp">【注册】</a> </td>
