@@ -130,6 +130,12 @@
 		</property>
 	</bean>
 	<!--前台管理Beans	-->
+	<!-- 业务逻辑bean -->
+	<bean id="BeforeMain" class="com.usc.services.custom.Impl.BeforeMainImpl">
+	<property name="customdao" ref="CustomDAO"/>
+	</bean>
+	
+	
 	
 	
 	

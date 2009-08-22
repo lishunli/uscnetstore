@@ -8,52 +8,57 @@
    <center>
    <h1>注册</h1>
    <hr color="#3254DD" width="80%">
-   <s:form action="RegisterSuccess.jsp" method="post" theme="simple">
+   <s:form action="RegisterAction" method="post" theme="simple">
    <table>
    <tr >
      <td align="center"><s:label >用户名：</s:label></td>
-   <td align="left"><s:textfield name="Custom.customName" id="customName"/></td>
+   <td align="left"><s:textfield name="custom.customName" id="customName"/></td>
+   <td align="right"><s:label >*</s:label></td>
+   </tr>
+   <tr>
+    <td align="center"><s:label >真实姓名：</s:label></td>
+   <td align="left"><s:textfield name="custom.realName" id="realName"/></td>
    <td align="right"><s:label >*</s:label></td>
    </tr>
    <tr>
    <td align="center"><s:label >密码：</s:label></td>
-   <td><s:textfield name="Custom.customPass"/></td>
+   <td><s:password name="custom.customPass"/></td> 
    <td align="right"><s:label >*</s:label></td>
    </tr>
    <tr>
    <td align="center"><s:label >重复密码：</s:label></td>
-   <td><s:textfield name="recustomPass"/></td>
+   <td><s:password name="recustomPass"/></td>
    <td align="right"><s:label >*</s:label></td>
    </tr>
    <tr>
    <td align="center"><s:label >Email：</s:label></td>
-   <td><s:textfield name="Custom.email" /></td>
+   <td><s:textfield name="custom.email" /></td>
     <td align="right"><s:label >*</s:label></td>
    </tr>
    <tr>  
      <td align="center"><s:label >性别：</s:label></td>   
-  <td><s:radio name="Custom.sex" list="#{'1':'男','0':'女'}" value="'1'"> </s:radio> </td>
+  <td><s:radio name="custom.sex" list="#{'1':'男','0':'女'}" value="'1'"> </s:radio> </td>
  <td align="right"><s:label >*</s:label></td>
    </tr>
     
    <tr>
    <td align="center"><s:label >地址：</s:label></td>  
-   <td><s:textfield  name="Custom.address" /></td>
+   <td><s:textfield  name="custom.address" /></td>
    <td align="right"><s:label >*</s:label></td>
    </tr>
      <tr>
      <td align="center"><s:label >邮编：</s:label></td>  
-   <td><s:textfield name="Custom.postCode" /></td>
+   <td><s:textfield name="custom.postCode" /></td>
    <td align="right"><s:label >*</s:label></td>
    </tr>
      <tr>
      <td align="center"><s:label >移动电话：</s:label></td> 
-   <td><s:textfield name="Custom.mobile" /></td>
+   <td><s:textfield name="custom.mobile" /></td>
      <td align="right"><s:label >*</s:label></td>
    </tr>
      <tr>
      <td align="center"><s:label >固定电话：</s:label></td>
-   <td><s:textfield name="Custom.phone" /></td>
+   <td><s:textfield name="custom.phone" /></td>
    </tr>
    <tr>
  <br>

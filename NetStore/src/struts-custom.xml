@@ -5,6 +5,18 @@
 
 <struts>
 	<package name="user" extends="struts-default">
+		<!-- 注册 -->
+		<action name="RegisterAction" class="RegisterAction">
+			<result name="success">
+				/customjsp/RegisterSuccess.jsp
+			</result>
+			<result name="error">/customjsp/Register.jsp</result>
+		</action>
 
+		<!-- 登录 -->
+		<action name="LoginAction" class="LoginAction">
+			<result name="success">/customjsp/Top.jsp</result>
+			<result name="error">/customjsp/Login.jsp</result>
+		</action>
 	</package>
 </struts>

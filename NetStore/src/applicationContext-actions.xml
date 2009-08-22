@@ -6,6 +6,14 @@
            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd">
 	<!--前台管理Action	-->
+	<!-- 注册 -->
+	<bean id="RegisterAction" class="com.usc.actions.custom.RegisterAction">
+	<property name="beforemainimpl" ref="BeforeMain"></property>
+	</bean>
+	<!-- 登录 -->
+	<bean id="LoginAction" class="com.usc.actions.custom.LoginAction">
+	<property name="beforemainimpl" ref="BeforeMain"></property>
+	</bean>
 	
 	
 	

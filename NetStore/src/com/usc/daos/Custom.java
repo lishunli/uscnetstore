@@ -199,9 +199,9 @@ public class Custom implements java.io.Serializable
 		return this.consumption;
 	}
 
-	public void setConsumption(Float consumption)
+	public void setConsumption(Float d)
 	{
-		this.consumption = consumption;
+		this.consumption =  d;
 	}
 
 	public Float getUcurrency()

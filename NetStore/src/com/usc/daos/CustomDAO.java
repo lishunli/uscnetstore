@@ -44,12 +44,12 @@ public class CustomDAO extends HibernateDaoSupport
 		// do nothing
 	}
 
-	public void save(Custom transientInstance)
+	public void save(Custom custom)
 	{
 		log.debug("saving Custom instance");
 		try
 		{
-			getHibernateTemplate().save(transientInstance);
+			getHibernateTemplate().save(custom);
 			log.debug("save successful");
 		} catch (RuntimeException re)
 		{
@@ -57,8 +57,29 @@ public class CustomDAO extends HibernateDaoSupport
 			throw re;
 		}
 	}
+	
+	public List findByProperty(String propertyName, Object value)
+	{
+		log.debug("finding Custom instance with property: " + propertyName
+				+ ", value: " + value);
+		try
+		{
+			String queryString = "from Custom as model where model."
+					+ propertyName + "= ?";
+			return getHibernateTemplate().find(queryString, value);
+		} catch (RuntimeException re)
+		{
+			log.error("find by property name failed", re);
+			throw re;
+		}
+	}
 
-	public void delete(Custom persistentInstance)
+	public List findByCustomName(Object customName)
+	{
+		return findByProperty("customName", customName);
+	}
+
+	/*public void delete(Custom persistentInstance)
 	{
 		log.debug("deleting Custom instance");
 		try
@@ -103,26 +124,7 @@ public class CustomDAO extends HibernateDaoSupport
 		}
 	}
 
-	public List findByProperty(String propertyName, Object value)
-	{
-		log.debug("finding Custom instance with property: " + propertyName
-				+ ", value: " + value);
-		try
-		{
-			String queryString = "from Custom as model where model."
-					+ propertyName + "= ?";
-			return getHibernateTemplate().find(queryString, value);
-		} catch (RuntimeException re)
-		{
-			log.error("find by property name failed", re);
-			throw re;
-		}
-	}
-
-	public List findByCustomPass(Object customPass)
-	{
-		return findByProperty(CUSTOM_PASS, customPass);
-	}
+	
 
 	public List findByEmail(Object email)
 	{
@@ -245,5 +247,5 @@ public class CustomDAO extends HibernateDaoSupport
 	public static CustomDAO getFromApplicationContext(ApplicationContext ctx)
 	{
 		return (CustomDAO) ctx.getBean("CustomDAO");
-	}
+	}*/
 }

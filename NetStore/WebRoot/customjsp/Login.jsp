@@ -12,17 +12,17 @@
 			</h1>
 			<br>
 			<hr color="#3254DD" width="80%">
-			<s:form action="" method="post">
+			<s:form action="LoginAction" method="post">
 				<table>
 					<tr>
 						<td>
-							<s:textfield name="Custom.customName" label="用户名或Email："/>
+							<s:textfield name="custom.customName" label="用户名或Email："/>
 						</td>
 					</tr>
 					<br>
 					<tr>
 						<td>
-							<s:textfield  name="Custom.customPass" label="密 码："/>
+							<s:textfield  name="customPass" label="密 码："/>
 						</td>
 					</tr>
 				

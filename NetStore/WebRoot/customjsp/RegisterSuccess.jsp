@@ -6,6 +6,6 @@
   </head> 
   <body>
   恭喜<%request.getParameter("Custom.address"); %>客户成为南华大学电子商务平台注册客户！
-  <s:a href="Login.jsp">返回登陆页面</s:a>
+  <s:a href="customjsp/Login.jsp">返回登陆页面</s:a>
   </body>
 </html>
