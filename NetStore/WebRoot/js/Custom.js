@@ -17,7 +17,7 @@ function CTime(bgclock){
 	var arr_week=new Array("������","����һ","���ڶ�","������","������","������","������");
 	week=arr_week[day];
 	var time="";
-	time=year+"��"+month+"��"+date+"�� "+week+" "+hour+":"+minu+":"+sec;
+	time=year+"��年"+month+"月��"+date+"日�� "+week+" "+hour+":"+minu+":"+sec;
 	if(document.all){
 		bgclock.innerHTML="<b>"+time+"</b>"
 }
