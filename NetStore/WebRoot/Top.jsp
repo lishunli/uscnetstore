@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="com.usc.daos.Custom" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -27,7 +28,11 @@ body {
     <th colspan="2" bgcolor="#B9C8EC" scope="col" ><marquee direction=left>南华大学电子商务平台 为了您的生活更简单 我们真诚为您服务！</marquee></th> 
   </tr>
   <tr>
-    <th bgcolor="#B9C8EC" scope="col" ><div align="left">欢迎您光临南华大学电子商务平台 <%session.getAttribute("Custom").toString(); %></div></th>
+    <th bgcolor="#B9C8EC" scope="col" ><div align="left">
+    <% Custom custom = (Custom)session.getAttribute("Custom");
+    if(custom==null){%>
+    <%out.print("欢迎您光临南华大学电子商务平台");}else{out.print("欢迎您的光临！"+custom.getCustomName());} %>
+    </div></th>
     <td bgcolor="#B9C8EC" scope="col" ><div align="left" id="bgclock"></div></td>
   </tr>
   <tr>
@@ -39,7 +44,7 @@ body {
   </tr>
   <tr>
     <td width="542" bgcolor="#E7E7E7"><span class="STYLE4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="customjsp/Main.jsp">首页</a>|<a href="customjsp/BooksMain.jsp">图书</a>|<a href="customjsp/DigitalsMain.jsp">数码</a></strong></span></td>
-    <td width="445" bgcolor="#E7E7E7"><span class="STYLE3"><a href="customjsp/PersonManager.jsp">我的信息库</a>&nbsp;<a href="customjsp/ShoppingCart.jsp"> 购物车&nbsp; <a href="customjsp/NewPeoples.jsp">新手上路</a> &nbsp;<a href="customjsp/Help.jsp">帮助中心</a></span></td>
+    <td width="445" bgcolor="#E7E7E7"><span class="STYLE3"><a href="customjsp/PersonManagerTop.jsp" type="redirect">我的信息库</a>&nbsp;<a href="customjsp/ShoppingCart.jsp"> 购物车</a>&nbsp; <a href="customjsp/NewPeoples.jsp">新手上路</a> &nbsp;<a href="customjsp/Help.jsp">帮助中心</a></span></td>
   </tr>
   <tr>
     <td bgcolor="#E7E7E7"><span class="STYLE3">按产品类型：

@@ -2,13 +2,16 @@ package com.usc.actions.custom;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.apache.struts2.interceptor.SessionAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.usc.daos.Custom;
 import com.usc.services.custom.Impl.BeforeMainImpl;
 
-public class LoginAction extends ActionSupport implements SessionAware{
+public class LoginAction extends ActionSupport {
 
 	/**
 	 * 
@@ -23,7 +26,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	private String customNameorEmail;
 	
-	private Map session;
+	private HttpServletRequest request;
 
 	@Override
 	public String execute() throws Exception {
@@ -39,7 +42,9 @@ public class LoginAction extends ActionSupport implements SessionAware{
 				&& custom.getCustomPass().equals(
 						beforemainimpl.encoderByMd5(customNameorEmail.trim())))
 		{
-			session.put("Custom", custom.getCustomName());
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("Custom", custom);
 			return "success";
 		}
 			else
@@ -79,12 +84,12 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		this.customNameorEmail = customNameorEmail;
 	}
 
-	public void setSession(Map session) {
-		this.session=session;
-		
+
+	public HttpServletRequest getRequest() {
+		return request;
 	}
 
-	public Map getSession() {
-		return session;
+	public void setRequest(HttpServletRequest request) {
+		this.request = request;
 	}
 }
