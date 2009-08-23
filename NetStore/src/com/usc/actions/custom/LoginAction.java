@@ -1,12 +1,8 @@
 package com.usc.actions.custom;
 
-import java.util.Map;
+//import javax.servlet.http.HttpServletRequest;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import org.apache.struts2.interceptor.SessionAware;
-
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.usc.daos.Custom;
 import com.usc.services.custom.Impl.BeforeMainImpl;
@@ -26,7 +22,6 @@ public class LoginAction extends ActionSupport {
 
 	private String customNameorEmail;
 	
-	private HttpServletRequest request;
 
 	@Override
 	public String execute() throws Exception {
@@ -36,15 +31,17 @@ public class LoginAction extends ActionSupport {
 		else if (beforemainimpl.findByEmail(customNameorEmail) != null)
 			custom = (Custom) beforemainimpl.findByEmail(customNameorEmail)
 					.iterator().next();
+	
+		
 		if (customNameorEmail != null
 				&& !customNameorEmail.equals("")
 				&& custom != null
 				&& custom.getCustomPass().equals(
 						beforemainimpl.encoderByMd5(customNameorEmail.trim())))
 		{
-			
-			HttpSession session = request.getSession();
-			session.setAttribute("Custom", custom);
+		/*	HttpSession session = request.getSession();
+			session.setAttribute("Custom", custom);*/
+			ActionContext.getContext().getSession().put("Custom", custom);
 			return "success";
 		}
 			else
@@ -84,12 +81,4 @@ public class LoginAction extends ActionSupport {
 		this.customNameorEmail = customNameorEmail;
 	}
 
-
-	public HttpServletRequest getRequest() {
-		return request;
-	}
-
-	public void setRequest(HttpServletRequest request) {
-		this.request = request;
-	}
 }
