@@ -82,7 +82,7 @@ public class UpdatePassAction extends ActionSupport
 		{
 			if (manger.updatePass(operator, newPass))//修改成功
 				return SUCCESS;
-			else
+			else//修改失败，请重新修改
 			{
 				this.addFieldError("operator.operatorPass", "修改失败，请重新修改");
 			}
