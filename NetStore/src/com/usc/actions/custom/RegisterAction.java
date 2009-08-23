@@ -20,9 +20,10 @@ public class RegisterAction extends ActionSupport {
 		custom.setBenefits(0f);
 		custom.setVipFlag(0);
 		custom.setVipDate(new Date());
-		custom.setActiveFlag(1);
-		if(beforemainimpl.findbyCustomName(custom.getCustomName())==null && customPassword.trim().equals(recustomPass.trim()))
+		custom.setActiveFlag(1);		
+		if(custom.getCustomName()!=null && !custom.getCustomName().equals("") && custom.getCustomPass().trim().equals(recustomPass.trim()))
 		{
+			custom.setCustomPass(beforemainimpl.encoderByMd5(custom.getCustomPass().trim()));
 			beforemainimpl.saveCustom(custom);
                return "success";
          }

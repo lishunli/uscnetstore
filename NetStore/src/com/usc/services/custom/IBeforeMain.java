@@ -10,4 +10,8 @@ public interface IBeforeMain {
 	
 	public List<Custom> findbyCustomName(String customName);
 	
+	public List<Custom> findByEmail(String email);
+	
+	public String encoderByMd5(String password);
+	
 }

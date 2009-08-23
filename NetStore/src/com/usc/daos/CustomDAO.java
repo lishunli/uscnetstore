@@ -78,6 +78,11 @@ public class CustomDAO extends HibernateDaoSupport
 	{
 		return findByProperty("customName", customName);
 	}
+	
+	public List findByEmail(Object email)
+	{
+		return findByProperty(EMAIL, email);
+	}
 
 	/*public void delete(Custom persistentInstance)
 	{
@@ -125,11 +130,6 @@ public class CustomDAO extends HibernateDaoSupport
 	}
 
 	
-
-	public List findByEmail(Object email)
-	{
-		return findByProperty(EMAIL, email);
-	}
 
 	public List findByRealName(Object realName)
 	{

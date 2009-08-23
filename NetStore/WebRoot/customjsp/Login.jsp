@@ -16,7 +16,7 @@
 				<table>
 					<tr>
 						<td>
-							<s:textfield name="custom.customName" label="用户名或Email："/>
+							<s:textfield name="customNameorEmail" label="用户名或Email："/>
 						</td>
 					</tr>
 					<br>

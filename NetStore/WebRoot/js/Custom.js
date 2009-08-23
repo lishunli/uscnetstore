@@ -14,12 +14,12 @@ function CTime(bgclock){
 	if(hour<10) hour="0"+hour;
 	if(minu<10) minu="0"+minu;
 	if(sec<10) sec="0"+sec;
-	var arr_week=new Array("������","����","���","������","������","������","������");
-	week=arr_week[day];
+	//var arr_week=new Array("������","����","���","������","������","������","������");
+	//week=arr_week[day];
 	var time="";
-	time="当前时间："+year+"��年"+month+"月��"+date+"日�� "+week+" "+hour+":"+minu+":"+sec;
-	if(document.all){
+	time="当前时间："+year+"��年"+month+"月��"+date+"日�� "+hour+":"+minu+":"+sec;
+	//if(document.all){
 		bgclock.innerHTML="<b>"+time+"</b>"
-}
+//}
 	var timer=setTimeout("CTime(bgclock)",200);
 } 

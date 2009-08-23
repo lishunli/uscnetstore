@@ -1,5 +1,7 @@
 package com.usc.services.custom.Impl;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 import com.usc.daos.Custom;
@@ -20,6 +22,13 @@ public class BeforeMainImpl implements IBeforeMain {
 		else return null;
 		
 	}
+	
+	public List<Custom> findByEmail(String email) {
+		if(customdao.findByEmail(email).size()>0)
+			return (List<Custom>)customdao.findByEmail(email);
+		else return null;
+		
+	}
 
 	public CustomDAO getCustomdao() {
 		return customdao;
@@ -29,6 +38,31 @@ public class BeforeMainImpl implements IBeforeMain {
 		this.customdao = customdao;
 	}
 
+		public String encoderByMd5(String password)
+		{
+			String resultString = null;
+			resultString = new String(password);
+			MessageDigest md;// 信息摘要
+			try
+			{
+				md = MessageDigest.getInstance("MD5");// 实例化
+				md.update(password.getBytes());
+				byte[] digest = md.digest();
+				StringBuffer sb = new StringBuffer();
+				for (int i = 0; i < digest.length; i++)
+				{
+					sb.append(Integer.toHexString(((int) digest[i]) & 0xFF));
+				}
+				resultString = sb.toString();
+			} catch (NoSuchAlgorithmException e)
+			{
+				e.printStackTrace();
+			}
+			return resultString;
+		}
+
+	}
+
 	
 
-}
+

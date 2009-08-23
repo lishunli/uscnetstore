@@ -7,16 +7,17 @@
 	<package name="user" extends="struts-default">
 		<!-- 注册 -->
 		<action name="RegisterAction" class="RegisterAction">
-			<result name="success">
+			<result name="success" type="redirect">
 				/customjsp/RegisterSuccess.jsp
 			</result>
-			<result name="error">/customjsp/Register.jsp</result>
+			<result name="error" type="redirect">/customjsp/Register.jsp</result>
 		</action>
 
 		<!-- 登录 -->
 		<action name="LoginAction" class="LoginAction">
-			<result name="success">/customjsp/Top.jsp</result>
-			<result name="error">/customjsp/Login.jsp</result>
+			<result name="success" type="redirect">/Top.jsp</result>
+			<result name="error" type="redirect">/customjsp/Login.jsp</result>
+			<result name="input" type="redirect">/customjsp/Login.jsp</result>
 		</action>
 	</package>
 </struts>

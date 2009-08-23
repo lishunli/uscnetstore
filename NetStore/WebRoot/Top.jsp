@@ -27,19 +27,19 @@ body {
     <th colspan="2" bgcolor="#B9C8EC" scope="col" ><marquee direction=left>南华大学电子商务平台 为了您的生活更简单 我们真诚为您服务！</marquee></th> 
   </tr>
   <tr>
-    <th bgcolor="#B9C8EC" scope="col" ><div align="left">欢迎您光临南华大学电子商务平台 </div></th>
+    <th bgcolor="#B9C8EC" scope="col" ><div align="left">欢迎您光临南华大学电子商务平台 <%session.getAttribute("Custom").toString(); %></div></th>
     <td bgcolor="#B9C8EC" scope="col" ><div align="left" id="bgclock"></div></td>
   </tr>
   <tr>
     <td colspan="2" background="images/custom/Log.jpg"  alt="x" width="987" height="50" hspace="0" vspace="0" border="0" ></td>
   </tr>
   <tr>
-    <td width="542" height="0" bgcolor="#76946D"><span class="STYLE3">您好！欢迎光临南华大学电子商务平台</span><a href="Login.jsp">【登录】</a><a href="Register.jsp">【注册】</a> </td>
+    <td width="542" height="0" bgcolor="#76946D"><span class="STYLE3">您好！欢迎光临南华大学电子商务平台</span><a href="customjsp/Login.jsp">【登录】</a><a href="customjsp/Register.jsp">【注册】</a> </td>
     <td bgcolor="#76946D">&nbsp;</td>
   </tr>
   <tr>
-    <td width="542" bgcolor="#E7E7E7"><span class="STYLE4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="Main.jsp">首页</a>|<a href="BooksMain.jsp">图书</a>|<a href="DigitalsMain.jsp">数码</a></strong></span></td>
-    <td width="445" bgcolor="#E7E7E7"><span class="STYLE3"><a href="PersonManager.jsp">我的信息库</a>&nbsp;<a href="ShoppingCart.jsp"> 购物车&nbsp; <a href="NewPeoples.jsp">新手上路</a> &nbsp;<a href="Help.jsp">帮助中心</a></span></td>
+    <td width="542" bgcolor="#E7E7E7"><span class="STYLE4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="customjsp/Main.jsp">首页</a>|<a href="customjsp/BooksMain.jsp">图书</a>|<a href="customjsp/DigitalsMain.jsp">数码</a></strong></span></td>
+    <td width="445" bgcolor="#E7E7E7"><span class="STYLE3"><a href="customjsp/PersonManager.jsp">我的信息库</a>&nbsp;<a href="customjsp/ShoppingCart.jsp"> 购物车&nbsp; <a href="customjsp/NewPeoples.jsp">新手上路</a> &nbsp;<a href="customjsp/Help.jsp">帮助中心</a></span></td>
   </tr>
   <tr>
     <td bgcolor="#E7E7E7"><span class="STYLE3">按产品类型：
