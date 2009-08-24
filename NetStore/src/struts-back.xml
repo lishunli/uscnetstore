@@ -4,6 +4,8 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+	<constant name="struts.custom.i18n.resources" value="message"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
 	<package name="back" extends="struts-default">
 	
 		<!--后台登陆页面 
@@ -26,6 +28,19 @@
 			<result name="input">/WEB-INF/jsp/back/updatePass.jsp</result>
 		</action>
 		
+		<action name="pType" class="PTypeAction" method="getAllPType"></action>
 	</package>
-
+	<package name="uploadImage" extends="struts-default">
+		<action name="bookEntry"  class="BookEntryAction">
+			<result name="success">/WEB-INF/jsp/back/back.jsp</result>
+			<result name="input">/WEB-INF/jsp/back/bookEntry.jsp</result>
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">1048576</param>
+<!--单位是字节	1M	（2097152B）		-->
+				<param name="allowedTypes">image/bmp,image/x-png,image/png,image/gif,image/jpeg,image/jpg,image/pjpeg</param>
+<!--容许文件类型为doc,ppt,xls,pdf,txt,java			-->
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
+	</package>
 </struts>

@@ -10,11 +10,16 @@
             <column name="bookID" />
             <generator class="native" />
         </id>
-        <many-to-one name="producttype" class="com.usc.daos.Producttype" fetch="select">
-            <column name="productTypeID">
+<!--        <many-to-one name="producttype" class="com.usc.daos.Producttype" fetch="select">-->
+<!--            <column name="productTypeID">-->
+<!--                <comment>产品分类ID</comment>-->
+<!--            </column>-->
+<!--        </many-to-one>-->
+		<property name="productTypeID" type="java.lang.Integer" not-null="true">
+		    <column name="productTypeID">
                 <comment>产品分类ID</comment>
             </column>
-        </many-to-one>
+		</property>
         <property name="bookName" type="java.lang.String">
             <column name="bookName" length="60" not-null="true">
                 <comment>图书名称</comment>
@@ -55,7 +60,7 @@
                 <comment>目录信息</comment>
             </column>
         </property>
-        <property name="picture" type="java.lang.String">
+        <property name="picture" type="java.sql.Blob">
             <column name="picture">
                 <comment>图片</comment>
             </column>

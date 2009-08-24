@@ -25,5 +25,6 @@ function BackExit()
 <h1>欢迎您：<%=session.getAttribute("manger") %></h1><br>
 <a href="backExit.action" onclick ="return BackExit()">退出</a><br>
 <a href="updatePass.action">修改密码</a><br>
+<a href="bookEntry.action">图书录入</a>
 </body>
 </html>

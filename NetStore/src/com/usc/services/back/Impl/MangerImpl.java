@@ -1,5 +1,6 @@
 package com.usc.services.back.Impl;
 
+import com.usc.daos.BookDAO;
 import com.usc.daos.Operator;
 import com.usc.daos.OperatorDAO;
 import com.usc.services.back.IManger;
@@ -13,6 +14,12 @@ import com.usc.services.back.IManger;
 public class MangerImpl implements IManger
 {
 	private OperatorDAO operDao;// 后台管理员DAO
+	private BookDAO bookDao;
+	
+	public void setBookDao(BookDAO bookDao)
+	{
+		this.bookDao = bookDao;
+	}
 
 	public void setOperDao(OperatorDAO operDao)
 	{

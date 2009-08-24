@@ -144,6 +144,8 @@
 	<!-- 后台管理员实现 -->
 	<bean id="MangerImpl" class="com.usc.services.back.Impl.MangerImpl">
 		<property name="operDao" ref="OperatorDAO"></property>
+		<property name="bookDao" ref="BookDAO"></property>
 	</bean>
+	
 	
 </beans>

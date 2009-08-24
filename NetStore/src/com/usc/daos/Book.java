@@ -1,5 +1,6 @@
 package com.usc.daos;
 
+import java.sql.Blob;
 import java.util.Date;
 
 /**
@@ -12,7 +13,7 @@ public class Book implements java.io.Serializable
 	// Fields
 
 	private Integer bookId;
-	private Producttype producttype;
+	private Integer productTypeID;
 	private String bookName;
 	private String author;
 	private String publisher;
@@ -21,7 +22,7 @@ public class Book implements java.io.Serializable
 	private String isbn;
 	private Float publishedPrice;
 	private String catalog;
-	private String picture;
+	private Blob picture;
 	private String briefIntroduction;
 	private Integer productsPflag;
 
@@ -44,12 +45,12 @@ public class Book implements java.io.Serializable
 	}
 
 	/** full constructor */
-	public Book(Producttype producttype, String bookName, String author,
+	public Book(Integer productTypeID, String bookName, String author,
 			String publisher, Date publishingTime, String version, String isbn,
-			Float publishedPrice, String catalog, String picture,
+			Float publishedPrice, String catalog, Blob picture,
 			String briefIntroduction, Integer productsPflag)
 	{
-		this.producttype = producttype;
+		this.productTypeID = productTypeID;
 		this.bookName = bookName;
 		this.author = author;
 		this.publisher = publisher;
@@ -75,14 +76,15 @@ public class Book implements java.io.Serializable
 		this.bookId = bookId;
 	}
 
-	public Producttype getProducttype()
+
+	public Integer getProductTypeID()
 	{
-		return this.producttype;
+		return productTypeID;
 	}
 
-	public void setProducttype(Producttype producttype)
+	public void setProductTypeID(Integer productTypeID)
 	{
-		this.producttype = producttype;
+		this.productTypeID = productTypeID;
 	}
 
 	public String getBookName()
@@ -165,12 +167,12 @@ public class Book implements java.io.Serializable
 		this.catalog = catalog;
 	}
 
-	public String getPicture()
+	public Blob getPicture()
 	{
 		return this.picture;
 	}
 
-	public void setPicture(String picture)
+	public void setPicture(Blob picture)
 	{
 		this.picture = picture;
 	}
