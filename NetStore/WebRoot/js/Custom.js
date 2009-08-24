@@ -17,7 +17,7 @@ function CTime(bgclock){
 	//var arr_week=new Array("������","����","���","������","������","������","������");
 	//week=arr_week[day];
 	var time="";
-	time="当前时间："+year+"��年"+month+"月��"+date+"日�� "+hour+":"+minu+":"+sec;
+	time="当前时间："+year+"年"+month+"月"+date+"日 "+hour+":"+minu+":"+sec;
 	//if(document.all){
 		bgclock.innerHTML="<b>"+time+"</b>"
 //}
