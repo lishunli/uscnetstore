@@ -118,9 +118,9 @@
     <th height="24" bgcolor="#8AD286" scope="row"><p align="left" class="STYLE10"><strong><a href="customjsp/PersonManagerMain.jsp?action=favorite" type="redirect">暂存架</a> </strong></p></th>
   </tr>
   <tr bgcolor="#EEEEEE">
-    <th height="24" bgcolor="#8AD286" scope="row"><p align="left" class="STYLE10"><strong><a href="customjsp/PersonManagerMain.jsp?action=remark" type="redirect">评论</a> </strong></p><br />
-    </p></th>
-  </tr>
+    <th height="24" bgcolor="#8AD286" scope="row"><p align="left" class="STYLE10"><strong><a href="customjsp/PersonManagerMain.jsp?action=remark" type="redirect">评论</a> </strong></p></th>
+    </tr>
+  
   <tr bgcolor="#EEEEEE">
     <th height="28" bgcolor="#8AD286" scope="row"><div align="left"><span class="STYLE10"><strong><a href="customjsp/PersonManagerMain.jsp?action=suggestion" type="redirect">建议</a> </strong></span></div></th>
   </tr>
