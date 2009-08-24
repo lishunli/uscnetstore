@@ -44,7 +44,7 @@ body {
   </tr>
   <tr>
     <td width="542" bgcolor="#E7E7E7"><span class="STYLE4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="customjsp/Main.jsp">首页</a>|<a href="customjsp/BooksMain.jsp">图书</a>|<a href="customjsp/DigitalsMain.jsp">数码</a></strong></span></td>
-    <td width="445" bgcolor="#E7E7E7"><span class="STYLE3"><a href="customjsp/PersonManagerMain.jsp?f=o" type="redirect">我的信息库</a>&nbsp;<a href="customjsp/ShoppingCart.jsp" type="redirect"> 购物车</a>&nbsp; <a href="customjsp/NewPeoples.jsp" type="redirect">新手上路</a> &nbsp;<a href="customjsp/Help.jsp" type="redirect">帮助中心</a></span></td>
+    <td width="445" bgcolor="#E7E7E7"><span class="STYLE3"><a href="customjsp/PersonManagerMain.jsp?action=order" type="redirect">我的信息库</a>&nbsp;<a href="customjsp/ShoppingCart.jsp" type="redirect"> 购物车</a>&nbsp; <a href="customjsp/NewPeoples.jsp" type="redirect">新手上路</a> &nbsp;<a href="customjsp/Help.jsp" type="redirect">帮助中心</a></span></td>
   </tr>
   <tr>
     <td bgcolor="#E7E7E7"><span class="STYLE3">按产品类型：

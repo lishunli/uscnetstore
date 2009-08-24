@@ -25,7 +25,7 @@
     <th width="157" height="10" bgcolor="#EEEEEE" scope="row"><div align="left">
         用户名:
         <% Custom custom1 = (Custom)session.getAttribute("Custom");
-    out.print(custom.getCustomName());%>
+    out.print(custom1.getCustomName());%>
 
         </div>      <div align="left" class="STYLE12">
         <div align="left">          身 份：
@@ -48,20 +48,34 @@
          %>
     </div></th>
     <td rowspan="8">
-    
-    
+  
  <%
-    String action = (String)request.getAttribute("f");
-    out.print(action);
-    if("o".equals(action)){%>
-   
-   <%@ include file="PersonManagerUHistory.jsp" %>
- <%}
- else 
- if("p".equals(action)){ %>
-  <%@ include file="PersonManagerCPassword.jsp" %>
+    String value = (String)request.getParameter("action");
+    if("order".equals(value)){%>
+    <%@ include file="PersonManagerOrder.jsp"%>
+ <%} 
+ else if("changepassword".equals(value)){%>
+ <%@ include file="PersonManagerCPassword.jsp"%><%}
+  else if("changeemail".equals(value)){%>
+ <%@ include file="PersonManagerCEmail.jsp"%><%}
+  else if("lookaddrss".equals(value)){%>
+ <%@ include file="PersonManagerAddress.jsp"%><%}
+  else if("uhistory".equals(value)){%>
+ <%@ include file="PersonManagerUHistory.jsp"%><%}
+  else if("swapu".equals(value)){%>
+ <%@ include file="PersonManagerUTransfor.jsp"%><%}
+  else if("bhistory".equals(value)){%>
+ <%@ include file="PersonManagerBHistory.jsp"%><%}
+  else if("bswapu".equals(value)){%>
+ <%@ include file="PersonManagerBSwapU.jsp"%><%}
+  else if("favorite".equals(value)){%>
+ <%@ include file="PersonManagerFavorite.jsp"%><%}
+  else if("remark".equals(value)){%>
+ <%@ include file="PersonManagerRemark.jsp"%><%}
+   else if("suggestion".equals(value)){%>
+ <%@ include file="PersonManagerSuggestion.jsp"%>
  <%}%>
-    </td>
+   </td>
   
     
     
@@ -70,7 +84,7 @@
   
   <tr bgcolor="#EEEEEE">
     <th height="28" bgcolor="#8AD286" scope="row"><div align="left">
-      <p class="STYLE10"><a href="PersonManagerMain.jsp?f=o" type="redirect">我的订单历史</a>&nbsp;
+      <p class="STYLE10"><a href="customjsp/PersonManagerMain.jsp?action=order" type="redirect">我的订单历史</a>&nbsp;
         </p>
     <p>
       </div></th>
@@ -78,16 +92,16 @@
   <tr bgcolor="#EEEEEE">
     <th height="71" bgcolor="#8AD286" scope="row"><p align="left"><span class="STYLE10"><strong>修改个人信息</strong></span><hr color="#AACCFF"/>
       <div align="left"><br />
-        <span class="STYLE8"><strong><a href="PersonManagerMain.jsp?f=p">修改密码</a></strong> <br />
-        <strong>修改Email地址</strong> <br />
-        <strong>查看收货地址薄</strong></span>
+        <span class="STYLE8"><strong><a href="customjsp/PersonManagerMain.jsp?action=changepassword" type="redirect">修改密码</a></strong> <br />
+        <strong><a href="customjsp/PersonManagerMain.jsp?action=changeemail" type="redirect">修改Email地址</a></strong> <br />
+        <strong><a href="customjsp/PersonManagerMain.jsp?action=lookaddrss" type="redirect">查看收货地址薄</a></strong></span>
         <p>    
       </div></th>
   </tr>  <tr bgcolor="#EEEEEE">
     <th height="64" bgcolor="#8AD286" scope="row"><p align="left"><span class="STYLE10"><strong>U</strong><strong>币管理</strong></span><hr color="#AACCFF"/>
       <div align="left"><br />
-        <span class="STYLE8"><strong>U</strong><strong>币历史</strong> <br />
-        <strong>转让U币</strong><strong> </strong></span>
+        <span class="STYLE8"><strong><a href="customjsp/PersonManagerMain.jsp?action=uhistory" type="redirect">U币历史</a></strong> <br />
+        <strong><a href="customjsp/PersonManagerMain.jsp?action=swapu" type="redirect">转让U币</a></strong><strong> </strong></span>
         <p>    
       </div></th>
   </tr>
@@ -96,19 +110,19 @@
       <div align="left"><span class="STYLE9">积分管理 </span></div>
       <span class="STYLE9"><hr color="#AACCFF"/></span>
       <div align="left"><br />
-        <span class="STYLE8"><strong>积分历史</strong> <br />
-              <strong>积分换U币</strong> </span></div>
+        <span class="STYLE8"><strong><a href="customjsp/PersonManagerMain.jsp?action=bhistory" type="redirect">积分历史</a></strong> <br />
+              <strong><a href="customjsp/PersonManagerMain.jsp?action=bswapu" type="redirect">积分换U币</a></strong> </span></div>
     <p></th>
   </tr>
   <tr bgcolor="#EEEEEE">
-    <th height="24" bgcolor="#8AD286" scope="row"><p align="left" class="STYLE10"><strong>暂存架</strong></p></th>
+    <th height="24" bgcolor="#8AD286" scope="row"><p align="left" class="STYLE10"><strong><a href="customjsp/PersonManagerMain.jsp?action=favorite" type="redirect">暂存架</a> </strong></p></th>
   </tr>
   <tr bgcolor="#EEEEEE">
-    <th height="24" bgcolor="#8AD286" scope="row"><p align="left"><span class="STYLE10"><strong>评论</strong></span><br />
+    <th height="24" bgcolor="#8AD286" scope="row"><p align="left" class="STYLE10"><strong><a href="customjsp/PersonManagerMain.jsp?action=remark" type="redirect">评论</a> </strong></p><br />
     </p></th>
   </tr>
   <tr bgcolor="#EEEEEE">
-    <th height="28" bgcolor="#8AD286" scope="row"><div align="left"><span class="STYLE10"><strong>建议</strong></span></div></th>
+    <th height="28" bgcolor="#8AD286" scope="row"><div align="left"><span class="STYLE10"><strong><a href="customjsp/PersonManagerMain.jsp?action=suggestion" type="redirect">建议</a> </strong></span></div></th>
   </tr>
 </table>
 </body>

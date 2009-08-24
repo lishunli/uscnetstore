@@ -20,9 +20,5 @@
 			<result name="input" type="redirect">/customjsp/Login.jsp</result>
 		</action>
 		
-		<!-- 个人信息管理 -->
-		<action name="PersonManagerAction" class="PersonManagerAction">
-		<result name="success" type="redirect">customjsp/PersonManagerMain.jsp</result>
-		</action>
 	</package>
 </struts>
