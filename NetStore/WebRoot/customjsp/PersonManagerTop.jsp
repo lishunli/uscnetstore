@@ -43,7 +43,7 @@ body {
     <td bgcolor="#76946D">&nbsp;</td>
   </tr>
   <tr>
-    <td width="542" bgcolor="#E7E7E7"><span class="STYLE4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="Main.jsp">首页</a>|<a href="BooksMain.jsp">图书</a>|<a href="DigitalsMain.jsp">数码</a></strong></span></td>
+    <td width="542" bgcolor="#E7E7E7"><span class="STYLE4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="Main.jsp" type="redirect">首页</a>|<a href="BooksMain.jsp" type="redirect">图书</a>|<a href="DigitalsMain.jsp" type="redirect">数码</a></strong></span></td>
     <td width="445" bgcolor="#E7E7E7"><span class="STYLE3"><a href="PersonManagerMain.jsp" type="redirect">我的信息库</a>&nbsp;<a href="ShoppingCart.jsp" type="redirect"> 购物车</a>&nbsp; <a href="NewPeoples.jsp" type="redirect">新手上路</a> &nbsp;<a href="Help.jsp" type="redirect">帮助中心</a></span></td>
   </tr>
 </table>
