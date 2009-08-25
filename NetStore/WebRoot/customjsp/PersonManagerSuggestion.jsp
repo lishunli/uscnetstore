@@ -6,7 +6,7 @@
   </head>
   
   <body>
-     <table cellspacing=1 cellpadding=4 border="3" width="938" align=center class=tableBorder2 height="110">
+     <table cellspacing=1 cellpadding=4 border="3" width="95%" align=center class=tableBorder2 height="110">
          <tr><td valign=middle  align=center height=25 background="WebRoot/images/bg2.gif" ><font color="blue"><b>建 议</b></font></td>
          </tr>
          <tr>
@@ -16,7 +16,7 @@
             </td> </tr>
      </table>
      <form action="suggestion.action" method="post">
-     <table cellspacing=1 cellpadding=4 border="3" width="938" align=center class=tableBorder2 height="300">
+     <table cellspacing=1 cellpadding=4 border="3" width="95%" align=center class=tableBorder2 height="300">
         <tr><td valign=left align=left><input name="suggestion" type="text"/>&nbsp;</td> </tr>
         <tr>
 			<td class=tablebody2 valign=middle  align=right>

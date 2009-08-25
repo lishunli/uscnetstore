@@ -55,6 +55,8 @@
     if("order".equals(value)){%>
     <%@ include file="PersonManagerOrder.jsp"%>
  <%} 
+  else if("changeuser".equals(value)){%>
+ <%@ include file="PersonManagerCUserInfor.jsp"%><%}
  else if("changepassword".equals(value)){%>
  <%@ include file="PersonManagerCPassword.jsp"%><%}
   else if("changeemail".equals(value)){%>
@@ -93,6 +95,7 @@
   <tr bgcolor="#EEEEEE">
     <th height="71" bgcolor="#8AD286" scope="row"><p align="left"><span class="STYLE10"><strong>修改个人信息</strong></span><hr color="#AACCFF"/>
       <div align="left"><br />
+      <strong><a href="<%=path%>/customjsp/PersonManagerMain.jsp?action=changeuser">修改基本信息</a></strong> <br />
         <span class="STYLE8"><strong><a href="<%=path%>/customjsp/PersonManagerMain.jsp?action=changepassword">修改密码</a></strong> <br />
         <strong><a href="<%=path%>/customjsp/PersonManagerMain.jsp?action=changeemail">修改Email地址</a></strong> <br />
         <strong><a href="<%=path%>/customjsp/PersonManagerMain.jsp?action=lookaddrss">查看收货地址薄</a></strong></span>

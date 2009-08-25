@@ -17,7 +17,7 @@
   </head>
   
   <body>
-    <table width="942" height="107" border="5" cellspacing="1" cellpadding="1">
+    <table width="95%" height="100px" border="5" cellspacing="1" cellpadding="1" align="center">
            <tr><td class=tablebody2 valign=middle colspan=6 align=center><font color="blue"><b>积分历史</b></td></tr>
             <tr>
               <td width="6%" class="tablebody1" colspan=6>用户名：${uCurrencyDetail.current}</td>

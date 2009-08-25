@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ page import="com.usc.daos.Custom" %>
+<%String path=request.getContextPath(); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -23,24 +24,53 @@ body {
 </head>
 
 <body onload="CTime(bgclock)">
-<%String path=request.getContextPath(); %>
+
 <table width="80%" height="30%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <th colspan="2" bgcolor="#B9C8EC" scope="col" ><marquee direction=left>南华大学电子商务平台 为了您的生活更简单 我们真诚为您服务！</marquee></th> 
   </tr>
   <tr>
     <th bgcolor="#B9C8EC" scope="col" ><div align="left">
-    <% Custom custom = (Custom)session.getAttribute("Custom");
-    if(custom==null){%>
-    <%out.print("欢迎您光临南华大学电子商务平台");}else{out.print("欢迎您的光临！"+custom.getCustomName());} %>
-    </div></th>
+    
+    
+    <%if(request.getParameter("action")=="1"){
+    session.removeValue("Custom"); 
+    out.print("欢迎您光临南华大学电子商务平台");%>
+        </div></th>
     <td bgcolor="#B9C8EC" scope="col" ><div align="left" id="bgclock"></div></td>
   </tr>
   <tr>
     <td colspan="2" background="images/custom/Log.jpg"  alt="x" width="987" height="50" hspace="0" vspace="0" border="0" ></td>
   </tr>
   <tr>
-    <td width="542" height="0" bgcolor="#76946D"><span class="STYLE3">您好！欢迎光临南华大学电子商务平台</span><a href="<%=path%>/customjsp/Login.jsp">【登录】</a><a href="<%=path%>/customjsp/Register.jsp" type="redirect">【注册】</a> </td>
+    <td width="542" height="0" bgcolor="#76946D"><span class="STYLE3">您好！欢迎光临南华大学电子商务平台</span>
+    <a href="<%=path%>/customjsp/Login.jsp">【登录】</a><a href="<%=path%>/customjsp/Register.jsp" type="redirect">【注册】</a>
+     <%}    else{%>
+    
+    
+
+    
+    
+    
+    <% Custom custom = (Custom)session.getAttribute("Custom");
+    if(custom==null){%>
+    <%out.print("欢迎您光临南华大学电子商务平台");}else{out.print("欢迎您的光临！"+custom.getCustomName());} %>
+      </div></th>
+    <td bgcolor="#B9C8EC" scope="col" ><div align="left" id="bgclock"></div></td>
+  </tr>
+  <tr>
+    <td colspan="2" background="images/custom/Log.jpg"  alt="x" width="987" height="50" hspace="0" vspace="0" border="0" ></td>
+  </tr>
+  <tr>
+    <td width="542" height="0" bgcolor="#76946D"><span class="STYLE3">您好！欢迎光临南华大学电子商务平台</span>
+    <a href="<%=path%>/Top.jsp">【注册】</a>
+    
+<%}%>
+    
+    
+    
+    
+    </td>
     <td bgcolor="#76946D">&nbsp;</td>
   </tr>
   <tr>
