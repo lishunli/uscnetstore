@@ -18,6 +18,9 @@ public class BookEntryAction extends ActionSupport
 	private BookDAO bookDao;//图书dao
 	private File upload;//上传的图片
 	private ProducttypeDAO pTypeDao;//ProducttypeDAO
+	private int PTypeID;//type
+	private IManger manger;// 接口实现对象，通过Spring注入
+	
 	public void setPTypeDao(ProducttypeDAO typeDao)
 	{
 		pTypeDao = typeDao;
@@ -33,7 +36,7 @@ public class BookEntryAction extends ActionSupport
 		this.upload = upload;
 	}
 
-	private int PTypeID;
+	
 	public int getPTypeID()
 	{
 		return PTypeID;
@@ -44,7 +47,7 @@ public class BookEntryAction extends ActionSupport
 		PTypeID = typeID;
 	}
 
-	private IManger manger;// 接口实现对象，通过Spring注入
+	
 
 	public void setManger(IManger manger)
 	{
@@ -71,8 +74,13 @@ public class BookEntryAction extends ActionSupport
 	{
 		if(null != book)
 		{
-			System.out.println("ISBN:"+book.getIsbn());
-			System.out.println("PTypeID:"+PTypeID);
+			if(null == book.getBookName() || "".equals(book.getBookName().trim()))
+			{
+				this.addFieldError("book.bookName", "图书名不能为空");
+			}
+			
+//			System.out.println("ISBN:"+book.getIsbn());
+//			System.out.println("PTypeID:"+PTypeID);
 		}
 	}
 
@@ -81,6 +89,7 @@ public class BookEntryAction extends ActionSupport
 	{
 		if(null != book)
 		{
+			
 			System.out.println("book.....");
 //			try
 //			{
@@ -88,7 +97,7 @@ public class BookEntryAction extends ActionSupport
 //					System.out.println("upload file is null ");
 			if(null != upload)
 			{
-				System.out.println("upload.....");
+//				System.out.println("upload.....");
 				FileInputStream fin = new FileInputStream(upload);
 				Blob blob = Hibernate.createBlob(fin);
 				book.setPicture(blob);

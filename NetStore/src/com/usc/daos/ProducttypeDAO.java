@@ -112,7 +112,7 @@ public class ProducttypeDAO extends HibernateDaoSupport
 		return findByProperty(PRODUCT_TYPE_NAME, productTypeName);
 	}
 
-	public List findByFartherTypeId(Object fartherTypeId)
+	public List<Producttype> findByFartherTypeId(Object fartherTypeId)
 	{
 		return findByProperty(FARTHER_TYPE_ID, fartherTypeId);
 	}

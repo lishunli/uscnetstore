@@ -27,8 +27,6 @@
 			<result name="success">/WEB-INF/jsp/back/back.jsp</result>
 			<result name="input">/WEB-INF/jsp/back/updatePass.jsp</result>
 		</action>
-		
-		<action name="pType" class="PTypeAction" method="getAllPType"></action>
 	</package>
 	<package name="uploadImage" extends="struts-default">
 		<action name="bookEntry"  class="BookEntryAction">

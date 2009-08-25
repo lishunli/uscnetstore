@@ -33,12 +33,10 @@
 	<bean id="UpdatePassAction" class="com.usc.actions.back.UpdatePassAction" scope="prototype">
 		<property name="manger" ref="MangerImpl"></property>
 	</bean>
+	<!--后台的图书录入	-->
 	<bean id="BookEntryAction" class="com.usc.actions.back.BookEntryAction" scope="prototype">
 		<property name="bookDao" ref="BookDAO"></property>
 		<property name="manger" ref="MangerImpl"></property>
-		<property name="PTypeDao" ref="ProducttypeDAO"></property>
-	</bean>
-	<bean id="PTypeAction" class="com.usc.actions.back.PTypeAction" scope="prototype">
 		<property name="PTypeDao" ref="ProducttypeDAO"></property>
 	</bean>
 	

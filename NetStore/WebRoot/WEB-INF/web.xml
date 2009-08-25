@@ -26,6 +26,15 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
+  <servlet>
+    <servlet-name>getAllType</servlet-name>
+    <servlet-class>com.usc.servlets.getAllType</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>getAllType</servlet-name>
+    <url-pattern>/getAllType</url-pattern>
+  </servlet-mapping>
 	<filter>
 		<filter-name>Spring character encoding filter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
