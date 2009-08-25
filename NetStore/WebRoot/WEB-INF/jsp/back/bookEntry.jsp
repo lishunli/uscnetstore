@@ -29,13 +29,11 @@
 			<br>
 			版次：<s:textfield name="book.version"></s:textfield>
 			<br>
-			分类：<select id="fType" onchange="getFType(1)">
-			</select>
-<select  id="sType" onchange="getSType(2)"></select>
-<select id="tType" onchange="gettType(3)"></select>
-<select  id="frType"  name="PTypeID" >
-			</select>
-			
+			分类：
+			<select id="fType" name="PTypeID" onchange="getFType(1)"></select>
+			<select  id="sType" name="PTypeID" onchange="getSType(2)"></select>
+			<select id="tType" name="PTypeID" onchange="gettType(3)"></select>
+			<select  id="frType"  name="PTypeID" ></select>
 			<br>
 			出版时间：<s:textfield name="book.publishingTime"></s:textfield>
 			<br>

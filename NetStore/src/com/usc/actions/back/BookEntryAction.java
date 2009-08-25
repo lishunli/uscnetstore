@@ -18,7 +18,7 @@ public class BookEntryAction extends ActionSupport
 	private BookDAO bookDao;//图书dao
 	private File upload;//上传的图片
 	private ProducttypeDAO pTypeDao;//ProducttypeDAO
-	private int PTypeID;//type
+	private int[] PTypeID;//type
 	private IManger manger;// 接口实现对象，通过Spring注入
 	
 	public void setPTypeDao(ProducttypeDAO typeDao)
@@ -36,18 +36,16 @@ public class BookEntryAction extends ActionSupport
 		this.upload = upload;
 	}
 
-	
-	public int getPTypeID()
+
+	public int[] getPTypeID()
 	{
 		return PTypeID;
 	}
 
-	public void setPTypeID(int typeID)
+	public void setPTypeID(int[] typeID)
 	{
 		PTypeID = typeID;
 	}
-
-	
 
 	public void setManger(IManger manger)
 	{
@@ -78,7 +76,6 @@ public class BookEntryAction extends ActionSupport
 			{
 				this.addFieldError("book.bookName", "图书名不能为空");
 			}
-			
 //			System.out.println("ISBN:"+book.getIsbn());
 //			System.out.println("PTypeID:"+PTypeID);
 		}
@@ -107,7 +104,14 @@ public class BookEntryAction extends ActionSupport
 //				// TODO Auto-generated catch block
 //				e.printStackTrace();
 //			}
-			book.setProductTypeID(PTypeID);
+			int i=0;
+			for(;i<PTypeID.length;i++)
+			{
+				if(PTypeID[i] == 0)
+					break;
+			}
+//			System.out.println(PTypeID[i-1]);
+			book.setProductTypeID(PTypeID[i-1]);
 			book.setProductsPflag(0);
 			bookDao.save(book);
 			
