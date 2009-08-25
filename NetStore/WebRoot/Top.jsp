@@ -32,7 +32,7 @@ body {
     <th bgcolor="#B9C8EC" scope="col" ><div align="left">
     <% Custom custom = (Custom)session.getAttribute("Custom");
     if(custom==null){%>
-    <%out.print("欢迎您光临南华大学电子商务平台");}else{out.print("欢迎您的光临！"+custom.getCustomName());} %>
+    <%out.print("欢迎您光临南华大学电子商务平台");}else{out.print("欢迎您的光临！"+custom.getCustomName());} %>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%=path%>/customjsp/Login.jsp">【登录】</a><a href="<%=path%>/customjsp/Register.jsp" type="redirect">【注册】</a>
     </div></th>
     <td bgcolor="#B9C8EC" scope="col" ><div align="left" id="bgclock"></div></td>
   </tr>
@@ -40,7 +40,7 @@ body {
     <td colspan="2" background="images/custom/Log.jpg"  alt="x" width="987" height="50" hspace="0" vspace="0" border="0" ></td>
   </tr>
   <tr>
-    <td width="542" height="0" bgcolor="#76946D"><span class="STYLE3">您好！欢迎光临南华大学电子商务平台</span><a href="<%=path%>/customjsp/Login.jsp">【登录】</a><a href="<%=path%>/customjsp/Register.jsp" type="redirect">【注册】</a> </td>
+    <td width="542" height="0" bgcolor="#76946D"> </td>
     <td bgcolor="#76946D">&nbsp;</td>
   </tr>
   <tr>
