@@ -1,9 +1,10 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ page import="com.usc.daos.Custom" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%String path=request.getContextPath(); %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" " http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=" http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text ml; charset=gb2312" />
 <title>无标题文档</title>
 <style type="text/css">
 <!--
@@ -43,8 +44,8 @@ body {
     <td bgcolor="#76946D">&nbsp;</td>
   </tr>
   <tr>
-    <td width="542" bgcolor="#E7E7E7"><span class="STYLE4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="Main.jsp" type="redirect">首页</a>|<a href="BooksMain.jsp" type="redirect">图书</a>|<a href="DigitalsMain.jsp" type="redirect">数码</a></strong></span></td>
-    <td width="445" bgcolor="#E7E7E7"><span class="STYLE3"><a href="PersonManagerMain.jsp" type="redirect">我的信息库</a>&nbsp;<a href="ShoppingCart.jsp" type="redirect"> 购物车</a>&nbsp; <a href="NewPeoples.jsp" type="redirect">新手上路</a> &nbsp;<a href="Help.jsp" type="redirect">帮助中心</a></span></td>
+    <td width="542" bgcolor="#E7E7E7"><span class="STYLE4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="<%=path%>/Top.jsp">首页</a>|<a href="<%=path%>/customjsp/BooksMain.jsp">图书</a>|<a href="<%=path%>/customjsp/DigitalsMain.jsp">数码</a></strong></span></td>
+    <td width="445" bgcolor="#E7E7E7"><span class="STYLE3"><a href="<%=path%>/customjsp/PersonManagerMain.jsp?action=order">我的信息库</a>&nbsp;<a href="<%=path%>/customjsp/ShoppingCart.jsp"> 购物车</a>&nbsp;<a href="<%=path%>/customjsp/NewPeoples.jsp">新手上路</a> &nbsp;<a href="<%=path%>/customjsp/Help.jsp">帮助中心</a></span></td>
   </tr>
 </table>
 <hr color="#0000FF" width="80%"/>

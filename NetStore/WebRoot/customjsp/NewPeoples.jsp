@@ -3,7 +3,7 @@
 <html>
   <head>
     
-    <title>My JSP 'ShoppingCart.jsp' starting page</title>
+    <title>My JSP 'NewPeoples.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">

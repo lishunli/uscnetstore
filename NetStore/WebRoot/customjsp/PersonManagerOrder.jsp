@@ -9,8 +9,8 @@
 
 <body>
     <!--账户右栏开始-->
-     <div class="main_right">
-        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+   
+        <table cellpadding="0" cellspacing="0" border="0" width="70%">
             <tr>
                 <td>
                     <div  id="orderList"  >
@@ -24,7 +24,7 @@
                 </td>
             </tr>
         </table>
-    </div>
+   
     <!--账户右栏结束-->
 
 
