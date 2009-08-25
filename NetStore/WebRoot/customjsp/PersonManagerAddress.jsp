@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="gbk"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'PersonManagerOrder.jsp' starting page</title>
+    <title>My JSP 'AddressShow.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,6 +23,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    This is my JSP page. <br>
+  <form action="AddressShow.Action" method="post">
+<table width="519" border="1" height="129">
+<tbody><tr>
+<td>常用收货地址：</td></tr>
+<tr>
+<td>&nbsp;收货人：</td></tr>
+<tr>
+<td>&nbsp;收货地址：</td></tr>
+<tr>
+<td>&nbsp;电话：</td></tr>
+<tr>
+<td align="center">&nbsp;<a href="AddressChange.jsp"><input type="submit" value="修 改" /></a><br></td></tr>
+</tbody></table>
+</form>
   </body>
 </html>
