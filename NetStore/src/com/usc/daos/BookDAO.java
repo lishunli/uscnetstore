@@ -135,7 +135,7 @@ public class BookDAO extends HibernateDaoSupport
 		return findByProperty(VERSION, version);
 	}
 
-	public List findByIsbn(Object isbn)
+	public List<Book> findByIsbn(Object isbn)
 	{
 		return findByProperty(ISBN, isbn);
 	}

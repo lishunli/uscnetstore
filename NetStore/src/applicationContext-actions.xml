@@ -38,6 +38,8 @@
 		<property name="bookDao" ref="BookDAO"></property>
 		<property name="manger" ref="MangerImpl"></property>
 		<property name="PTypeDao" ref="ProducttypeDAO"></property>
+		<property name="PDao" ref="ProductsDAO"></property>
+		<property name="product" ref="Products"></property>
 	</bean>
 	
 </beans>

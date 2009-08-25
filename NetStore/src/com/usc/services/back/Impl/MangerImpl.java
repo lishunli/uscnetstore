@@ -72,4 +72,14 @@ public class MangerImpl implements IManger
 		return false;
 	}
 
+	/**
+	 * 对图书表进行ISBN唯一性验证
+	 */
+	public boolean checkIsbnIsExist(String isbn)
+	{
+		if(!bookDao.findByIsbn(isbn).isEmpty())//不存在也即唯一，返回真
+			return true;
+		return false;
+	}
+
 }

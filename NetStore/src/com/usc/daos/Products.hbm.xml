@@ -10,11 +10,18 @@
             <column name="productsID" />
             <generator class="native" />
         </id>
-        <many-to-one name="producttype" class="com.usc.daos.Producttype" fetch="select">
-            <column name="productTypeID">
-                <comment>产品分类ID</comment>
+<!--        <many-to-one name="producttype" class="com.usc.daos.Producttype" fetch="select">-->
+<!--            <column name="productTypeID">-->
+<!--                <comment>产品分类ID</comment>-->
+<!--            </column>-->
+<!--        </many-to-one>-->
+
+		 <property name="productTypeId" type="java.lang.Integer">
+            <column name="productTypeID" not-null="true">
+                <comment>产品分类ID，最大的分类</comment>
             </column>
-        </many-to-one>
+        </property>
+
         <property name="entityId" type="java.lang.Integer">
             <column name="entityID" not-null="true">
                 <comment>实物ID,和图书表编号、数码编号有关，向上面表插入的时候同时对产品表操作，把主键添加到产品表中</comment>

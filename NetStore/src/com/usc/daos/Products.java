@@ -13,7 +13,7 @@ public class Products implements java.io.Serializable
 	// Fields
 
 	private Integer productsId;
-	private Producttype producttype;
+	private Integer productTypeId;
 	private Integer entityId;
 	private Set commodities = new HashSet(0);
 	private Set stockouts = new HashSet(0);
@@ -34,10 +34,10 @@ public class Products implements java.io.Serializable
 	}
 
 	/** full constructor */
-	public Products(Producttype producttype, Integer entityId, Set commodities,
+	public Products(Integer productTypeId, Integer entityId, Set commodities,
 			Set stockouts, Set stocks, Set stockins)
 	{
-		this.producttype = producttype;
+		this.productTypeId = productTypeId;
 		this.entityId = entityId;
 		this.commodities = commodities;
 		this.stockouts = stockouts;
@@ -57,14 +57,15 @@ public class Products implements java.io.Serializable
 		this.productsId = productsId;
 	}
 
-	public Producttype getProducttype()
+
+	public Integer getProductTypeId()
 	{
-		return this.producttype;
+		return productTypeId;
 	}
 
-	public void setProducttype(Producttype producttype)
+	public void setProductTypeId(Integer productTypeId)
 	{
-		this.producttype = producttype;
+		this.productTypeId = productTypeId;
 	}
 
 	public Integer getEntityId()
