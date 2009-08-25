@@ -1,5 +1,7 @@
 package com.usc.daos;
 
+import java.sql.Blob;
+
 /**
  * Digital entity. @author MyEclipse Persistence Tools
  */
@@ -10,7 +12,7 @@ public class Digital implements java.io.Serializable
 	// Fields
 
 	private Integer digitalId;
-	private Producttype producttype;
+	private Integer productTypeID;
 	private String digitalName;
 	private Float publishedPrice;
 	private String manufacturer;
@@ -18,7 +20,7 @@ public class Digital implements java.io.Serializable
 	private String modelNumber;
 	private String parameter;
 	private String barcode;
-	private String photo;
+	private Blob photo;
 	private String description;
 	private String specialExplanation;
 	private Integer productsPflag;
@@ -42,12 +44,12 @@ public class Digital implements java.io.Serializable
 	}
 
 	/** full constructor */
-	public Digital(Producttype producttype, String digitalName,
+	public Digital(Integer productTypeID, String digitalName,
 			Float publishedPrice, String manufacturer, String brand,
-			String modelNumber, String parameter, String barcode, String photo,
+			String modelNumber, String parameter, String barcode, Blob photo,
 			String description, String specialExplanation, Integer productsPflag)
 	{
-		this.producttype = producttype;
+		this.productTypeID = productTypeID;
 		this.digitalName = digitalName;
 		this.publishedPrice = publishedPrice;
 		this.manufacturer = manufacturer;
@@ -73,14 +75,15 @@ public class Digital implements java.io.Serializable
 		this.digitalId = digitalId;
 	}
 
-	public Producttype getProducttype()
+
+	public Integer getProductTypeID()
 	{
-		return this.producttype;
+		return productTypeID;
 	}
 
-	public void setProducttype(Producttype producttype)
+	public void setProductTypeID(Integer productTypeID)
 	{
-		this.producttype = producttype;
+		this.productTypeID = productTypeID;
 	}
 
 	public String getDigitalName()
@@ -153,12 +156,13 @@ public class Digital implements java.io.Serializable
 		this.barcode = barcode;
 	}
 
-	public String getPhoto()
+
+	public Blob getPhoto()
 	{
-		return this.photo;
+		return photo;
 	}
 
-	public void setPhoto(String photo)
+	public void setPhoto(Blob photo)
 	{
 		this.photo = photo;
 	}

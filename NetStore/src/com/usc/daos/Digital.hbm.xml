@@ -10,11 +10,16 @@
             <column name="digitalID" />
             <generator class="native" />
         </id>
-        <many-to-one name="producttype" class="com.usc.daos.Producttype" fetch="select">
-            <column name="productTypeID">
+<!--        <many-to-one name="producttype" class="com.usc.daos.Producttype" fetch="select">-->
+<!--            <column name="productTypeID">-->
+<!--                <comment>产品分类ID</comment>-->
+<!--            </column>-->
+<!--        </many-to-one>-->
+		<property name="productTypeID" type="java.lang.Integer" not-null="true">
+		    <column name="productTypeID">
                 <comment>产品分类ID</comment>
             </column>
-        </many-to-one>
+		</property>
         <property name="digitalName" type="java.lang.String">
             <column name="digitalName" length="60" not-null="true">
                 <comment>数码名称</comment>
@@ -50,7 +55,7 @@
                 <comment>条形码</comment>
             </column>
         </property>
-        <property name="photo" type="java.lang.String">
+        <property name="photo" type="java.sql.Blob">
             <column name="photo">
                 <comment>图片</comment>
             </column>

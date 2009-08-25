@@ -41,5 +41,13 @@
 		<property name="PDao" ref="ProductsDAO"></property>
 		<property name="product" ref="Products"></property>
 	</bean>
+	<!--后台的数码录入	-->
+	<bean id="DigitalEntryAction" class="com.usc.actions.back.DigitalEntryAction" scope="prototype">
+		<property name="digitalDao" ref="DigitalDAO"></property>
+		<property name="manger" ref="MangerImpl"></property>
+		<property name="PTypeDao" ref="ProducttypeDAO"></property>
+		<property name="PDao" ref="ProductsDAO"></property>
+		<property name="product" ref="Products"></property>
+	</bean>
 	
 </beans>

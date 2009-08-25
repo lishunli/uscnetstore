@@ -1,6 +1,7 @@
 package com.usc.services.back.Impl;
 
 import com.usc.daos.BookDAO;
+import com.usc.daos.DigitalDAO;
 import com.usc.daos.Operator;
 import com.usc.daos.OperatorDAO;
 import com.usc.services.back.IManger;
@@ -15,6 +16,7 @@ public class MangerImpl implements IManger
 {
 	private OperatorDAO operDao;// 后台管理员DAO
 	private BookDAO bookDao;
+	private DigitalDAO digitalDAO;
 	
 	public void setBookDao(BookDAO bookDao)
 	{
@@ -24,6 +26,11 @@ public class MangerImpl implements IManger
 	public void setOperDao(OperatorDAO operDao)
 	{
 		this.operDao = operDao;
+	}
+
+	public void setDigitalDAO(DigitalDAO digitalDAO)
+	{
+		this.digitalDAO = digitalDAO;
 	}
 
 	/**
@@ -78,6 +85,16 @@ public class MangerImpl implements IManger
 	public boolean checkIsbnIsExist(String isbn)
 	{
 		if(!bookDao.findByIsbn(isbn).isEmpty())//不存在也即唯一，返回真
+			return true;
+		return false;
+	}
+
+	/**
+	 * 对数码表进行条形码唯一性验证
+	 */
+	public boolean checkBarCodeIsExist(String barcode)
+	{
+		if(!digitalDAO.findByBarcode(barcode).isEmpty())//不存在也即唯一，返回真
 			return true;
 		return false;
 	}

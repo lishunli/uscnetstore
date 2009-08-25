@@ -145,7 +145,7 @@ public class DigitalDAO extends HibernateDaoSupport
 		return findByProperty(PARAMETER, parameter);
 	}
 
-	public List findByBarcode(Object barcode)
+	public List<Digital> findByBarcode(Object barcode)
 	{
 		return findByProperty(BARCODE, barcode);
 	}

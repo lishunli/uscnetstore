@@ -145,6 +145,7 @@
 	<bean id="MangerImpl" class="com.usc.services.back.Impl.MangerImpl">
 		<property name="operDao" ref="OperatorDAO"></property>
 		<property name="bookDao" ref="BookDAO"></property>
+		<property name="digitalDAO" ref="DigitalDAO"></property>
 	</bean>
 	<bean id="Products" class="com.usc.daos.Products"></bean>
 	
