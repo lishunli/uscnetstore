@@ -42,7 +42,7 @@ function processResponse() {
 				sType.options.length = 0;
 				tType.options.length = 0;
 				frType.options.length = 0;
-			} else if ((no == 1 && fType.value != 0) || sType.value == "") {// 第一级下拉框选择不为0项（也即选择请选择的其他选项）时，后面下拉框全部清空后再更新数据
+			} else if (no == 1 && fType.value != 0)  {// 第一级下拉框选择不为0项（也即选择请选择的其他选项）时，后面下拉框全部清空后再更新数据
 				sType.options.length = 0;
 				tType.options.length = 0;
 				frType.options.length = 0;
@@ -50,13 +50,13 @@ function processResponse() {
 			} else if (no == 2 && sType.value == 0) {// 第二级下拉框选择0项（也即请选择选项）时，后面下拉框全部清空
 				tType.options.length = 0;
 				frType.options.length = 0;
-			} else if ((no == 2 && sType.value != 0) || tType.value == "") {// 第二级下拉框选择不为0项（也即选择请选择的其他选项）时，后面下拉框全部清空后再更新数据
+			} else if (no == 2 && sType.value != 0)  {// 第二级下拉框选择不为0项（也即选择请选择的其他选项）时，后面下拉框全部清空后再更新数据
 				tType.options.length = 0;
 				frType.options.length = 0;
 				addOption(tType, types);
 			} else if (no == 3 && tType.value == 0) {// 第三级下拉框选择0项（也即请选择选项）时，后面下拉框全部清空
 				frType.options.length = 0;
-			} else if ((no == 3 && tType.value != 0) || frType.value == "") {// 第三级下拉框选择不为0项（也即选择请选择的其他选项）时，后面下拉框全部清空后再更新数据
+			} else if (no == 3 && tType.value != 0)  {// 第三级下拉框选择不为0项（也即选择请选择的其他选项）时，后面下拉框全部清空后再更新数据
 				frType.options.length = 0;
 				addOption(frType, types);
 			}
