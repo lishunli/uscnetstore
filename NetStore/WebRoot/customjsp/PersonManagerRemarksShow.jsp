@@ -21,8 +21,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	-->
 
   </head>
-  
-  <body>
-    This is my JSP page. <br>
+  <body bgcolor="#EEEEEE">
+  <table width="599" border="1" height="29">
+<tbody><tr>
+<td><img border="0" src="../images/custom/.jpg">&nbsp;
+              所有评论(共3条)</td></tr>
+</tbody></table><br>
+<table width="598" border="1" height="170">
+<tbody><tr>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td></tr>
+<tr>
+<td>&nbsp;</td></tr>
+</tbody></table>
   </body>
 </html>

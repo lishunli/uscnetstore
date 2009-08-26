@@ -15,7 +15,7 @@
 
   </head>
   
-  <body><br><br><br>
+  <body bgcolor="#EEEEEE"><br><br><br>
     <form action="UserInforChange.Action" method="post">
     <table width="700" cellspacing="1" cellpadding="3" border="3" align="center" class="tableborder2" height="350"> 
     <tr> 

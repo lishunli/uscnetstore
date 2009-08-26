@@ -15,17 +15,17 @@
 
   </head>
   
-  <body>
+  <body bgcolor="#EEEEEE">
    <!--右栏开始-->
               <div class="main_right">
         	  
 	            <div id="div_Input" class="account_message">
 		            <div class="modify_email">
 			              <ul>
-			              <li>　我的E-mail地址：<span id="lab_oldEmail">zhtw1986@163.com</span>
+			              <li>我的E-mail地址：<span id="lab_oldEmail">zhtw1986@163.com</span>
                               <em><span id="oldEmailValidMsg"></span></em>
                           </li>
-                          <li>　　我的登录密码：<input name="txt_pass" type="password" id="txt_pass" class="textbox2" />
+                          <li>我的登录密码：   <input name="txt_pass" type="password" id="txt_pass" class="textbox2" />
                               <span id="passValidMsg"></span>
                           </li>
                           <li>我的新E-mail地址：<input name="txt_newEmail" type="text" id="txt_newEmail" class="textbox2" />

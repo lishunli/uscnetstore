@@ -21,7 +21,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   
-  <body>
+  <body bgcolor="#EEEEEE">
          <!--右栏开始-->
          <form name="form1" method="post" action="passwordchange.action" id="form1">
           <div id="div_Input" class="main_right">
@@ -29,8 +29,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	            <h3>修改密码</h3>
 	            <div class="modify_email reduce_modify_w">
 		             <ul>
-		              <li>　　　　原有密码：<input name="txt_oldPass" type="password" id="txt_oldPass" class="textbox2" /><span id="txtOldPassValidMsg"></span></li>
-		              <li>　您想要的新密码：<input name="txt_newPass" type="password" id="txt_newPass" class="textbox2" /><span id="txtNewPassValidMsg"></span><span class="c_gray"> 密码可由大小写英文字母、数字组成，长度6－12位。</span></li>
+		              <li>原有密码：&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;  <input name="txt_oldPass" type="password" id="txt_oldPass" class="textbox2" /><span id="txtOldPassValidMsg"></span></li>
+		              <li>您想要的新密码：&nbsp; <input name="txt_newPass" type="password" id="txt_newPass" class="textbox2" /><span id="txtNewPassValidMsg"></span><span class="c_gray"> 密码可由大小写英文字母、数字组成，长度6－12位。</span></li>
 		              <li>请再次输入新密码：<input name="txt_PassRepeat" type="password" id="txt_PassRepeat" class="textbox2" /><span id="txtPassRepeatValidMsg"></span></li>
 		             </ul>
 		             <input class="button_ok add_ok" name="" type="button" value="确 认" onclick="btnClientChgPass_Click()" />

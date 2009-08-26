@@ -5,7 +5,7 @@
     <title>My remarks.jsp' starting page</title>
   </head>
   
-  <body> 
+  <body bgcolor="#EEEEEE"> 
 <table width="656" border="1" height="95">
 <tbody><tr>
 <td>&nbsp;<input type="button" value="图书" name="button6"> <input type="button" value="数码" name="button7"></td></tr>

@@ -5,8 +5,8 @@
     <title>My JSP 'suggestion.jsp' starting page</title>
   </head>
   
-  <body>
-     <table cellspacing=1 cellpadding=4 border="3" width="95%" align=center class=tableBorder2 height="110">
+  <body bgcolor="#EEEEEE">
+     <table cellspacing=1 cellpadding=4 border="3" width="600" align=center class=tableBorder2 height="110" >
          <tr><td valign=middle  align=center height=25 background="WebRoot/images/bg2.gif" ><font color="blue"><b>建 议</b></font></td>
          </tr>
          <tr>
@@ -16,8 +16,8 @@
             </td> </tr>
      </table>
      <form action="suggestion.action" method="post">
-     <table cellspacing=1 cellpadding=4 border="3" width="95%" align=center class=tableBorder2 height="300">
-        <tr><td valign=left align=left><input name="suggestion" type="text"/>&nbsp;</td> </tr>
+     <table cellspacing=1 cellpadding=4 border="3" width="600" align=center class=tableBorder2 height="210" >
+        <tr><td valign=left align=center><textarea cols="70" rows="10" name="suggestion"></textarea>&nbsp;</td> </tr>
         <tr>
 			<td class=tablebody2 valign=middle  align=right>
 			<input type="submit" value="确  定" /><input type="submit" value="取  消" /></td>

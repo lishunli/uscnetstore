@@ -15,7 +15,7 @@
 
   </head>
  
-  <body>
+  <body bgcolor="#EEEEEE">
        <table cellspacing=1 cellpadding=4 align=center class=tableBorder2>
 		<tr><td height=25 valign=middle>U币转让说明：</td></tr>
 		<tr><td height=25 valign=middle>注释：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -23,7 +23,7 @@
 		</table><br>
   
   <form action="UTransfor.action" method="post">
-       <table cellpadding=8 cellspacing=1 align=center class=tableborder2 width="500" border="10">
+       <table cellpadding=8 cellspacing=1 align=center class=tableborder2 width="500" border="3">
 		<tr>
 			<td valign=middle colspan=2 align=center height=25 background="WebRoot/images/bg2.gif" ><font color="blue"><b>U币转让</b></font></td>
 		</tr>

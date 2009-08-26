@@ -4,8 +4,8 @@
 <html>
   <head>
   </head> 
-  <body>
-        <table width="60%" height="60%" border="5" cellspacing="1" cellpadding="1">
+  <body bgcolor="#EEEEEE">
+        <table width="60%" height="60%" border="3" cellspacing="1" cellpadding="1">
            <tr><td class=tablebody2 valign=middle colspan=6 align=center><font color="blue"><b>U币历史清单</b></td></tr>
            <tr>
                <td width="6%" class="tablebody1">${uCurrencyDetail.uCurrencyID}</td>

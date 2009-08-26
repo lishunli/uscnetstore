@@ -5,7 +5,7 @@
     <title>My Favorite</title>
   </head>
   
-  <body>
+  <body bgcolor="#EEEEEE">
   <table width="650" border="1" height="57">
 <tbody><tr>
 <td align=center>我的暂存架</td>

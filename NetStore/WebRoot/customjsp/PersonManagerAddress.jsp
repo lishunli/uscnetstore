@@ -15,9 +15,9 @@
 
   </head>
   
-  <body>
+  <body bgcolor="#EEEEEE">
   <form action="AddressShow.Action" method="post">
-<table width="519" border="1" height="129">
+<table width="715" border="1" height="215">
 <tbody><tr>
 <td>常用收货地址：</td></tr>
 <tr>
@@ -27,7 +27,9 @@
 <tr>
 <td>&nbsp;电话：</td></tr>
 <tr>
-<td align="center">&nbsp;<a href="AddressChange.jsp"><input type="submit" value="修 改" /></a><br></td></tr>
+<td align="center">&nbsp;<a href="PersonManagerCAddress.jsp">修 改</a><br></td>
+
+</tr>
 </tbody></table>
 </form>
   </body>

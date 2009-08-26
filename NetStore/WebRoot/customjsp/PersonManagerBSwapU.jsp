@@ -15,7 +15,7 @@
 
   </head>
   
-  <body>
+  <body bgcolor="#EEEEEE">
   <table cellspacing=1 cellpadding=3 align=center class=tableBorder2>
 		<tr>
 		<td height=25 valign=middle>

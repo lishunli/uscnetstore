@@ -15,8 +15,8 @@
 
   </head>
   
-  <body> 
-    <table width="559" border="1" bgcolor="#c0c0c0" height="179">
+  <body bgcolor="#EEEEEE"> 
+    <table width="559" border="1" height="179">
 <tbody><tr>
 <td >&nbsp;收货人信息：</td>
 </tr>

@@ -22,10 +22,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   
-  <body> 
-   <table width="200" border="1">
+  <body bgcolor="#EEEEEE"> 
+   <table width="533" border="1" height="51">
 <tbody><tr>
-<td>&nbsp;</td></tr>
-</tbody></table> 
-  </body>
+<td width="6%" class="tablebody1">评论:${user.uCurrency}</td></tr>
+</tbody></table><br> 
+<br>&nbsp;<textarea cols="60" rows="10" name="textarea3"></textarea><br>&nbsp;
+输入验证码：<input type="text" name="text3"><img border="0" src="../images/custom/.jpg">&nbsp;
+              <a href="Remarking.action">看不清，换一张</a>
+              <input type="button" value="发表评论" name="button8">&nbsp;
+              <input type="button" value="取消" name="button8">&nbsp;
+</body>
 </html>
