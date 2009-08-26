@@ -14,8 +14,8 @@ public class Commodity implements java.io.Serializable
 	// Fields
 
 	private Integer commodityId;
-	private Operator operator;
-	private Products products;
+	private Integer operatorID;
+	private Integer productsID;
 	private Float discount;
 	private Integer saleFlag;
 	private Date publisheTime;
@@ -40,12 +40,12 @@ public class Commodity implements java.io.Serializable
 	}
 
 	/** full constructor */
-	public Commodity(Operator operator, Products products, Float discount,
+	public Commodity(Integer operatorID, Integer productsID, Float discount,
 			Integer saleFlag, Date publisheTime, Set favorites, Set remarks,
 			Set sales, Set shoppingcarts)
 	{
-		this.operator = operator;
-		this.products = products;
+		this.operatorID = operatorID;
+		this.productsID = productsID;
 		this.discount = discount;
 		this.saleFlag = saleFlag;
 		this.publisheTime = publisheTime;
@@ -67,24 +67,25 @@ public class Commodity implements java.io.Serializable
 		this.commodityId = commodityId;
 	}
 
-	public Operator getOperator()
+
+	public Integer getOperatorID()
 	{
-		return this.operator;
+		return operatorID;
 	}
 
-	public void setOperator(Operator operator)
+	public void setOperatorID(Integer operatorID)
 	{
-		this.operator = operator;
+		this.operatorID = operatorID;
 	}
 
-	public Products getProducts()
+	public Integer getProductsID()
 	{
-		return this.products;
+		return productsID;
 	}
 
-	public void setProducts(Products products)
+	public void setProductsID(Integer productsID)
 	{
-		this.products = products;
+		this.productsID = productsID;
 	}
 
 	public Float getDiscount()
