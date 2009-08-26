@@ -123,6 +123,7 @@ public class BookDAO extends HibernateDaoSupport
 	
 	/**
 	 * 图书名的模糊查找
+	 * 发布标志位为0
 	 * @param bookName
 	 * @return
 	 */

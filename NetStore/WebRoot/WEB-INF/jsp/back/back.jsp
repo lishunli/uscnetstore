@@ -27,5 +27,6 @@ function BackExit()
 <a href="updatePass.action">修改密码</a><br><br>
 <a href="bookEntry.action">图书录入</a><br><br>
 <a href="digitalEntry.action">数码录入</a><br><br>
+<a href="backSerach.action">产品发布</a><br><br>
 </body>
 </html>

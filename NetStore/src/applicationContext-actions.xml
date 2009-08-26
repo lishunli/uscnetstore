@@ -49,5 +49,12 @@
 		<property name="PDao" ref="ProductsDAO"></property>
 		<property name="product" ref="Products"></property>
 	</bean>
-	
+	<!--后台的搜索	-->
+	<bean id="BackSerachAction" class="com.usc.actions.back.BackSerachAction" scope="prototype">
+		<property name="bookDao" ref="BookDAO"></property>
+		<property name="digitalDao" ref="DigitalDAO"></property>
+	</bean>
+	<!--产品发布	-->
+	<bean id="PublisheAction" class="com.usc.actions.back.PublisheAction" scope="prototype">
+	</bean>
 </beans>
