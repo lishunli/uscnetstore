@@ -120,6 +120,20 @@ public class DigitalDAO extends HibernateDaoSupport
 		return findByProperty(DIGITAL_NAME, digitalName);
 	}
 
+	
+	/**
+	 * 数码名称的模糊查找
+	 * @param bookName
+	 * @return
+	 */
+
+	public List<Digital> findByLikeDigitalName(String digitalName)
+	{
+		String queryString="from Digital as d where d.digitalName like '%"+digitalName+"%'";
+		return getHibernateTemplate().find(queryString);
+	}
+	
+	
 	public List findByPublishedPrice(Object publishedPrice)
 	{
 		return findByProperty(PUBLISHED_PRICE, publishedPrice);
@@ -170,7 +184,7 @@ public class DigitalDAO extends HibernateDaoSupport
 		return findByProperty(PRODUCTS_PFLAG, productsPflag);
 	}
 
-	public List findAll()
+	public List<Digital> findAll()
 	{
 		log.debug("finding all Digital instances");
 		try

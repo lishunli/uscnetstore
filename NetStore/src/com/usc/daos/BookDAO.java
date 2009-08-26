@@ -99,6 +99,7 @@ public class BookDAO extends HibernateDaoSupport
 		}
 	}
 
+	
 	public List findByProperty(String propertyName, Object value)
 	{
 		log.debug("finding Book instance with property: " + propertyName
@@ -118,6 +119,18 @@ public class BookDAO extends HibernateDaoSupport
 	public List findByBookName(Object bookName)
 	{
 		return findByProperty(BOOK_NAME, bookName);
+	}
+	
+	/**
+	 * 图书名的模糊查找
+	 * @param bookName
+	 * @return
+	 */
+
+	public List<Book> findByLikeBookName(String bookName)
+	{
+		String queryString="from Book as b where b.bookName like '%"+bookName+"%'";
+		return getHibernateTemplate().find(queryString);
 	}
 
 	public List findByAuthor(Object author)
@@ -165,7 +178,7 @@ public class BookDAO extends HibernateDaoSupport
 		return findByProperty(PRODUCTS_PFLAG, productsPflag);
 	}
 
-	public List findAll()
+	public List<Book> findAll()
 	{
 		log.debug("finding all Book instances");
 		try
