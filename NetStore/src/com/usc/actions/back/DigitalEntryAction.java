@@ -15,6 +15,11 @@ import com.usc.daos.ProductsDAO;
 import com.usc.daos.ProducttypeDAO;
 import com.usc.services.back.IManger;
 
+/**
+ * 数码录入
+ * @author MZ
+ *
+ */
 public class DigitalEntryAction extends ActionSupport
 {
 	private Digital digital;//图书,通过Struts2传入

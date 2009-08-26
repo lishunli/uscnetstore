@@ -5,6 +5,11 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.usc.daos.Operator;
 import com.usc.services.back.IManger;
 
+/**
+ * 修改密码
+ * @author MZ
+ *
+ */
 public class UpdatePassAction extends ActionSupport
 {
 	private Operator operator;// 管理员对象，通过Struts2传过来

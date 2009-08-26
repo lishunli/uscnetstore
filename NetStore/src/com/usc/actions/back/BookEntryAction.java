@@ -14,6 +14,11 @@ import com.usc.daos.ProductsDAO;
 import com.usc.daos.ProducttypeDAO;
 import com.usc.services.back.IManger;
 
+/**
+ * 图书录入Action
+ * @author MZ
+ *
+ */
 public class BookEntryAction extends ActionSupport
 {
 	private Book book;//图书,通过Struts2传入
