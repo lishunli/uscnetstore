@@ -130,7 +130,7 @@ public class BookDAO extends HibernateDaoSupport
 
 	public List<Book> findByLikeBookName(String bookName)
 	{
-		String queryString="from Book as b where b.bookName like '%"+bookName+"%'";
+		String queryString="from Book as b where b.productsPflag = 0 and b.bookName like '%"+bookName+"%'" ;
 		return getHibernateTemplate().find(queryString);
 	}
 

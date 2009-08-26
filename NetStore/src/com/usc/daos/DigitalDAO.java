@@ -129,7 +129,7 @@ public class DigitalDAO extends HibernateDaoSupport
 
 	public List<Digital> findByLikeDigitalName(String digitalName)
 	{
-		String queryString="from Digital as d where d.digitalName like '%"+digitalName+"%'";
+		String queryString="from Digital as d where d.productsPflag = 0 and d.digitalName like '%"+digitalName+"%'";
 		return getHibernateTemplate().find(queryString);
 	}
 	

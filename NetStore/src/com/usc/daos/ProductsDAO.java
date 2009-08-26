@@ -106,7 +106,7 @@ public class ProductsDAO extends HibernateDaoSupport
 		}
 	}
 
-	public List findByEntityId(Object entityId)
+	public List<Products> findByEntityId(Object entityId)
 	{
 		return findByProperty(ENTITY_ID, entityId);
 	}

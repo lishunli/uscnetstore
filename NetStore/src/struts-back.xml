@@ -40,8 +40,8 @@
 		<action name="publishe" class="PublisheAction">
 			<result name="success">/WEB-INF/jsp/back/back.jsp
 			</result>
-<!--			<result name="input">/WEB-INF/jsp/back/publishe.jsp-->
-<!--			</result>-->
+			<result name="input">/WEB-INF/jsp/back/publishe.jsp
+			</result>
 		</action>
 	</package>
 	<package name="uploadImage" extends="struts-default">

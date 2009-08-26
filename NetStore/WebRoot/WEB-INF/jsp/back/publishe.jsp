@@ -47,9 +47,6 @@
 							定价
 						</td>
 						<td>
-							折扣
-						</td>
-						<td>
 							操作
 						</td>
 					</tr>
@@ -67,14 +64,11 @@
 							<td>
 								<s:property value="#book.publishedPrice" />
 							</td>
-
 							<td>
-								<s:textfield id="discount" name="discount"></s:textfield>
-							</td>
-
-							<td>
-<input type="button" onclick="publishe(<s:property value='#book.bookId'/>)" value="发布"/>
-<%--								<s:a href="publishe.action?type=publishe()">发布</s:a>--%>
+								<input type="button"
+									onclick="publisheBook(<s:property value='#book.bookId'/>)"
+									value="发布" />
+								<%--onclick="publishe('<s:property value="#book.bookName"/>')"上面是传一个Int值，这个传String字符串--%>
 							</td>
 
 						</tr>
@@ -87,7 +81,22 @@
 				<table border="1" width="80%" align="center">
 					<tr>
 						<td>
-							名
+							数码名称
+						</td>
+						<td>
+							厂家
+						</td>
+						<td>
+							品牌
+						</td>
+						<td>
+							型号
+						</td>
+						<td>
+							定价
+						</td>
+						<td>
+							操作
 						</td>
 					</tr>
 					<s:iterator value="#request.digitalSerach" id="digital">
@@ -95,6 +104,24 @@
 							<td>
 								<s:property value="#digital.digitalName" />
 							</td>
+							<td>
+								<s:property value="#digital.manufacturer" />
+							</td>
+							<td>
+								<s:property value="#digital.brand" />
+							</td>
+							<td>
+								<s:property value="#digital.modelNumber" />
+							</td>
+							<td>
+								<s:property value="#digital.publishedPrice" />
+							</td>
+							<td>
+								<input type="button"
+									onclick="publisheDigital(<s:property value='#digital.digitalId'/>)"
+									value="发布" />
+							</td>
+
 						</tr>
 					</s:iterator>
 				</table>

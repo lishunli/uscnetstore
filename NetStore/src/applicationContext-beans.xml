@@ -141,12 +141,26 @@
 	
 	
 	<!--后台管理Beans	-->
+	
+	
+	<bean id="Products" class="com.usc.daos.Products"></bean>
+	<bean id="Book" class="com.usc.daos.Book"></bean>
+	<bean id="Digital" class="com.usc.daos.Digital"></bean>
+	<bean id="Commodity" class="com.usc.daos.Commodity"></bean>
 	<!-- 后台管理员实现 -->
 	<bean id="MangerImpl" class="com.usc.services.back.Impl.MangerImpl">
 		<property name="operDao" ref="OperatorDAO"></property>
 		<property name="bookDao" ref="BookDAO"></property>
 		<property name="digitalDAO" ref="DigitalDAO"></property>
 	</bean>
-	<bean id="Products" class="com.usc.daos.Products"></bean>
+	<!--系统管理员实现	-->
+	<bean id="SystemAdminImpl" class="com.usc.services.back.Impl.SystemAdminImpl">
+		<property name="book" ref="Book"></property>
+		<property name="digital" ref="Digital"></property>
+		<property name="bookDao" ref="BookDAO"></property>
+		<property name="digitalDao" ref="DigitalDAO"></property>
+		<property name="operDao" ref="OperatorDAO"></property>
+		<property name="productDao" ref="ProductsDAO"></property>
+	</bean>
 	
 </beans>
