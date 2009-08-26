@@ -35,10 +35,14 @@
 			<br>
 			型号：<s:textfield name="digital.modelNumber"></s:textfield><br>
 			分类：
-			<select id="fType" name="PTypeID" onchange="getFType(1)"></select>
-			<select  id="sType" name="PTypeID" onchange="getSType(2)"></select>
-			<select id="tType" name="PTypeID" onchange="gettType(3)"></select>
-			<select  id="frType"  name="PTypeID" ></select>
+			<s:select list="{}" id="fType" name="PTypeID" onchange="getFType(1)"></s:select>
+			<s:select list="{}" id="sType" name="PTypeID" onchange="getSType(2)"></s:select>
+			<s:select list="{}" id="tType" name="PTypeID" onchange="gettType(3)"></s:select>
+			<s:select list="{}" id="frType" name="PTypeID"></s:select>
+			<%--			<select id="fType" name="PTypeID" onchange="getFType(1)"></select>--%>
+			<%--			<select  id="sType" name="PTypeID" onchange="getSType(2)"></select>--%>
+			<%--			<select id="tType" name="PTypeID" onchange="gettType(3)"></select>--%>
+			<%--			<select  id="frType"  name="PTypeID" ></select>--%>
 			<font color="red">* <s:fielderror>
 					<s:param>PTypeID</s:param>
 				</s:fielderror> </font>

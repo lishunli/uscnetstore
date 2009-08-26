@@ -27,18 +27,24 @@
 					<s:param>book.publishedPrice</s:param>
 				</s:fielderror> </font>
 			<br>
-			作者：<s:textfield name="book.author"></s:textfield><br>
+			作者：<s:textfield name="book.author"></s:textfield>
+			<br>
 			出版社：<s:textfield name="book.publisher"></s:textfield>
 			<font color="red">* <s:fielderror>
 					<s:param>book.publisher</s:param>
 				</s:fielderror> </font>
 			<br>
-			版次：<s:textfield name="book.version"></s:textfield><br>
+			版次：<s:textfield name="book.version"></s:textfield>
+			<br>
 			分类：
-			<select id="fType" name="PTypeID" onchange="getFType(1)"></select>
-			<select  id="sType" name="PTypeID" onchange="getSType(2)"></select>
-			<select id="tType" name="PTypeID" onchange="gettType(3)"></select>
-			<select  id="frType"  name="PTypeID" ></select>
+			<s:select list="{}" id="fType" name="PTypeID" onchange="getFType(1)"></s:select>
+			<s:select list="{}" id="sType" name="PTypeID" onchange="getSType(2)"></s:select>
+			<s:select list="{}" id="tType" name="PTypeID" onchange="gettType(3)"></s:select>
+			<s:select list="{}" id="frType" name="PTypeID"></s:select>
+			<%--			<select id="fType" name="PTypeID" onchange="getFType(1)"></select>--%>
+			<%--			<select  id="sType" name="PTypeID" onchange="getSType(2)"></select>--%>
+			<%--			<select id="tType" name="PTypeID" onchange="gettType(3)"></select>--%>
+			<%--			<select  id="frType"  name="PTypeID" ></select>--%>
 			<font color="red">* <s:fielderror>
 					<s:param>PTypeID</s:param>
 				</s:fielderror> </font>
@@ -48,8 +54,10 @@
 					<s:param>book.publishingTime</s:param>
 				</s:fielderror> </font>
 			<br>
-			目录：<s:textarea name="book.catalog"></s:textarea><br>
-			内容简介：<s:textarea name="book.briefIntroduction"></s:textarea><br>
+			目录：<s:textarea name="book.catalog"></s:textarea>
+			<br>
+			内容简介：<s:textarea name="book.briefIntroduction"></s:textarea>
+			<br>
 			图片：<s:file name="upload"></s:file>
 			<font color="red"> <s:fielderror>
 					<s:param>upload</s:param>
