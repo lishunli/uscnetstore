@@ -10,16 +10,27 @@
             <column name="commodityID" />
             <generator class="native" />
         </id>
-        <many-to-one name="operator" class="com.usc.daos.Operator" fetch="select">
-            <column name="operatorID">
+<!--        <many-to-one name="operator" class="com.usc.daos.Operator" fetch="select">-->
+<!--            <column name="operatorID">-->
+<!--                <comment>操作员ID</comment>-->
+<!--            </column>-->
+<!--        </many-to-one>-->
+<!--        <many-to-one name="products" class="com.usc.daos.Products" fetch="select">-->
+<!--            <column name="productsID">-->
+<!--                <comment>产品ID</comment>-->
+<!--            </column>-->
+<!--        </many-to-one>-->
+
+		 <property name="operatorID" type="java.lang.Integer">
+            <column name="operatorID" not-null="true">
                 <comment>操作员ID</comment>
             </column>
-        </many-to-one>
-        <many-to-one name="products" class="com.usc.daos.Products" fetch="select">
-            <column name="productsID">
+        </property>
+         <property name="productsID" type="java.lang.Integer">
+            <column name="productsID" not-null="true">
                 <comment>产品ID</comment>
             </column>
-        </many-to-one>
+        </property>
         <property name="discount" type="java.lang.Float">
             <column name="discount" precision="12" scale="0" not-null="true">
                 <comment>折扣</comment>
