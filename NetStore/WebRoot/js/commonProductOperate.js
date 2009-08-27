@@ -24,13 +24,15 @@ function mergeDiscount(entityID, type) {
 	}
 }
 
-//撤销发布
+// 撤销发布
 function unPublishe(entityID, type) {
-	window.self.location = "unPublishe.action?entityID=" + entityID + "&type="
-			+ type;
+	if (confirm("你真的要撤销该普通商品的发布吗？")) {
+		window.self.location = "unPublishe.action?entityID=" + entityID
+				+ "&type=" + type;
+	}
 }
 
-//设为促销
+// 设为促销
 function saleSet(entityID, type) {
 	var salePrice = prompt("请输入促销价", "0.0");
 	if (check_num(salePrice)) {
@@ -40,16 +42,17 @@ function saleSet(entityID, type) {
 			alert("优先级输入错误，请输入正整数");
 		} else {
 			window.self.location = "saleSet.action?entityID=" + entityID
-					+ "&type=" + type + "&salePrice=" + salePrice + "&priority=" + priority;
+					+ "&type=" + type + "&salePrice=" + salePrice
+					+ "&priority=" + priority;
 		}
 	} else {
 		alert("促销价输入错误，请输入正确的促销价格");
 	}
-	//	private Float salePrice;//特价
-	//	private Integer priority; //优先级
+	// private Float salePrice;//特价
+	// private Integer priority; //优先级
 }
 
-//判断是否为float型数据
+// 判断是否为float型数据
 function check_num(val_num) {
 	var checkOK = "0123456789.";
 	var checkStr = val_num;
@@ -60,7 +63,7 @@ function check_num(val_num) {
 	for (i = 0; i < checkStr.length; i++) {
 		ch = checkStr.charAt(i);
 		if (ch == checkOK.charAt(10)) {
-			n++;//判断该字符串中有几个点
+			n++;// 判断该字符串中有几个点
 		}
 		for (j = 0; j < checkOK.length; j++)
 			if (ch == checkOK.charAt(j))
@@ -70,7 +73,7 @@ function check_num(val_num) {
 			allValid = false;
 			break;
 		}
-		if (n > 1)//如果字符串中点的个数>1的,错误
+		if (n > 1)// 如果字符串中点的个数>1的,错误
 		{
 			allValid = false;
 			break;
