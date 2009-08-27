@@ -232,5 +232,28 @@ public class SystemAdminImpl implements ISystemAdmin
 		}
 		return 0;
 	}
+
+	/**
+	 *  折扣 优先级 修改促销表
+	 */
+	public void mergeSale(int type,int entityID,float salePrice, int priority)
+	{
+		
+		/**
+		 * 1.通过实物ID和分类ID找到产品ID
+		 * 2.通过产品ID在商品表中找到商品
+		 * 3.通过商品ID在促销表中找到促销商品
+		 * 4.修改促销商品的促销价和优先级
+		 */
+		for(Commodity commodity:commodityDao.findByProductsID(getProductID(type,entityID)))
+		{
+			for(Sale sale : saleDao.findByCommodityId(commodity.getCommodityId()))
+			{
+				sale.setSalePrice(salePrice);
+				sale.setPriority(priority);
+				saleDao.merge(sale);
+			}
+		}
+	}
 	
 }

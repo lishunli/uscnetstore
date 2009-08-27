@@ -69,6 +69,13 @@
 		<property name="sysAdmin" ref="SystemAdminImpl"></property>
 		<property name="commodityDao" ref="CommodityDAO"></property>
 	</bean>
+	<!--后台促销商品搜索	-->
+	<bean id="BackSaleSerachAction" class="com.usc.actions.back.BackSaleSerachAction">
+		<property name="bookDao" ref="BookDAO"></property>
+		<property name="digitalDao" ref="DigitalDAO"></property>
+		<property name="sysAdmin" ref="SystemAdminImpl"></property>
+		<property name="commodityDao" ref="CommodityDAO"></property>
+	</bean>
 	<!--产品发布	-->
 	<bean id="PublisheAction" class="com.usc.actions.back.PublisheAction"
 		scope="prototype">
@@ -98,4 +105,15 @@
 		<property name="sale" ref="Sale"></property>
 		<property name="saleDao" ref="SaleDAO"></property>
 	</bean>
+	<!--修改促销商品（促销价或优先级）	-->
+	<bean id="MergeSaleAction" class="com.usc.actions.back.MergeSaleAction" scope="prototype">
+		<property name="sysAdmin" ref="SystemAdminImpl"></property>
+	</bean>
+	
+	<!--设为普通商品-->
+	<bean id="UnSaleAction" class="com.usc.actions.back.UnSaleAction" scope="prototype">
+		<property name="sysAdmin" ref="SystemAdminImpl"></property>
+	</bean>
+
+
 </beans>

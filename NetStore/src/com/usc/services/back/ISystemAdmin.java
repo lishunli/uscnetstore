@@ -21,4 +21,5 @@ public interface ISystemAdmin
 	void setsaleFlag(int productTypeID,int entityID,int flag);//根据产品类型ID和实物ID来设置商品促销标志位
 	void saveSale(Sale s);//保存促销商品，要注意此时会对优先级进行处理
 	int getMaxPriority();//获得最大的优先级
+	void mergeSale(int type,int intentityID,float salePrice,int priority);// 实物ID// 类型，1为图书，2为数码// 折扣//优先级 修改促销表
 }

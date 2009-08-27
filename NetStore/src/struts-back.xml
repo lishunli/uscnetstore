@@ -43,6 +43,13 @@
 			<result name="input">/WEB-INF/jsp/back/commonProductOperate.jsp
 			</result>
 		</action>
+		<!--后台促销商品搜索		-->
+		<action name="backSaleSerach" class="BackSaleSerachAction">
+			<result name="success">/WEB-INF/jsp/back/saleProductOperate.jsp
+			</result>
+			<result name="input">/WEB-INF/jsp/back/saleProductOperate.jsp
+			</result>
+		</action>
 		<!--撤销发布		-->
 		<action name="unPublishe" class="UnPublisheAction">
 			<result name="success">/WEB-INF/jsp/back/back.jsp
@@ -50,7 +57,6 @@
 			<result name="input">/WEB-INF/jsp/back/commonProductOperate.jsp
 			</result>
 		</action>
-		
 		<!--产品发布		-->
 		<action name="publishe" class="PublisheAction">
 			<result name="success">/WEB-INF/jsp/back/back.jsp
@@ -65,10 +71,25 @@
 			<result name="input">/WEB-INF/jsp/back/commonProductOperate.jsp
 			</result>
 		</action>
+		<!--设置促销商品		-->
 		<action name="saleSet" class="SaleSetAction">
 			<result name="success">/WEB-INF/jsp/back/back.jsp
 			</result>
 			<result name="input">/WEB-INF/jsp/back/commonProductOperate.jsp
+			</result>
+		</action>
+		<!--修改促销商品（折扣或优先级） -->
+		<action name="mergeSale" class="MergeSaleAction">
+			<result name="success">/WEB-INF/jsp/back/back.jsp
+			</result>
+			<result name="input">/WEB-INF/jsp/back/saleProductOperate.jsp
+			</result>
+		</action>	
+		<!--设为普通商品		-->
+		<action name="unSale" class="UnSaleAction">
+			<result name="success">/WEB-INF/jsp/back/back.jsp
+			</result>
+			<result name="input">/WEB-INF/jsp/back/saleProductOperate.jsp
 			</result>
 		</action>
 	</package>

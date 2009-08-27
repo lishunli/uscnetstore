@@ -1,32 +1,23 @@
 package com.usc.actions.back;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import org.apache.struts2.components.Bean;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.sun.org.apache.commons.beanutils.BeanUtils;
 import com.usc.daos.Book;
 import com.usc.daos.BookDAO;
+import com.usc.daos.BookExtra;
 import com.usc.daos.Commodity;
 import com.usc.daos.CommodityDAO;
 import com.usc.daos.Digital;
 import com.usc.daos.DigitalDAO;
-import com.usc.daos.BookExtra;
 import com.usc.daos.DigitalExtra;
 import com.usc.services.back.ISystemAdmin;
 
-/**
- * 后台普通商品搜索
- * 
- * @author MZ
- * 
- */
-public class BackCommonSerachAction extends ActionSupport
+public class BackSaleSerachAction extends ActionSupport
 {
 	private String type;
 	private String productsName;
@@ -104,12 +95,11 @@ public class BackCommonSerachAction extends ActionSupport
 							.findByProductsID(sysAdmin.getProductID(1, book
 									.getBookId())))
 					{
-						if (commodity.getSaleFlag() == 0)// 发布，但不是促销商品
+						if (commodity.getSaleFlag() == 1)// 发布，是促销商品
 						{
 							BookExtra bookExtra = new BookExtra();
 							BeanUtils.copyProperties(bookExtra, book);
-							bookExtra.setDiscount(sysAdmin.getDiscount(1, book
-									.getBookId()));
+							bookExtra.setDiscount(sysAdmin.getDiscount(1, bookExtra.getBookId()));
 							bookExtra.setSalePrice(sysAdmin.getSalePrice(1,
 									book.getBookId()));
 							bookExtra.setPriority(sysAdmin.getPriority(1, book
@@ -118,7 +108,7 @@ public class BackCommonSerachAction extends ActionSupport
 						}
 					}
 				}
-				request.put("bookCommon", bookExtraList);
+				request.put("bookSale", bookExtraList);
 			} else if ("数码".equals(type.trim()))
 			{
 				for (Digital digital : digitalDao
@@ -128,7 +118,7 @@ public class BackCommonSerachAction extends ActionSupport
 							.findByProductsID(sysAdmin.getProductID(2, digital
 									.getDigitalId())))
 					{
-						if (commodity.getSaleFlag() == 0)// 发布，但不是促销商品
+						if (commodity.getSaleFlag() == 1)// 发布，是促销商品
 						{
 							DigitalExtra digitalExtra = new DigitalExtra();
 							BeanUtils.copyProperties(digitalExtra, digital);
@@ -142,7 +132,7 @@ public class BackCommonSerachAction extends ActionSupport
 						}
 					}
 				}
-				request.put("digitalCommon", digitalExtraList);
+				request.put("digitalSale", digitalExtraList);
 			}
 		}
 		return SUCCESS;
