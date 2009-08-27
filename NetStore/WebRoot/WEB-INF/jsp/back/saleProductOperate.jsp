@@ -1,31 +1,30 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
 <%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-	<head>
-		<base href="<%=basePath%>">
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>促销商品操作</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
 
-		<title>发布商品</title>
-
-		<meta http-equiv="pragma" content="no-cache">
-		<meta http-equiv="cache-control" content="no-cache">
-		<meta http-equiv="expires" content="0">
-		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-		<meta http-equiv="description" content="This is my page">
-		<script type="text/javascript" src="js/jquery.js"></script>
-		<script type="text/javascript" src="js/publishe.js"></script>
-	</head>
-
-	<body>
-
-		<s:form name="backSerach" method="post" theme="simple">
+  </head>
+  
+  <body>
+   <s:form name="backSaleSerach" method="post" theme="simple">
 		产品分类
 		<s:select list="{'图书','数码'}" id="type" name="type" value="type"></s:select>
 		产品名称
@@ -139,5 +138,5 @@
 				</table>
 			</s:if>
 		</s:form>
-	</body>
+  </body>
 </html>

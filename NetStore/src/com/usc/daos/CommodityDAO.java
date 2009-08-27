@@ -27,7 +27,8 @@ public class CommodityDAO extends HibernateDaoSupport
 	// property constants
 	public static final String DISCOUNT = "discount";
 	public static final String SALE_FLAG = "saleFlag";
-
+	public static final String  PRODUCTSID ="productsID";
+	
 	protected void initDao()
 	{
 		// do nothing
@@ -111,6 +112,11 @@ public class CommodityDAO extends HibernateDaoSupport
 	public List findByDiscount(Object discount)
 	{
 		return findByProperty(DISCOUNT, discount);
+	}
+	
+	public List<Commodity> findByProductsID(Object productsID)
+	{
+		return findByProperty(PRODUCTSID, productsID);
 	}
 
 	public List findBySaleFlag(Object saleFlag)

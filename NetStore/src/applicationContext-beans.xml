@@ -142,7 +142,6 @@
 	
 	<!--后台管理Beans	-->
 	
-	
 	<bean id="Products" class="com.usc.daos.Products"></bean>
 	<bean id="Book" class="com.usc.daos.Book"></bean>
 	<bean id="Digital" class="com.usc.daos.Digital"></bean>
@@ -161,6 +160,8 @@
 		<property name="digitalDao" ref="DigitalDAO"></property>
 		<property name="operDao" ref="OperatorDAO"></property>
 		<property name="productDao" ref="ProductsDAO"></property>
+		<property name="saleDao" ref="SaleDAO"></property>
+		<property name="commodityDao" ref="CommodityDAO"></property>
 	</bean>
 	
 </beans>

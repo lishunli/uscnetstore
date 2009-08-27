@@ -36,6 +36,13 @@
 			<result name="input">/WEB-INF/jsp/back/publishe.jsp
 			</result>
 		</action>
+		<!--后台普通商品搜索		-->
+		<action name="backCommonSerach" class="BackCommonSerachAction">
+			<result name="success">/WEB-INF/jsp/back/commonProductOperate.jsp
+			</result>
+			<result name="input">/WEB-INF/jsp/back/commonProductOperate.jsp
+			</result>
+		</action>
 		<!--产品发布		-->
 		<action name="publishe" class="PublisheAction">
 			<result name="success">/WEB-INF/jsp/back/back.jsp

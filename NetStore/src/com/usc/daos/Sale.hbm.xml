@@ -10,16 +10,26 @@
             <column name="saleCommodityID" />
             <generator class="native" />
         </id>
-        <many-to-one name="commodity" class="com.usc.daos.Commodity" fetch="select">
-            <column name="commodityID">
-                <comment>商品ID</comment>
-            </column>
-        </many-to-one>
-        <many-to-one name="operator" class="com.usc.daos.Operator" fetch="select">
-            <column name="operatorID">
+<!--        <many-to-one name="commodity" class="com.usc.daos.Commodity" fetch="select">-->
+<!--            <column name="commodityID">-->
+<!--                <comment>商品ID</comment>-->
+<!--            </column>-->
+<!--        </many-to-one>-->
+<!--        <many-to-one name="operator" class="com.usc.daos.Operator" fetch="select">-->
+<!--            <column name="operatorID">-->
+<!--                <comment>操作员ID</comment>-->
+<!--            </column>-->
+<!--        </many-to-one>-->
+		<property name="commodityId" type="java.lang.Integer">
+            <column name="commodityID" not-null="true">
                 <comment>操作员ID</comment>
             </column>
-        </many-to-one>
+        </property>
+		<property name="operatorID" type="java.lang.Integer">
+            <column name="operatorID" not-null="true">
+                <comment>操作员ID</comment>
+            </column>
+        </property>
         <property name="salePrice" type="java.lang.Float">
             <column name="salePrice" precision="12" scale="0" not-null="true">
                 <comment>促销价</comment>

@@ -25,6 +25,7 @@ public class SaleDAO extends HibernateDaoSupport
 	// property constants
 	public static final String SALE_PRICE = "salePrice";
 	public static final String PRIORITY = "priority";
+	public static final String COMMODITYID="commodityId";
 
 	protected void initDao()
 	{
@@ -110,7 +111,17 @@ public class SaleDAO extends HibernateDaoSupport
 	{
 		return findByProperty(SALE_PRICE, salePrice);
 	}
+	/**
+	 * 根据商品ID找促销商品
+	 * @param commodityId
+	 * @return
+	 */
+	public List<Sale> findByCommodityId(Object commodityId)
+	{
+		return findByProperty(COMMODITYID, commodityId);
+	}
 
+	
 	public List findByPriority(Object priority)
 	{
 		return findByProperty(PRIORITY, priority);

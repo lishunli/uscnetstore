@@ -28,5 +28,7 @@ function BackExit()
 <a href="bookEntry.action">图书录入</a><br><br>
 <a href="digitalEntry.action">数码录入</a><br><br>
 <a href="backSerach.action">产品发布</a><br><br>
+<a href="backCommonSerach.action">普通商品操作</a><br><br>
+<a href="backSaleSerach.action">促销商品操作</a><br><br>
 </body>
 </html>

@@ -10,8 +10,8 @@ public class Sale implements java.io.Serializable
 	// Fields
 
 	private Integer saleCommodityId;
-	private Commodity commodity;
-	private Operator operator;
+	private Integer commodityId;
+	private Integer operatorID;
 	private Float salePrice;
 	private Integer priority;
 
@@ -30,11 +30,11 @@ public class Sale implements java.io.Serializable
 	}
 
 	/** full constructor */
-	public Sale(Commodity commodity, Operator operator, Float salePrice,
+	public Sale(Integer commodityId, Integer operatorID, Float salePrice,
 			Integer priority)
 	{
-		this.commodity = commodity;
-		this.operator = operator;
+		this.commodityId = commodityId;
+		this.operatorID = operatorID;
 		this.salePrice = salePrice;
 		this.priority = priority;
 	}
@@ -51,24 +51,25 @@ public class Sale implements java.io.Serializable
 		this.saleCommodityId = saleCommodityId;
 	}
 
-	public Commodity getCommodity()
+
+	public Integer getCommodityId()
 	{
-		return this.commodity;
+		return commodityId;
 	}
 
-	public void setCommodity(Commodity commodity)
+	public void setCommodityId(Integer commodityId)
 	{
-		this.commodity = commodity;
+		this.commodityId = commodityId;
 	}
 
-	public Operator getOperator()
+	public Integer getOperatorID()
 	{
-		return this.operator;
+		return operatorID;
 	}
 
-	public void setOperator(Operator operator)
+	public void setOperatorID(Integer operatorID)
 	{
-		this.operator = operator;
+		this.operatorID = operatorID;
 	}
 
 	public Float getSalePrice()

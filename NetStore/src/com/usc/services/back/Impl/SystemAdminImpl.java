@@ -2,12 +2,16 @@ package com.usc.services.back.Impl;
 
 import com.usc.daos.Book;
 import com.usc.daos.BookDAO;
+import com.usc.daos.Commodity;
+import com.usc.daos.CommodityDAO;
 import com.usc.daos.Digital;
 import com.usc.daos.DigitalDAO;
 import com.usc.daos.Operator;
 import com.usc.daos.OperatorDAO;
 import com.usc.daos.Products;
 import com.usc.daos.ProductsDAO;
+import com.usc.daos.Sale;
+import com.usc.daos.SaleDAO;
 import com.usc.services.back.ISystemAdmin;
 
 
@@ -26,7 +30,8 @@ public class SystemAdminImpl implements ISystemAdmin
 	private DigitalDAO digitalDao;//数码DAO，通过Spring注入
 	private ProductsDAO productDao;//产品DAO，通过Spring注入
 	private OperatorDAO operDao;//操作员DAO，通过Spring注入
-
+	private SaleDAO saleDao;//促销DAO，通过Spring注入
+	private CommodityDAO commodityDao;//商品DAO，通过Spring注入
 	public void setBook(Book book)
 	{
 		this.book = book;
@@ -55,6 +60,16 @@ public class SystemAdminImpl implements ISystemAdmin
 	public void setOperDao(OperatorDAO operDao)
 	{
 		this.operDao = operDao;
+	}
+
+	public void setSaleDao(SaleDAO saleDao)
+	{
+		this.saleDao = saleDao;
+	}
+	
+	public void setCommodityDao(CommodityDAO commodityDao)
+	{
+		this.commodityDao = commodityDao;
 	}
 
 	/**
@@ -99,6 +114,66 @@ public class SystemAdminImpl implements ISystemAdmin
 			digital.setProductsPflag(1);//设置发布标志位
 			digitalDao.merge(digital);//更新数码
 		}
+	}
+
+	/**
+	 * 根据产品类型ID和实物ID来获取折扣
+	 */
+	public float getDiscount(int productTypeID, int entityID)
+	{
+		/**
+		 * 1.通过实物ID和分类ID找到产品ID
+		 * 2.通过产品ID在商品表中找到商品
+		 * 3.返回商品的折扣
+		 */
+		
+		for(Commodity commodity :commodityDao.findByProductsID(this.getProductID(productTypeID,entityID)))
+		{
+			return commodity.getDiscount();
+		}
+		return 0;
+	}
+
+	/**
+	 * 根据产品类型ID和实物ID来获取优先级
+	 */
+	public int getPriority(int productTypeID, int entityID)
+	{
+		/**
+		 * 1.通过实物ID和分类ID找到产品ID
+		 * 2.通过产品ID在商品表中找到商品
+		 * 3.通过商品ID在促销表中找到促销商品
+		 * 4.返回促销商品的优先级
+		 */
+		for(Commodity commodity:commodityDao.findByProductsID(getProductID(productTypeID,entityID)))
+		{
+			for(Sale sale : saleDao.findByCommodityId(commodity.getCommodityId()))
+			{
+				return sale.getPriority();
+			}
+		}
+		return 0;
+	}
+
+	/**
+	 * 根据产品类型ID和实物ID来获取促销价
+	 */
+	public float getSalePrice(int productTypeID, int entityID)
+	{
+		/**
+		 * 1.通过实物ID和分类ID找到产品ID
+		 * 2.通过产品ID在商品表中找到商品
+		 * 3.通过商品ID在促销表中找到促销商品
+		 * 4.返回促销商品的促销价
+		 */
+		for(Commodity commodity:commodityDao.findByProductsID(getProductID(productTypeID,entityID)))
+		{
+			for(Sale sale : saleDao.findByCommodityId(commodity.getCommodityId()))
+			{
+				return sale.getSalePrice();
+			}
+		}
+		return 0;
 	}
 	
 }

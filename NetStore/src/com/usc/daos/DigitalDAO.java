@@ -133,6 +133,19 @@ public class DigitalDAO extends HibernateDaoSupport
 		return getHibernateTemplate().find(queryString);
 	}
 	
+	/**
+	 * 数码名称的模糊查找
+	 * 已经发布的产品，也即普通商品的模糊查找
+	 * @param bookName
+	 * @return
+	 */
+
+	public List<Digital> findByLikeCommonDigitalName(String digitalName)
+	{
+		String queryString="from Digital as d where d.productsPflag = 0 and d.digitalName like '%"+digitalName+"%'";
+		return getHibernateTemplate().find(queryString);
+	}
+	
 	
 	public List findByPublishedPrice(Object publishedPrice)
 	{
