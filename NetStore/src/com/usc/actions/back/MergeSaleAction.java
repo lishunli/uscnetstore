@@ -17,6 +17,51 @@ public class MergeSaleAction extends ActionSupport
 	
 	private ISystemAdmin sysAdmin;// 系统管理员实现实例化对象，通过Spring注入
 	
+	public int getEntityID()
+	{
+		return entityID;
+	}
+
+	public void setEntityID(int entityID)
+	{
+		this.entityID = entityID;
+	}
+
+	public int getType()
+	{
+		return type;
+	}
+
+	public void setType(int type)
+	{
+		this.type = type;
+	}
+
+	public float getSalePrice()
+	{
+		return salePrice;
+	}
+
+	public void setSalePrice(float salePrice)
+	{
+		this.salePrice = salePrice;
+	}
+
+	public int getPriority()
+	{
+		return priority;
+	}
+
+	public void setPriority(int priority)
+	{
+		this.priority = priority;
+	}
+
+	public void setSysAdmin(ISystemAdmin sysAdmin)
+	{
+		this.sysAdmin = sysAdmin;
+	}
+
 	@Override
 	public String execute() throws Exception
 	{
