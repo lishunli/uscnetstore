@@ -8,11 +8,11 @@
 	<!--前台管理Action	-->
 	<!-- 注册 -->
 	<bean id="RegisterAction" class="com.usc.actions.custom.RegisterAction">
-	<property name="beforemainimpl" ref="BeforeMain"></property>
+		<property name="beforemainimpl" ref="BeforeMain"></property>
 	</bean>
 	<!-- 登录 -->
 	<bean id="LoginAction" class="com.usc.actions.custom.LoginAction">
-	<property name="beforemainimpl" ref="BeforeMain"></property>
+		<property name="beforemainimpl" ref="BeforeMain"></property>
 	</bean>
 	
 	
@@ -23,18 +23,22 @@
 	
 	<!--后台管理Action	-->
 	<!-- 后台管理员登陆 -->
-	<bean id="BackLoginAction" class="com.usc.actions.back.loginAction" scope="prototype">
+	<bean id="BackLoginAction" class="com.usc.actions.back.loginAction"
+		scope="prototype">
 		<property name="manger" ref="MangerImpl"></property>
 	</bean>
 	<!-- 后台退出 -->
-	<bean id="BackExitAction" class="com.usc.actions.back.BackExitAction" scope="prototype">
+	<bean id="BackExitAction" class="com.usc.actions.back.BackExitAction"
+		scope="prototype">
 	</bean>
 	<!-- 后台修改密码 -->
-	<bean id="UpdatePassAction" class="com.usc.actions.back.UpdatePassAction" scope="prototype">
+	<bean id="UpdatePassAction" class="com.usc.actions.back.UpdatePassAction"
+		scope="prototype">
 		<property name="manger" ref="MangerImpl"></property>
 	</bean>
 	<!--后台的图书录入	-->
-	<bean id="BookEntryAction" class="com.usc.actions.back.BookEntryAction" scope="prototype">
+	<bean id="BookEntryAction" class="com.usc.actions.back.BookEntryAction"
+		scope="prototype">
 		<property name="bookDao" ref="BookDAO"></property>
 		<property name="manger" ref="MangerImpl"></property>
 		<property name="PTypeDao" ref="ProducttypeDAO"></property>
@@ -42,7 +46,8 @@
 		<property name="product" ref="Products"></property>
 	</bean>
 	<!--后台的数码录入	-->
-	<bean id="DigitalEntryAction" class="com.usc.actions.back.DigitalEntryAction" scope="prototype">
+	<bean id="DigitalEntryAction" class="com.usc.actions.back.DigitalEntryAction"
+		scope="prototype">
 		<property name="digitalDao" ref="DigitalDAO"></property>
 		<property name="manger" ref="MangerImpl"></property>
 		<property name="PTypeDao" ref="ProducttypeDAO"></property>
@@ -50,28 +55,47 @@
 		<property name="product" ref="Products"></property>
 	</bean>
 	<!--后台的搜索	-->
-	<bean id="BackSerachAction" class="com.usc.actions.back.BackSerachAction" scope="prototype">
+	<bean id="BackSerachAction" class="com.usc.actions.back.BackSerachAction"
+		scope="prototype">
 		<property name="bookDao" ref="BookDAO"></property>
 		<property name="digitalDao" ref="DigitalDAO"></property>
 	</bean>
 	
 	<!--后台普通商品的搜索	-->
-	<bean id="BackCommonSerachAction" class="com.usc.actions.back.BackCommonSerachAction" scope="prototype">
+	<bean id="BackCommonSerachAction" class="com.usc.actions.back.BackCommonSerachAction"
+		scope="prototype">
 		<property name="bookDao" ref="BookDAO"></property>
 		<property name="digitalDao" ref="DigitalDAO"></property>
 		<property name="sysAdmin" ref="SystemAdminImpl"></property>
+		<property name="commodityDao" ref="CommodityDAO"></property>
 	</bean>
 	<!--产品发布	-->
-	<bean id="PublisheAction" class="com.usc.actions.back.PublisheAction" scope="prototype">
+	<bean id="PublisheAction" class="com.usc.actions.back.PublisheAction"
+		scope="prototype">
 		<property name="commodity" ref="Commodity"></property>
 		<property name="commodityDao" ref="CommodityDAO"></property>
 		<property name="sysAdmin" ref="SystemAdminImpl"></property>
 	</bean>
 	<!--修改普通商品的折扣	-->
-	<bean id="UpdateDiscountAction" class="com.usc.actions.back.UpdateDiscountAction">
+	<bean id="UpdateDiscountAction" class="com.usc.actions.back.UpdateDiscountAction"
+		scope="prototype">
 		<property name="commodity" ref="Commodity"></property>
 		<property name="commodityDao" ref="CommodityDAO"></property>
 		<property name="sysAdmin" ref="SystemAdminImpl"></property>
 	</bean>
-
+	<!--撤销发布	-->
+	<bean id="UnPublisheAction" class="com.usc.actions.back.UnPublisheAction"
+		scope="prototype">
+		<property name="commodity" ref="Commodity"></property>
+		<property name="commodityDao" ref="CommodityDAO"></property>
+		<property name="sysAdmin" ref="SystemAdminImpl"></property>
+	</bean>
+	<!--设置为促销商品-->
+	<bean id="SaleSetAction" class="com.usc.actions.back.SaleSetAction" scope="prototype">
+		<property name="commodity" ref="Commodity"></property>
+		<property name="commodityDao" ref="CommodityDAO"></property>
+		<property name="sysAdmin" ref="SystemAdminImpl"></property>
+		<property name="sale" ref="Sale"></property>
+		<property name="saleDao" ref="SaleDAO"></property>
+	</bean>
 </beans>

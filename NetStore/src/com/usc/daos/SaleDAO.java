@@ -122,12 +122,12 @@ public class SaleDAO extends HibernateDaoSupport
 	}
 
 	
-	public List findByPriority(Object priority)
+	public List<Sale> findByPriority(Object priority)
 	{
 		return findByProperty(PRIORITY, priority);
 	}
 
-	public List findAll()
+	public List<Sale> findAll()
 	{
 		log.debug("finding all Sale instances");
 		try

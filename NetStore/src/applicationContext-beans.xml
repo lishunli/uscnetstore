@@ -146,6 +146,7 @@
 	<bean id="Book" class="com.usc.daos.Book"></bean>
 	<bean id="Digital" class="com.usc.daos.Digital"></bean>
 	<bean id="Commodity" class="com.usc.daos.Commodity"></bean>
+	<bean id="Sale" class="com.usc.daos.Sale"></bean>
 	<!-- 后台管理员实现 -->
 	<bean id="MangerImpl" class="com.usc.services.back.Impl.MangerImpl">
 		<property name="operDao" ref="OperatorDAO"></property>

@@ -43,7 +43,13 @@
 			<result name="input">/WEB-INF/jsp/back/commonProductOperate.jsp
 			</result>
 		</action>
-		
+		<!--撤销发布		-->
+		<action name="unPublishe" class="UnPublisheAction">
+			<result name="success">/WEB-INF/jsp/back/back.jsp
+			</result>
+			<result name="input">/WEB-INF/jsp/back/commonProductOperate.jsp
+			</result>
+		</action>
 		
 		<!--产品发布		-->
 		<action name="publishe" class="PublisheAction">
@@ -54,6 +60,12 @@
 		</action>
 		<!--修改普通商品的折扣		-->
 		<action name="updateDiscount" class="UpdateDiscountAction">
+			<result name="success">/WEB-INF/jsp/back/back.jsp
+			</result>
+			<result name="input">/WEB-INF/jsp/back/commonProductOperate.jsp
+			</result>
+		</action>
+		<action name="saleSet" class="SaleSetAction">
 			<result name="success">/WEB-INF/jsp/back/back.jsp
 			</result>
 			<result name="input">/WEB-INF/jsp/back/commonProductOperate.jsp

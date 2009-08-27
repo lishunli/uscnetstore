@@ -71,6 +71,7 @@ public class SystemAdminImpl implements ISystemAdmin
 	{
 		this.commodityDao = commodityDao;
 	}
+	
 
 	/**
 	 * 根据操作员姓名来唯一获得ID
@@ -172,6 +173,62 @@ public class SystemAdminImpl implements ISystemAdmin
 			{
 				return sale.getSalePrice();
 			}
+		}
+		return 0;
+	}
+
+	/**
+	 * 保存促销商品，要注意此时会对优先级进行处理
+	 */
+	public void saveSale(Sale s)
+	{
+		if(!saleDao.findByPriority(s.getPriority()).isEmpty())//在促销表中有找到该优先级
+		{
+			for(Sale sale : saleDao.findByPriority(s.getPriority()))
+			{
+				sale.setPriority(getMaxPriority()+1);
+				saleDao.merge(sale);
+			}
+		}
+		saleDao.save(s);
+	}
+
+	/**
+	 * 根据产品类型ID和实物ID来设置商品促销标志位
+	 */
+	public void setsaleFlag(int productTypeID, int entityID, int flag)
+	{
+		for(Commodity commodity:commodityDao.findByProductsID(getProductID(productTypeID,entityID)))
+		{
+			commodity.setSaleFlag(flag);//设置促销商品标志位
+			commodityDao.merge(commodity);//更新
+		}
+	}
+
+	
+	
+	/**
+	 * 获得最大的优先级+1
+	 */
+	public int getMaxPriority()
+	{
+		int MaxPriority = 0;
+		for(Sale sale : saleDao.findAll())
+		{
+			if(sale.getPriority()>MaxPriority)
+				MaxPriority = sale.getPriority();
+		}
+		return MaxPriority;
+	}
+
+	/**
+	 * 根据产品类型ID和实物ID来获得商品ID
+	 */
+	public int getCommodityID(int productTypeID, int entityID)
+	{
+		for(Commodity commodity : commodityDao.findByProductsID(getProductID(productTypeID, entityID)))
+		{
+			return commodity.getCommodityId();
 		}
 		return 0;
 	}

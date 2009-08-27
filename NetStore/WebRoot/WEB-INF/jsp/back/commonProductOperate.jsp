@@ -75,13 +75,9 @@
 								<s:property value="#bookCommon.discount" />
 							</td>
 							<td>
-								<%--								<input type="button"--%>
-								<%--									onclick="publisheBook(<s:property value='#book.bookId'/>)"--%>
-								<%--									value="发布" />--%>
-								<%--onclick="publishe('<s:property value="#book.bookName"/>')"上面是传一个Int值，这个传String字符串--%>
 								<input type="button" onclick="mergeDiscount(<s:property value="#bookCommon.bookId" />,1)" value="修改折扣">
-								<input type="button" onclick="" value="撤销发布">
-								<input type="button" onclick="" value="设为促销">
+								<input type="button" onclick="unPublishe(<s:property value="#bookCommon.bookId" />,1)" value="撤销发布">
+								<input type="button" onclick="saleSet(<s:property value="#bookCommon.bookId" />,1)" value="设为促销">
 							</td>
 
 						</tr>
@@ -142,13 +138,9 @@
 								<s:property value="#digitalCommon.discount" />
 							</td>
 							<td>
-								<%--								<input type="button"--%>
-								<%--									onclick="publisheBook(<s:property value='#book.bookId'/>)"--%>
-								<%--									value="发布" />--%>
-								<%--onclick="publishe('<s:property value="#book.bookName"/>')"上面是传一个Int值，这个传String字符串--%>
 								<input type="button" onclick="mergeDiscount(<s:property value="#digitalCommon.digitalId" />,2)" value="修改折扣">
-								<input type="button" onclick="" value="撤销发布">
-								<input type="button" onclick="" value="设为促销">
+								<input type="button" onclick="unPublishe(<s:property value="#digitalCommon.digitalId" />,2)" value="撤销发布">
+								<input type="button" onclick="saleSet(<s:property value="#digitalCommon.digitalId" />,2)" value="设为促销">
 							</td>
 
 						</tr>
