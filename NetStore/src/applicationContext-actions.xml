@@ -67,5 +67,11 @@
 		<property name="commodityDao" ref="CommodityDAO"></property>
 		<property name="sysAdmin" ref="SystemAdminImpl"></property>
 	</bean>
+	<!--修改普通商品的折扣	-->
+	<bean id="UpdateDiscountAction" class="com.usc.actions.back.UpdateDiscountAction">
+		<property name="commodity" ref="Commodity"></property>
+		<property name="commodityDao" ref="CommodityDAO"></property>
+		<property name="sysAdmin" ref="SystemAdminImpl"></property>
+	</bean>
 
 </beans>

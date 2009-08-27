@@ -100,18 +100,18 @@ public class SystemAdminImpl implements ISystemAdmin
 	/**
 	 * 根据产品类型ID和实物ID来设置产品发布标志位
 	 */
-	public void setProductPFlag(int productTypeID, int entityID)
+	public void setProductPFlag(int productTypeID, int entityID,int flag)
 	{
 		if(1 == productTypeID)
 		{
 			book=bookDao.findById(entityID);//找到book
-			book.setProductsPflag(1);//设置发布标志位
+			book.setProductsPflag(flag);//设置发布标志位
 			bookDao.merge(book);//更新book
 		}
 		else if(2 == productTypeID)
 		{
 			digital=digitalDao.findById(entityID);//找到数码
-			digital.setProductsPflag(1);//设置发布标志位
+			digital.setProductsPflag(flag);//设置发布标志位
 			digitalDao.merge(digital);//更新数码
 		}
 	}

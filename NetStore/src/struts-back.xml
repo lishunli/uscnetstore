@@ -43,11 +43,20 @@
 			<result name="input">/WEB-INF/jsp/back/commonProductOperate.jsp
 			</result>
 		</action>
+		
+		
 		<!--产品发布		-->
 		<action name="publishe" class="PublisheAction">
 			<result name="success">/WEB-INF/jsp/back/back.jsp
 			</result>
 			<result name="input">/WEB-INF/jsp/back/publishe.jsp
+			</result>
+		</action>
+		<!--修改普通商品的折扣		-->
+		<action name="updateDiscount" class="UpdateDiscountAction">
+			<result name="success">/WEB-INF/jsp/back/back.jsp
+			</result>
+			<result name="input">/WEB-INF/jsp/back/commonProductOperate.jsp
 			</result>
 		</action>
 	</package>

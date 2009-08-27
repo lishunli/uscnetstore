@@ -106,9 +106,9 @@ public class BackCommonSerachAction extends ActionSupport
 				{
 					DigitalExtra digitalExtra = new DigitalExtra();
 					BeanUtils.copyProperties(digitalExtra, digital);
-					digitalExtra.setDiscount(sysAdmin.getDiscount(1, digitalExtra.getDigitalId()));
-					digitalExtra.setSalePrice(sysAdmin.getSalePrice(1, digitalExtra.getDigitalId()));
-					digitalExtra.setPriority(sysAdmin.getPriority(1, digitalExtra.getDigitalId()));
+					digitalExtra.setDiscount(sysAdmin.getDiscount(2, digitalExtra.getDigitalId()));
+					digitalExtra.setSalePrice(sysAdmin.getSalePrice(2, digitalExtra.getDigitalId()));
+					digitalExtra.setPriority(sysAdmin.getPriority(2, digitalExtra.getDigitalId()));
 					digitalExtraList.add(digitalExtra);
 				}
 				request.put("digitalCommon",digitalExtraList);

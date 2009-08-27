@@ -19,7 +19,6 @@
 		<meta http-equiv="expires" content="0">
 		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 		<meta http-equiv="description" content="This is my page">
-		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/publishe.js"></script>
 	</head>
 
@@ -72,7 +71,7 @@
 							</td>
 							<td>
 								<input type="button"
-									onclick="publisheBook(<s:property value='#book.bookId'/>)"
+									onclick="publishe(<s:property value='#book.bookId'/>,1)"
 									value="发布" />
 								<%--onclick="publishe('<s:property value="#book.bookName"/>')"上面是传一个Int值，这个传String字符串--%>
 							</td>
@@ -130,7 +129,7 @@
 							</td>
 							<td>
 								<input type="button"
-									onclick="publisheDigital(<s:property value='#digital.digitalId'/>)"
+									onclick="publishe(<s:property value='#digital.digitalId'/>,2)"
 									value="发布" />
 							</td>
 

@@ -19,10 +19,7 @@
 		<meta http-equiv="expires" content="0">
 		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 		<meta http-equiv="description" content="This is my page">
-		<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
+		<script type="text/javascript" src="js/commonProductOperate.js"></script>
 	</head>
 
 	<body>
@@ -82,7 +79,7 @@
 								<%--									onclick="publisheBook(<s:property value='#book.bookId'/>)"--%>
 								<%--									value="发布" />--%>
 								<%--onclick="publishe('<s:property value="#book.bookName"/>')"上面是传一个Int值，这个传String字符串--%>
-								<input type="button" onclick="" value="修改折扣">
+								<input type="button" onclick="mergeDiscount(<s:property value="#bookCommon.bookId" />,1)" value="修改折扣">
 								<input type="button" onclick="" value="撤销发布">
 								<input type="button" onclick="" value="设为促销">
 							</td>
@@ -149,7 +146,7 @@
 								<%--									onclick="publisheBook(<s:property value='#book.bookId'/>)"--%>
 								<%--									value="发布" />--%>
 								<%--onclick="publishe('<s:property value="#book.bookName"/>')"上面是传一个Int值，这个传String字符串--%>
-								<input type="button" onclick="" value="修改折扣">
+								<input type="button" onclick="mergeDiscount(<s:property value="#digitalCommon.digitalId" />,2)" value="修改折扣">
 								<input type="button" onclick="" value="撤销发布">
 								<input type="button" onclick="" value="设为促销">
 							</td>
