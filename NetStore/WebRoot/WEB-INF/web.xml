@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app version="2.5" 
-	xmlns="http://java.sun.com/xml/ns/javaee" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-
-  <filter>
+	<filter>
 		<filter-name>struts2</filter-name>
 		<filter-class> org.apache.struts2.dispatcher.FilterDispatcher 
 		</filter-class>
@@ -14,11 +12,9 @@
 		<filter-name>struts2</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
-	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath*:applicationContext-*.xml</param-value>
@@ -26,19 +22,15 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-  <servlet>
-    <servlet-name>getAllType</servlet-name>
-    <servlet-class>com.usc.servlets.getAllType</servlet-class>
-  </servlet>
-  <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>Picture</servlet-name>
-    <servlet-class>com.usc.services.custom.Impl.Picture</servlet-class>
-  </servlet>
-
-
-  
+	<servlet>
+		<servlet-name>getAllType</servlet-name>
+		<servlet-class>com.usc.servlets.getAllType</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getAllType</servlet-name>
+		<url-pattern>/getAllType</url-pattern>
+	</servlet-mapping>
+	
 	<filter>
 		<filter-name>Spring character encoding filter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
