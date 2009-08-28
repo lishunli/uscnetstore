@@ -3,6 +3,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
+<<<<<<< .mine
+  
+=======
+>>>>>>> .r130
     
     <title>My JSP 'ChangePassword.jsp' starting page</title>
     

@@ -12,9 +12,9 @@
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
-  </head>
   
+  </head>
+
   <body bgcolor="#EEEEEE"> 
     <table width="559" border="1" height="179">
 <tbody><tr>
@@ -29,9 +29,8 @@
 <option value="2">四川省</option>
 <option value="3">广东省</option>
 </select>市:<select name="combobox4">
-   <option selected value="4">成都市</option>
-   <option value="5">广州市</option>
-   </select>
+           <option selected value="4">成都市</option>
+           <option value="5">广州市</option></select>
 </td>
 </tr>
 <tr>
