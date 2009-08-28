@@ -1,12 +1,20 @@
 <%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
 
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
 <<<<<<< .mine
+<<<<<<< .mine
+ 
+=======
+>>>>>>> .r125
+=======
+<<<<<<< .mine
   
 =======
 >>>>>>> .r130
+>>>>>>> .r132
     
     <title>My JSP 'ChangePassword.jsp' starting page</title>
     

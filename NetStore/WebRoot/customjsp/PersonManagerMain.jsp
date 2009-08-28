@@ -21,7 +21,7 @@
 
 <body>
 
-<table width="75%" height="422" border="2" align="center">
+<table width="75%" height="422" border="1" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <th width="157" height="10" bgcolor="#EEEEEE" scope="row"><div align="left">
         用户名:

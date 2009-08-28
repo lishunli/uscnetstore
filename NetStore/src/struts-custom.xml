@@ -20,5 +20,10 @@
 			<result name="input" type="redirect">/customjsp/Login.jsp</result>
 		</action>
 		
+		<!-- 搜索产品 -->
+		<action name="FuzzySearchAction" class="FuzzySearchAction">
+	      <result>/customjsp/FuzzySearch.jsp</result>
+		</action>
+		
 	</package>
 </struts>

@@ -31,7 +31,7 @@ body {
   <tr>
     <th height="13" bgcolor="#B9C8EC" scope="col" ><div align="left">
      <% Custom custom = (Custom)session.getAttribute("Custom");
-  out.print("欢迎您！"+custom.getCustomName());%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【注销登录】 </div></th>
+  out.print("欢迎您！"+custom.getCustomName());%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div></th>
     <th bgcolor="#B9C8EC" scope="col" ><div align="left"></div></th>
   </tr>
   <tr>

@@ -29,7 +29,7 @@ body {
     <th colspan="2" bgcolor="#B9C8EC" scope="col" ><marquee direction=left>南华大学电子商务平台 为了您的生活更简单 我们真诚为您服务！</marquee></th> 
   </tr>
   <tr>
-    <th bgcolor="#B9C8EC" scope="col" ><div align="left">
+    <th bgcolor="#B9C8EC" scope="col" ><div align="left">   
     <% Custom custom = (Custom)session.getAttribute("Custom");
     if(custom==null){%>
     <%out.print("欢迎您光临南华大学电子商务平台");}else{out.print("欢迎您的光临！"+custom.getCustomName());} %>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<%=path%>/customjsp/Login.jsp">【登录】</a><a href="<%=path%>/customjsp/Register.jsp" type="redirect">【注册】</a>
@@ -46,22 +46,25 @@ body {
   <tr>
     <td width="542" bgcolor="#E7E7E7"><span class="STYLE4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="<%=path%>/Top.jsp">首页</a>|<a href="<%=path%>/customjsp/BooksMain.jsp">图书</a>|<a href="<%=path%>/customjsp/DigitalsMain.jsp">数码</a></strong></span></td>
     <td width="445" bgcolor="#E7E7E7"><span class="STYLE3"><a href="<%=path%>/customjsp/PersonManagerMain.jsp?action=order">我的信息库</a>&nbsp;<a href="<%=path%>/customjsp/ShoppingCart.jsp"> 购物车</a>&nbsp; <a href="<%=path%>/customjsp/NewPeoples.jsp">新手上路</a> &nbsp;<a href="<%=path%>/customjsp/Help.jsp">帮助中心</a></span></td>
-  </tr>
+  </tr> 
+  <form action="FuzzySearchAction.action" method="post">
+ <table width="80%" height="30%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td bgcolor="#E7E7E7"><span class="STYLE3">按产品类型：
-        <select name="select2">
-          <option value="1" selected="selected">图书</option>
+    <td bgcolor="#E7E7E7" align="left" width="40%"><span class="STYLE3">按产品类型：
+        <select name="s">
+          <option value="1" >图书</option>
           <option value="2">数码</option>
         </select>
-&nbsp;&nbsp;
-<input name="textfield2" type="text" size="36" />
+<input name="Search" type="text" size="30" />
     </span></td>
-    <td bgcolor="#E7E7E7"><span class="STYLE7">搜索 高级搜索</span></td>
-  </tr>
+    <td bgcolor="#E7E7E7" valign="top" align="left">
+    <span class="STYLE7">   
+    <input type="submit" value="搜索"/>&nbsp;&nbsp;&nbsp;<a href="<%=path%>/customjsp/AdvancedSearch.jsp">高级搜索</a>    
+    </span></td>
+  </tr> 
+</table><hr color="#0000FF"/>
+</form>
 </table>
-<hr color="#0000FF"/>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 </body>
 </html>
+
