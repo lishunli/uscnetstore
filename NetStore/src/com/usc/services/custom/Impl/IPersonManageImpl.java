@@ -2,6 +2,7 @@ package com.usc.services.custom.Impl;
 
 import com.usc.daos.Custom;
 import com.usc.daos.CustomDAO;
+import com.usc.daos.Suggestion;
 import com.usc.services.custom.IPersonManage;
 
 public class IPersonManageImpl implements IPersonManage {
@@ -25,12 +26,27 @@ public class IPersonManageImpl implements IPersonManage {
 		
 	}
 
+
+
+	public void UTransfor(Custom custom1, String custom2Name, float Unumber) {
+		customdao.UTransfor(custom1, custom2Name, Unumber);
+		
+	}
+
+
+
 	public CustomDAO getCustomdao() {
 		return customdao;
 	}
 
 	public void setCustomdao(CustomDAO customdao) {
 		this.customdao = customdao;
+	}
+
+
+	public void saveSuggestion(Suggestion suggestion) {
+		// TODO Auto-generated method stub
+		
 	}
 
 
