@@ -10,8 +10,10 @@ import com.usc.services.back.ISystemAdmin;
 
 /**
  * 撤销发布
+ * 
  * @author MZ
  *
+ * 2009-8-28上午09:44:40
  */
 public class UnPublisheAction extends ActionSupport
 {

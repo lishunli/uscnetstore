@@ -14,9 +14,9 @@
 
 //修改折扣
 function mergeDiscount(entityID, type) {
-	var discount = prompt("请输入修改的折扣 (1-100)", "100");
-	if (null == discount) {
-	} else if (discount < 1 || discount != parseInt(discount) || discount > 100) {
+	var discount = prompt("请输入修改的折扣 (1-100)", "100");//折扣
+	if (null == discount) {//取消
+	} else if (discount < 1 || discount != parseInt(discount) || discount > 100) {//正整数 1-100
 		alert("折扣输入错误，请输入1-100 之间的正整数");
 	} else {
 		window.self.location = "updateDiscount.action?entityID=" + entityID
@@ -26,7 +26,7 @@ function mergeDiscount(entityID, type) {
 
 // 撤销发布
 function unPublishe(entityID, type) {
-	if (confirm("你真的要撤销该普通商品的发布吗？")) {
+	if (confirm("你真的要撤销该普通商品的发布吗？")) {//撤销确认
 		window.self.location = "unPublishe.action?entityID=" + entityID
 				+ "&type=" + type;
 	}

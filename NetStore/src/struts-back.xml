@@ -92,6 +92,11 @@
 			<result name="input">/WEB-INF/jsp/back/saleProductOperate.jsp
 			</result>
 		</action>
+		<!--返回后台首页		-->
+		<action name="indexBack">
+			<result>/WEB-INF/jsp/back/back.jsp</result>
+		</action>
+		
 	</package>
 	<package name="uploadImage" extends="struts-default">
 		<!--图书录入	-->

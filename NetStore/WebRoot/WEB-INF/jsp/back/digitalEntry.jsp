@@ -10,6 +10,8 @@
 		<script type="text/javascript" src="js/back.js"></script>
 	</head>
 	<body>
+		<p align="right"><a href="indexBack.action">回到后台首页</a></p>
+
 		<s:form action="digitalEntry" method="post" theme="simple"
 			enctype="multipart/form-data">
 			条形码:<s:textfield name="digital.barcode"></s:textfield>

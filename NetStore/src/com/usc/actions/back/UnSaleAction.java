@@ -7,8 +7,10 @@ import com.usc.services.back.ISystemAdmin;
 
 /**
  * 设为普通商品
+ * 
  * @author MZ
  *
+ * 2009-8-28上午09:44:50
  */
 public class UnSaleAction extends ActionSupport
 {

@@ -10,8 +10,10 @@ import com.usc.daos.DigitalDAO;
 
 /**
  * 后台模糊搜索
+ * 
  * @author MZ
  *
+ * 2009-8-28上午09:43:59
  */
 public class BackSerachAction extends ActionSupport
 {

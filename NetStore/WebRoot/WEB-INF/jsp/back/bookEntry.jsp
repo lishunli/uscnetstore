@@ -10,6 +10,8 @@
 		<script type="text/javascript" src="js/back.js"></script>
 	</head>
 	<body>
+		<p align="right"><a href="indexBack.action">回到后台首页</a></p>
+		
 		<s:form action="bookEntry" method="post" theme="simple"
 			enctype="multipart/form-data">
 			ISBN:<s:textfield name="book.isbn"></s:textfield>

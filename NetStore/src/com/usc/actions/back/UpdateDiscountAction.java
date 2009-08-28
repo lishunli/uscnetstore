@@ -9,9 +9,11 @@ import com.usc.daos.CommodityDAO;
 import com.usc.services.back.ISystemAdmin;
 
 /**
- * 后修改产品折扣
+ * 修改产品折扣
+ * 
  * @author MZ
  *
+ * 2009-8-28上午09:45:00
  */
 public class UpdateDiscountAction extends ActionSupport
 {

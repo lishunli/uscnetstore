@@ -19,7 +19,8 @@ import com.usc.services.back.Impl.SystemAdminImpl;
  * 发布产品
  * 
  * @author MZ
- * 
+ *
+ * 2009-8-28上午09:44:23
  */
 public class PublisheAction extends ActionSupport
 {

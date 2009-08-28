@@ -5,8 +5,10 @@ import com.usc.services.back.ISystemAdmin;
 
 /**
  * 修改促销商品（促销价或优先级）
+ * 
  * @author MZ
  *
+ * 2009-8-28上午09:44:12
  */
 public class MergeSaleAction extends ActionSupport
 {

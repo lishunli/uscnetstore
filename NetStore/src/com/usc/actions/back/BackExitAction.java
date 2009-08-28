@@ -5,8 +5,10 @@ import com.opensymphony.xwork2.ActionSupport;
 
 /**
  * 后台退出Action
+ * 
  * @author MZ
  *
+ * 2009-8-26下午16:27:02
  */
 public class BackExitAction extends ActionSupport
 {

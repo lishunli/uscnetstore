@@ -37,9 +37,9 @@
 
 //产品发布
 function publishe(entityID, type) {
-	var discount = prompt("请输入折扣 (1-100)", "100");
-	if (null == discount) {
-	} else if (discount < 1 || discount != parseInt(discount) || discount > 100) {
+	var discount = prompt("请输入折扣 (1-100)", "100");//输入折扣
+	if (null == discount) {//取消
+	} else if (discount < 1 || discount != parseInt(discount) || discount > 100) {//正整数 1-100
 		alert("折扣输入错误，请输入1-100 之间的正整数");
 	} else {
 		window.self.location = "publishe.action?entityID=" + entityID

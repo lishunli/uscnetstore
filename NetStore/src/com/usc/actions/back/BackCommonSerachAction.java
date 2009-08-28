@@ -24,7 +24,8 @@ import com.usc.services.back.ISystemAdmin;
  * 后台普通商品搜索
  * 
  * @author MZ
- * 
+ *
+ * 2009-8-28上午09:42:16
  */
 public class BackCommonSerachAction extends ActionSupport
 {

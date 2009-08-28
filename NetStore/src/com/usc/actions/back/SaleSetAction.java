@@ -10,8 +10,10 @@ import com.usc.services.back.ISystemAdmin;
 
 /**
  * 设置为促销商品
+ * 
  * @author MZ
  *
+ * 2009-8-28上午09:44:32
  */
 public class SaleSetAction extends ActionSupport
 {

@@ -23,6 +23,8 @@
 	</head>
 
 	<body>
+		<p align="right"><a href="indexBack.action">回到后台首页</a></p>
+
 		<s:form name="backSaleSerach" method="post" theme="simple">
 		产品分类
 		<s:select list="{'图书','数码'}" id="type" name="type" value="type"></s:select>

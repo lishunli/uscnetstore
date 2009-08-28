@@ -8,23 +8,28 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
+		<p align="right"><a href="indexBack.action">回到后台首页</a></p>
+
 		<s:form action="updatePass" method="post" theme="simple">
 姓名：<%=session.getAttribute("manger")%><br>
 原密码： <s:password name="operator.operatorPass"></s:password>
-			
+
 			<font color="red">* <span id="operatorPassError"></span> <s:fielderror>
 					<s:param>operator.operatorPass</s:param>
-				</s:fielderror> </font><br>
+				</s:fielderror> </font>
+			<br>
 新密码：<s:password name="newPass"></s:password>
-			
+
 			<font color="red">* <span id="newPassError"></span> <s:fielderror>
 					<s:param>newPass</s:param>
-				</s:fielderror> </font><br>
+				</s:fielderror> </font>
+			<br>
 重复新密码：<s:password name="reNewPass"></s:password>
-			
+
 			<font color="red">* <span id="reNewPassError"></span> <s:fielderror>
 					<s:param>reNewPass</s:param>
-				</s:fielderror> </font><br>
+				</s:fielderror> </font>
+			<br>
 			<s:submit value="修改"></s:submit>
 			<s:reset value="重置"></s:reset>
 			<br>
