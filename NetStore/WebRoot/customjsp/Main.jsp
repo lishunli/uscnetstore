@@ -124,7 +124,7 @@
 										src="<%=basePath
 								+ "ShowImage.image?type=1&entityId="%><s:property value="#bookSaleInit.bookId"/>"
 										width="100" height="100" alt="照片"
-										title="<s:property value="#bookCommonInit.bookName" />"
+										title="<s:property value="#bookSaleInit.bookName" />"
 										onerror="javascript:this.src='../images/custom/NoPhoto.jpg'" />
 								</a>
 								<DIV
