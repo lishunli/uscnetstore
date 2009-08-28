@@ -97,8 +97,17 @@ public class CustomDAO extends HibernateDaoSupport
 	   getHibernateTemplate().update(custom);
 	}
 	
+	public void changeCustomPassword(Custom custom,String newPassword)
+	{
+		custom.setCustomPass(newPassword);
+		getHibernateTemplate().update(custom);
+	}
 	
-	
+	public void changeCustomEmail(Custom custom,String email)
+	{
+		custom.setEmail(email);
+		getHibernateTemplate().update(custom);
+	}
 
 	/*public void delete(Custom persistentInstance)
 	{

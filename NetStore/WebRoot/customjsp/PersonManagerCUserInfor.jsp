@@ -47,7 +47,7 @@
     </tr> 
     <tr>
        <td class=tablebody2 valign=middle  align=right colspan="1">
-		<input type="submit" value="确  定" />&nbsp;&nbsp;&nbsp;<input type="submit" value="取  消" /></td>
+		<input type="submit" value="确  定" />&nbsp;&nbsp;&nbsp;<input type="submit" value="重 置" /></td>
     </tr> 
     </table>
     </form>

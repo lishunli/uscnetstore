@@ -1,35 +1,35 @@
-<%@ page language="java" import="java.util.*" pageEncoding="GBK"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-  <head>
-    <title>ÐÞ¸ÄÃÜÂë</title>
-  </head>
-  
-  <body bgcolor="#EEEEEE">
-         <!--ÓÒÀ¸¿ªÊ¼-->
-         <form name="form1" method="post" action="passwordchange.action" id="form1">
-          <div id="div_Input" class="main_right">
-	        <div class="account_message">
-	            <h3>ÐÞ¸ÄÃÜÂë</h3>
-	            <div class="modify_email reduce_modify_w">
-		             <ul>
-		              <li>Ô­ÓÐÃÜÂë£º&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;  <input name="txt_oldPass" type="password" id="txt_oldPass" class="textbox2" /><span id="txtOldPassValidMsg"></span></li>
-		              <li>ÄúÏëÒªµÄÐÂÃÜÂë£º&nbsp; <input name="txt_newPass" type="password" id="txt_newPass" class="textbox2" /><span id="txtNewPassValidMsg"></span><span class="c_gray"> ÃÜÂë¿ÉÓÉ´óÐ¡Ð´Ó¢ÎÄ×ÖÄ¸¡¢Êý×Ö×é³É£¬³¤¶È6£­12Î»¡£</span></li>
-		              <li>ÇëÔÙ´ÎÊäÈëÐÂÃÜÂë£º<input name="txt_PassRepeat" type="password" id="txt_PassRepeat" class="textbox2" /><span id="txtPassRepeatValidMsg"></span></li>
-		             </ul>
-		             <input class="button_ok add_ok" name="" type="button" value="È· ÈÏ" onclick="btnClientChgPass_Click()" />
-		             <input onclick="__doPostBack('btn_ok','')" name="btn_ok" type="button" id="btn_ok" style="display:none" />
-                        <em><span id="lblMsg" style="color:Red;"></span></em>
-	            </div>
-	            <input type="hidden" name="Hid_Email" id="Hid_Email" value="zhtw1986@163.com" />
-            </div>
-          </div>
-          <!--ÓÒÀ¸½áÊø-->
-          <!--ÓÒÀ¸¿ªÊ¼ÐÞ¸Ä³É¹¦-->
-	      
-	      <!--ÓÒÀ¸½áÊø-->
-            <div class="empty_box"></div>
-      
-        </form>
+  <head>   
+    <title>ä¿®æ”¹å¯†ç </title>
+  </head> 
+  <body bgcolor="#EEEEEE"><br><br><br>
+    <form action="PersonManagerCPasswordAction.action" method="post">
+    
+    <table width="700" cellspacing="1" cellpadding="3" border="1" align="center" class="tableborder2" height="250"> 
+    <tr> 
+       <td valign="middle" height="25" align="center" colspan="3"><font color="blue"><b>ä¿®æ”¹å¯†ç </b></font><br></td> 
+    </tr> 
+    <tr>
+        <td valign="middle"  align="center" width="25%">åŽŸæ¥å¯†ç :</td>
+        <td valign=middle class=tablebody1 width="70%"><input name="oldPassword" type="password"/> &nbsp;</td>
+        <td></td>
+    </tr>         
+    <tr> 
+       <td valign="middle"  align="center" >æ–°å¯†ç :</td>
+        <td valign=middle class=tablebody1><input name="newPassword" type="password"/> &nbsp;</td>
+        <td></td>
+    </tr>   <tr> 
+       <td valign="middle"  align="center" >ç¡®è®¤å¯†ç :</td>
+        <td valign=middle class=tablebody1><input name="newPasswordOk" type="password"/> &nbsp;</td>
+        <td></td>
+    </tr>
+    <tr>
+       <td class=tablebody2 valign=middle  align=right colspan="1">
+		<input type="submit" value="ä¿® æ”¹" />&nbsp;&nbsp;&nbsp;<input type="reset" value="é‡ ç½®" /></td>
+    </tr> 
+    </table>
+    </form>
   </body>
 </html>

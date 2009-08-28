@@ -25,6 +25,15 @@
 	<property name="personmanage" ref="PersonManage"/>
 	</bean>
 	
+	<!-- 用户密码修改 -->
+	<bean id="PersonManagerCPasswordAction" class="com.usc.actions.custom.PersonManagerCPasswordAction">
+	<property name="personmanage" ref="PersonManage"/>
+	</bean>
+	<!-- 用户Email修改 -->
+	<bean id="PersonManagerCEmailAction" class="com.usc.actions.custom.PersonManagerCEmailAction">
+	<property name="personmanage" ref="PersonManage"/>
+	</bean>
+	
 	
 	
 	

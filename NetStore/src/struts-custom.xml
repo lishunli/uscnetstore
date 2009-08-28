@@ -29,5 +29,16 @@
      <action name="UserInforChangeAction" class="UserInforChangeAction">
      <result name="success">/customjsp/UserInforChangeSuccess.jsp</result>
      </action>
+     
+     <!-- 用户修改密码 -->
+     <action name="PersonManagerCPasswordAction" class="PersonManagerCPasswordAction">
+     <result name="success">/customjsp/UserPassChangeSuccess.jsp</result>
+     <result name="error">/customjsp/PersonManagerCPassword.jsp</result>
+     </action>
+     
+     <!--  用户修改Email-->    
+     <action name="PersonManagerCEmailAction" class="PersonManagerCEmailAction">
+     <result name="success">/customjsp/UserEmailChangeSuccess.jsp</result>
+     </action>
 	</package>
 </struts>

@@ -13,14 +13,16 @@ public class IPersonManageImpl implements IPersonManage {
 		customdao.changeCustomInfo(custom, realName, sex, address, postCode, mobile, phone);
 	}
 
-	public void ChangerCustomEmail(Custom custom, String email) {
-		// TODO Auto-generated method stub
-
+	
+	public void changeCustomPassword(Custom custom, String newPassword) {
+		customdao.changeCustomPassword(custom, newPassword);
+		
 	}
 
-	public void ChangerCustomPassword(Custom custom, String password) {
-		// TODO Auto-generated method stub
 
+	public void changeCustomEmail(Custom custom, String email) {
+		customdao.changeCustomEmail(custom, email);
+		
 	}
 
 	public CustomDAO getCustomdao() {
@@ -30,5 +32,6 @@ public class IPersonManageImpl implements IPersonManage {
 	public void setCustomdao(CustomDAO customdao) {
 		this.customdao = customdao;
 	}
+
 
 }
