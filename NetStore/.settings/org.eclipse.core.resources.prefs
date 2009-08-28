@@ -1,6 +1,7 @@
-#Wed Aug 26 16:55:16 CST 2009
+#Fri Aug 28 11:30:34 CST 2009
 eclipse.preferences.version=1
 encoding//WebRoot/js=UTF-8
 encoding//WebRoot/js/Custom.js=UTF-8
 encoding//WebRoot/js/back.js=UTF-8
 encoding//WebRoot/js/publishe.js=UTF-8
+encoding//src/com/usc/actions/custom/FuzzySearchAction.java=GBK
