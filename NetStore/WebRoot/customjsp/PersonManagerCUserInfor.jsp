@@ -5,7 +5,7 @@
     <title>修改个人信息</title>
   </head> 
   <body bgcolor="#EEEEEE"><br><br><br>
-    <form action="UserInforChangeAction.Action" method="post">
+    <form action="UserInforChangeAction.action" method="post">
     
     <table width="700" cellspacing="1" cellpadding="3" border="1" align="center" class="tableborder2" height="350"> 
     <tr> 

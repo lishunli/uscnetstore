@@ -4,10 +4,12 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.usc.daos.Custom;
 import com.usc.daos.CustomDAO;
+import com.usc.services.custom.IPersonManage;
+
 
 public class UserInforChangeAction  extends ActionSupport {
 	
-	private CustomDAO customdao;
+	private  IPersonManage personmanage;
 
 	private String realName;
 	
@@ -72,15 +74,17 @@ public class UserInforChangeAction  extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		Custom custom = (Custom)ActionContext.getContext().getSession().get("Custom");
-		customdao.changeCustomInfo(custom, realName, sex, address, postCode, mobile, phone);
+		personmanage.changeCustomInfo(custom, realName, sex, address, postCode, mobile, phone);
 		return "success";
 	}
 
-	public CustomDAO getCustomdao() {
-		return customdao;
+
+
+	public IPersonManage getPersonmanage() {
+		return personmanage;
 	}
 
-	public void setCustomdao(CustomDAO customdao) {
-		this.customdao = customdao;
+	public void setPersonmanage(IPersonManage personmanage) {
+		this.personmanage = personmanage;
 	}
 }

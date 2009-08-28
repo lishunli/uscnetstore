@@ -22,7 +22,7 @@
 	</bean>
 	<!-- 用户信息修改 -->
 	<bean id="UserInforChangeAction" class="com.usc.actions.custom.UserInforChangeAction">
-	<property name="customdao" ref="CustomDAO"></property>
+	<property name="personmanage" ref="PersonManage"/>
 	</bean>
 	
 	

@@ -96,6 +96,10 @@ public class CustomDAO extends HibernateDaoSupport
 		//String queryString = "update custom set realName = '"+realName+"',sex = sex,address = '"+address+"',postCode  ='"+postCode+"',mobile = '"+mobile+"',phone = '"+phone+"' where  =customName='"+customName+"'";
 	   getHibernateTemplate().update(custom);
 	}
+	
+	
+	
+
 	/*public void delete(Custom persistentInstance)
 	{
 		log.debug("deleting Custom instance");

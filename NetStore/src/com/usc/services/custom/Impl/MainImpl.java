@@ -14,15 +14,7 @@ public class MainImpl implements IMain {
 	
 	private DigitalDAO digitaldao;
 	
-/*	public List<Book> FuzzySearchBooks(String fuzzy) {
-		
-		return bookdao.FuzzySearchBooks(fuzzy);
-	}
 
-	public List<Digital> FuzzySearchDigitals(String fuzzy) {
-		
-		return digitaldao.FuzzySearchDigitals(fuzzy);
-	}*/
 
 	public BookDAO getBookdao() {
 		return bookdao;

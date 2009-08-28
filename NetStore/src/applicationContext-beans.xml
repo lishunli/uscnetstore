@@ -138,6 +138,9 @@
 	<property name="bookdao" ref="BookDAO"/>
 	<property name="digitaldao" ref="DigitalDAO"/>
 	</bean>
+	<bean id="PersonManage" class="com.usc.services.custom.Impl.IPersonManageImpl">
+	<property name="customdao" ref="CustomDAO"/>
+	</bean>
 	
 	
 	
