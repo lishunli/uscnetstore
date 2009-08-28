@@ -1,66 +1,53 @@
-<%@ page language="java" import="java.util.*" pageEncoding="gbk"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>   
-    <title>My JSP 'UserInforChange.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
-  </head>
-  
+    <title>ä¿®æ”¹ä¸ªäººä¿¡æ¯</title>
+  </head> 
   <body bgcolor="#EEEEEE"><br><br><br>
-    <form action="UserInforChange.Action" method="post">
-    <table width="700" cellspacing="1" cellpadding="3" border="3" align="center" class="tableborder2" height="350"> 
+    <form action="UserInforChangeAction.Action" method="post">
+    
+    <table width="700" cellspacing="1" cellpadding="3" border="1" align="center" class="tableborder2" height="350"> 
     <tr> 
-       <td valign="middle" height="25" align="center" colspan="3"><font color="blue"><b>ĞŞ¸Ä¸öÈËĞÅÏ¢</b></font><br></td> 
+       <td valign="middle" height="25" align="center" colspan="3"><font color="blue"><b>ä¿®æ”¹ä¸ªäººä¿¡æ¯</b></font><br></td> 
     </tr> 
     <tr>
-        <td valign="middle"  align="center" width="25%">ÕæÊµĞÕÃû</td>
-        <td valign=middle class=tablebody1 width="70%"><input name="usernamet" type="text"/> &nbsp;</td>
-        <td>*</td>
+        <td valign="middle"  align="center" width="25%">çœŸå®å§“å:</td>
+        <td valign=middle class=tablebody1 width="70%"><input name="realName" type="text"/> &nbsp;</td>
+        <td></td>
     </tr>   
     <tr> 
-       <td valign="middle"  align="center" >ĞÔ ±ğ</td>
-       <td width="6%" class="tablebody1">${user.sex}</td> 
+       <td valign="middle"  align="center" >æ€§ åˆ«:</td>
+       <td width="6%" class="tablebody1">
+       <select name="sex" id="sex">
+       <option value="ç”·">ç”·</option>
+       <option value="å¥³">å¥³</option>
+       </select>
+       </td> 
+       
     </tr> 
-       <td valign="middle"  align="center" >µØ Ö·</td>
-       <td>
-          <select name="selP1" id="selP1" >
-            <option value=1>ËÄ´¨</option>
-            <option value=2>ÉÏº£</option>
-            <option value=3>Õã½­</option>
-          </select>
-          <select name="selP2" id="selP2" >
-            <option value=1>³É¶¼ÊĞ</option>
-            <option value=2>ÉÏº£</option>
-            <option value=3>ºÏ·ÊÊĞ</option>
-          </select>
-        </td>
+       <td valign="middle"  align="center" >åœ° å€:</td>
+     
+  <td valign=middle class=tablebody1><input name="address" type="text"  size="40"/> &nbsp;</td>
+        
     <tr> 
-       <td valign="middle"  align="center" >ÓÊ ±à</td>
-        <td valign=middle class=tablebody1><input name="usernamet" type="text"/> &nbsp;</td>
-        <td>*</td>
+       <td valign="middle"  align="center" >é‚® ç¼–:</td>
+        <td valign=middle class=tablebody1><input name="postCode" type="text"/> &nbsp;</td>
+        <td></td>
     </tr> 
      <tr> 
-       <td valign="middle"  align="center" >ÒÆ¶¯µç»°</td>
+       <td valign="middle"  align="center" >ç§»åŠ¨ç”µè¯:</td>
         <td valign=middle class=tablebody1><input name="mobile" type="text"/> &nbsp;</td>
-        <td>*</td>
+        <td></td>
     </tr> 
      <tr> 
-       <td valign="middle"  align="center" >¹Ì¶¨µç»°</td>
+       <td valign="middle"  align="center" >å›ºå®šç”µè¯:</td>
         <td valign=middle class=tablebody1><input name="phone" type="text"/> &nbsp;</td>
-        <td>*</td>
+        <td></td>
     </tr> 
     <tr>
-       <td class=tablebody2 valign=middle  align=right colspan="3">
-		<input type="submit" value="È·  ¶¨" /><input type="submit" value="È¡  Ïû" /></td>
+       <td class=tablebody2 valign=middle  align=right colspan="1">
+		<input type="submit" value="ç¡®  å®š" />&nbsp;&nbsp;&nbsp;<input type="submit" value="å–  æ¶ˆ" /></td>
     </tr> 
     </table>
     </form>

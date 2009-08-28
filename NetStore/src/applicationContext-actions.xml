@@ -20,6 +20,10 @@
 	<property name="digitalDao" ref="DigitalDAO"></property>
 	<property name="sysAdmin" ref="SystemAdminImpl"></property>
 	</bean>
+	<!-- 用户信息修改 -->
+	<bean id="UserInforChangeAction" class="com.usc.actions.custom.UserInforChangeAction">
+	<property name="customdao" ref="CustomDAO"></property>
+	</bean>
 	
 	
 	

@@ -37,7 +37,7 @@
    </tr>
    <tr>  
      <td align="center"><s:label >性别：</s:label></td>   
-  <td><s:radio name="custom.sex" list="#{'1':'男','0':'女'}" value="'1'"> </s:radio> </td>
+  <td><s:radio name="custom.sex" list="#{'男':'男','女':'女'}" value="'男'"> </s:radio> </td>
  <td align="right"><s:label >*</s:label></td>
    </tr>
     

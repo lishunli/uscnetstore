@@ -31,7 +31,7 @@
         </div>      <div align="left" class="STYLE12">
         <div align="left">          身 份：
         <%
-        if(custom1.getActiveFlag()==0)
+        if(custom1.getVipFlag()==0)
         out.print("普通注册用户");
         else out.print("VIP用户");
          %>

@@ -84,6 +84,18 @@ public class CustomDAO extends HibernateDaoSupport
 		return findByProperty(EMAIL, email);
 	}
 
+	
+	public void changeCustomInfo(Custom custom,String realName,String sex,String address,String postCode,String mobile,String phone)
+	{
+		custom.setRealName(realName);
+		custom.setSex(sex);
+		custom.setAddress(address);
+		custom.setPostCode(postCode);
+		custom.setMobile(mobile);
+		custom.setPhone(phone);
+		//String queryString = "update custom set realName = '"+realName+"',sex = sex,address = '"+address+"',postCode  ='"+postCode+"',mobile = '"+mobile+"',phone = '"+phone+"' where  =customName='"+customName+"'";
+	   getHibernateTemplate().update(custom);
+	}
 	/*public void delete(Custom persistentInstance)
 	{
 		log.debug("deleting Custom instance");

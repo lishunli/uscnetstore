@@ -25,5 +25,9 @@
 	      <result>/customjsp/FuzzySearch.jsp</result>
 		</action>
 		
+		<!-- 用户信息修改 -->
+     <action name="UserInforChangeAction" class="UserInforChangeAction">
+     <result name="success">/customjsp/UserInforChangeSuccess.jsp</result>
+     </action>
 	</package>
 </struts>
