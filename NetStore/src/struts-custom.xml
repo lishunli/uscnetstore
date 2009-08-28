@@ -29,6 +29,15 @@
      <action name="UserInforChangeAction" class="UserInforChangeAction">
      <result name="success">/customjsp/UserInforChangeSuccess.jsp</result>
      </action>
+
+     
+		<!--   首页面的初始化操作，获得加载页面的数据  -->
+		<action name="init" class="InitAction">
+			<result name="success">/customjsp/Main.jsp</result>
+			<result name="input">/customjsp/Main.jsp</result>
+		</action>
+     
+
      
      <!-- 用户修改密码 -->
      <action name="PersonManagerCPasswordAction" class="PersonManagerCPasswordAction">
@@ -40,5 +49,6 @@
      <action name="PersonManagerCEmailAction" class="PersonManagerCEmailAction">
      <result name="success">/customjsp/UserEmailChangeSuccess.jsp</result>
      </action>
+
 	</package>
 </struts>

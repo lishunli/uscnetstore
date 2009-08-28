@@ -1,6 +1,7 @@
 package com.usc.daos;
 
 import java.sql.Blob;
+import java.util.Date;
 
 public class DigitalExtra
 {
@@ -14,6 +15,14 @@ public class DigitalExtra
 	private Float discount;// 折扣
 	private Float salePrice;//特价
 	private Integer priority; //优先级
+	private Date publisheTime;//发布时间
+	private Integer productTypeName;//类型
+	private String parameter;//参数
+	private Blob photo;//图片
+	private String description;//说明
+	private String specialExplanation;//特别说明
+	private Float privilegePrice;//会员价，有可能是定价*折扣，有可能是vip
+	
 	public Integer getDigitalId()
 	{
 		return digitalId;
@@ -94,5 +103,62 @@ public class DigitalExtra
 	{
 		this.priority = priority;
 	}
+	public Date getPublisheTime()
+	{
+		return publisheTime;
+	}
+	public void setPublisheTime(Date publisheTime)
+	{
+		this.publisheTime = publisheTime;
+	}
+	public Integer getProductTypeName()
+	{
+		return productTypeName;
+	}
+	public void setProductTypeName(Integer productTypeName)
+	{
+		this.productTypeName = productTypeName;
+	}
+	public String getParameter()
+	{
+		return parameter;
+	}
+	public void setParameter(String parameter)
+	{
+		this.parameter = parameter;
+	}
+	public Blob getPhoto()
+	{
+		return photo;
+	}
+	public void setPhoto(Blob photo)
+	{
+		this.photo = photo;
+	}
+	public String getDescription()
+	{
+		return description;
+	}
+	public void setDescription(String description)
+	{
+		this.description = description;
+	}
+	public String getSpecialExplanation()
+	{
+		return specialExplanation;
+	}
+	public void setSpecialExplanation(String specialExplanation)
+	{
+		this.specialExplanation = specialExplanation;
+	}
+	public Float getPrivilegePrice()
+	{
+		return privilegePrice;
+	}
+	public void setPrivilegePrice(Float privilegePrice)
+	{
+		this.privilegePrice = privilegePrice;
+	}
+	
 	
 }

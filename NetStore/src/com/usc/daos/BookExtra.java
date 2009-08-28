@@ -1,5 +1,8 @@
 package com.usc.daos;
 
+import java.sql.Blob;
+import java.util.Date;
+
 
 public class BookExtra
 {
@@ -12,6 +15,14 @@ public class BookExtra
 	private Float discount;// 折扣
 	private Float salePrice;//特价
 	private Integer priority; //优先级
+	private Integer productTypeName;//类型
+	private Date publishingTime;//出版时间
+	private Date publisheTime;//发布时间
+	private String version;//版本
+	private String catalog;//目录
+	private Blob picture;//照片
+	private String briefIntroduction;//内容简介
+	private Float privilegePrice;//会员价，有可能是定价*折扣，有可能是vip
 	
 	public Integer getBookId()
 	{
@@ -84,6 +95,70 @@ public class BookExtra
 	public void setPriority(Integer priority)
 	{
 		this.priority = priority;
+	}
+	public Integer getProductTypeName()
+	{
+		return productTypeName;
+	}
+	public void setProductTypeName(Integer productTypeName)
+	{
+		this.productTypeName = productTypeName;
+	}
+	public Date getPublishingTime()
+	{
+		return publishingTime;
+	}
+	public void setPublishingTime(Date publishingTime)
+	{
+		this.publishingTime = publishingTime;
+	}
+	public Date getPublisheTime()
+	{
+		return publisheTime;
+	}
+	public void setPublisheTime(Date publisheTime)
+	{
+		this.publisheTime = publisheTime;
+	}
+	public String getVersion()
+	{
+		return version;
+	}
+	public void setVersion(String version)
+	{
+		this.version = version;
+	}
+	public String getCatalog()
+	{
+		return catalog;
+	}
+	public void setCatalog(String catalog)
+	{
+		this.catalog = catalog;
+	}
+	public Blob getPicture()
+	{
+		return picture;
+	}
+	public void setPicture(Blob picture)
+	{
+		this.picture = picture;
+	}
+	public String getBriefIntroduction()
+	{
+		return briefIntroduction;
+	}
+	public void setBriefIntroduction(String briefIntroduction)
+	{
+		this.briefIntroduction = briefIntroduction;
+	}
+	public Float getPrivilegePrice()
+	{
+		return privilegePrice;
+	}
+	public void setPrivilegePrice(Float privilegePrice)
+	{
+		this.privilegePrice = privilegePrice;
 	}
 	
 	

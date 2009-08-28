@@ -24,6 +24,13 @@
 	<bean id="UserInforChangeAction" class="com.usc.actions.custom.UserInforChangeAction">
 	<property name="personmanage" ref="PersonManage"/>
 	</bean>
+	<!--首页面的初始化操作，获得加载页面的数据	-->
+	<bean id="InitAction" class="com.usc.actions.custom.InitAction" scope="prototype">
+		<property name="bookDao" ref="BookDAO"></property>
+		<property name="digitalDao" ref="DigitalDAO"></property>
+		<property name="sysAdmin" ref="SystemAdminImpl"></property>
+		<property name="commodityDao" ref="CommodityDAO"></property>
+	</bean>
 	
 	<!-- 用户密码修改 -->
 	<bean id="PersonManagerCPasswordAction" class="com.usc.actions.custom.PersonManagerCPasswordAction">
@@ -33,7 +40,6 @@
 	<bean id="PersonManagerCEmailAction" class="com.usc.actions.custom.PersonManagerCEmailAction">
 	<property name="personmanage" ref="PersonManage"/>
 	</bean>
-	
 	
 	
 	
