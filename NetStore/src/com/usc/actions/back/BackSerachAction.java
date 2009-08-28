@@ -66,10 +66,10 @@ public class BackSerachAction extends ActionSupport
 			Map request = (Map) ActionContext.getContext().get("request");
 			if ("图书".equals(type.trim()))
 			{
-				request.put("bookSerach", bookDao.findByLikeBookName(productsName.trim()));
+				request.put("bookSerach", bookDao.findByLikeBookName(productsName.trim()));//未发布的图书模糊查找，
 			} else if ("数码".equals(type.trim()))
 			{
-				request.put("digitalSerach",digitalDao.findByLikeDigitalName(productsName.trim()));
+				request.put("digitalSerach",digitalDao.findByLikeDigitalName(productsName.trim()));//未发布的书面模糊查找，
 			}
 		}
 		return SUCCESS;

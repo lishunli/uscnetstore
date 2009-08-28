@@ -41,7 +41,7 @@ public class UnSaleAction extends ActionSupport
 	@Override
 	public String execute() throws Exception
 	{
-		sysAdmin.setsaleFlag(type, entityID, 0);
+		sysAdmin.setsaleFlag(type, entityID, 0);//把类型和实物传过去，促销标志设置为0
 		return SUCCESS;
 	}
 	

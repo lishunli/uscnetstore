@@ -107,14 +107,10 @@ public class BackCommonSerachAction extends ActionSupport
 					{
 						if (commodity.getSaleFlag() == 0)// 发布，但不是促销商品
 						{
-							BookExtra bookExtra = new BookExtra();
-							BeanUtils.copyProperties(bookExtra, book);
+							BookExtra bookExtra = new BookExtra();//实例化扩展Book的对象
+							BeanUtils.copyProperties(bookExtra, book);//类copy
 							bookExtra.setDiscount(sysAdmin.getDiscount(1, book
-									.getBookId()));
-							bookExtra.setSalePrice(sysAdmin.getSalePrice(1,
-									book.getBookId()));
-							bookExtra.setPriority(sysAdmin.getPriority(1, book
-									.getBookId()));
+									.getBookId()));//设置折扣
 							bookExtraList.add(bookExtra);
 						}
 					}
@@ -134,11 +130,7 @@ public class BackCommonSerachAction extends ActionSupport
 							DigitalExtra digitalExtra = new DigitalExtra();
 							BeanUtils.copyProperties(digitalExtra, digital);
 							digitalExtra.setDiscount(sysAdmin.getDiscount(2,
-									digitalExtra.getDigitalId()));
-							digitalExtra.setSalePrice(sysAdmin.getSalePrice(2,
-									digitalExtra.getDigitalId()));
-							digitalExtra.setPriority(sysAdmin.getPriority(2,
-									digitalExtra.getDigitalId()));
+									digitalExtra.getDigitalId()));//设置折扣
 							digitalExtraList.add(digitalExtra);
 						}
 					}

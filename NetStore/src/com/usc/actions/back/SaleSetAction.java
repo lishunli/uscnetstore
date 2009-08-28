@@ -90,7 +90,8 @@ public class SaleSetAction extends ActionSupport
 		sale.setOperatorID(sysAdmin.getOperatorID(ActionContext.getContext().getSession().get("manger").toString()));
 		sale.setSalePrice(salePrice);
 		sale.setPriority(priority);
-		sysAdmin.saveSale(sale);
+		//设置表中属性
+		sysAdmin.saveSale(sale);//接口，保存商品，要考虑优先级存在问题
 		return SUCCESS;
 	}
 	

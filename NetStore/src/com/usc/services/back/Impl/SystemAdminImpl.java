@@ -190,7 +190,7 @@ public class SystemAdminImpl implements ISystemAdmin
 	}
 
 	/**
-	 * 根据产品类型ID和实物ID来设置商品促销标志位
+	 * 根据产品类型ID和实物ID来设置商品促销标志位和从促销表里删除
 	 */
 	public void setsaleFlag(int productTypeID, int entityID, int flag)
 	{
@@ -199,6 +199,10 @@ public class SystemAdminImpl implements ISystemAdmin
 		{
 			commodity.setSaleFlag(flag);// 设置促销商品标志位
 			commodityDao.merge(commodity);// 更新
+			for(Sale sale :saleDao.findByCommodityId(commodity.getCommodityId()))
+			{
+				saleDao.delete(sale);//从促销表里删除
+			}
 		}
 	}
 

@@ -81,6 +81,7 @@
 		<property name="digitalDao" ref="DigitalDAO"></property>
 		<property name="sysAdmin" ref="SystemAdminImpl"></property>
 		<property name="commodityDao" ref="CommodityDAO"></property>
+		<property name="saleDao" ref="SaleDAO"></property>
 	</bean>
 	<!--产品发布	-->
 	<bean id="PublisheAction" class="com.usc.actions.back.PublisheAction"

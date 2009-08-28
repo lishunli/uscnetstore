@@ -67,7 +67,7 @@ public class MergeSaleAction extends ActionSupport
 	@Override
 	public String execute() throws Exception
 	{
-		sysAdmin.mergeSale(type, entityID, salePrice, priority);
+		sysAdmin.mergeSale(type, entityID, salePrice, priority);//修改促销表，促销价和优先级
 		return SUCCESS;
 	}
 

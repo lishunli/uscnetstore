@@ -74,6 +74,12 @@ public class UpdateDiscountAction extends ActionSupport
 	@Override
 	public String execute() throws Exception
 	{
+		/**
+		 * 1.获得产品ID
+		 * 2.通过产品ID获得商品（应该唯一）
+		 * 3.设置此商品的折扣
+		 * 4.修改此商品
+		 */
 		for(Commodity commodity : commodityDao.findByProductsID(sysAdmin.getProductID(type, entityID)))
 		{
 			commodity.setDiscount(discount);

@@ -59,6 +59,11 @@ public class UnPublisheAction extends ActionSupport
 		/**
 		 * 删除已发布的产品从商品表中
 		 */
+		/**
+		 * 1.根据类型和实物ID来找到产品ID
+		 * 2.通过产品ID找到商品ID（应该唯一）
+		 * 3.删除该商品
+		 */
 		for(Commodity commodity : commodityDao.findByProductsID(sysAdmin.getProductID(type, entityID)))
 		{
 			commodityDao.delete(commodity);
