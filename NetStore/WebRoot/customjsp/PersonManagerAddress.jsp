@@ -1,36 +1,49 @@
-<%@ page language="java" import="java.util.*" pageEncoding="gbk"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="com.usc.daos.Custom" %>
+ <%Custom custom3 = (Custom)session.getAttribute("Custom");%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>   
-    <title>My JSP 'AddressShow.jsp' starting page</title>
+    <title>åœ°å€è–„</title>
+  </head> 
+  <body bgcolor="#EEEEEE"><br><br><br>
+    <form action="PersonManagerAddress.action" method="post">
     
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
-  </head>
-  
-  <body bgcolor="#EEEEEE">
-  <form action="AddressShow.Action" method="post">
-<table width="715" border="1" height="215">
-<tbody><tr>
-<td>³£ÓÃÊÕ»õµØÖ·£º</td></tr>
-<tr>
-<td>&nbsp;ÊÕ»õÈË£º</td></tr>
-<tr>
-<td>&nbsp;ÊÕ»õµØÖ·£º</td></tr>
-<tr>
-<td>&nbsp;µç»°£º</td></tr>
-<tr>
-<td align="center">&nbsp;<a href="PersonManagerCAddress.jsp">ĞŞ ¸Ä</a><br></td>
-
-</tr>
-</tbody></table>
-</form>
+    <table width="700" cellspacing="1" cellpadding="3" border="1" align="center" class="tableborder2" height="250"> 
+    <tr> 
+       <td valign="middle" height="25" align="center" colspan="3"><font color="blue"><b>åœ°å€è–„</b></font><br></td> 
+    </tr> 
+    <tr>
+        <td valign="middle"  align="center" width="25%">æ”¶è´§äººå§“å:</td>
+        <td valign=middle class=tablebody1 width="70%"><%out.print(custom3.getCustomName()); %>&nbsp;</td>
+        <td></td>
+    </tr>         
+    <tr> 
+       <td valign="middle"  align="center" >å¸¸ç”¨æ”¶è´§äººåœ°å€:</td>
+        <td valign=middle class=tablebody1><%out.print(custom3.getAddress()); %>&nbsp;</td>
+        <td></td>
+    </tr>   
+    <tr> 
+       <td valign="middle"  align="center" >ä»˜æ¬¾æ–¹å¼:</td>
+        <td valign=middle class=tablebody1>è´§åˆ°ä»˜æ¬¾&nbsp;</td>
+        <td></td>
+    </tr>
+      <tr> 
+       <td valign="middle"  align="center" >æ‰‹æœºå·ç :</td>
+        <td valign=middle class=tablebody1><%out.print(custom3.getMobile()); %> &nbsp;</td>
+        <td></td>
+    </tr>
+    
+     <tr> 
+       <td valign="middle"  align="center" >ç”µè¯å·ç :</td>
+        <td valign=middle class=tablebody1><%out.print(custom3.getPhone()); %> &nbsp;</td>
+        <td></td>
+    </tr>
+    <tr>
+       <td class=tablebody2 valign=middle  align=right colspan="1">
+		<input type="submit" value="ä¿® æ”¹" />&nbsp;&nbsp;&nbsp;<input type="reset" value="é‡ ç½®" /></td>
+    </tr> 
+    </table>
+    </form>
   </body>
 </html>
