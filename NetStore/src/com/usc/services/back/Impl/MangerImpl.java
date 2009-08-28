@@ -67,11 +67,8 @@ public class MangerImpl implements IManger
 			{
 				if (oper.getOperatorPass().equals(operator.getOperatorPass()))
 				{
-					operDao.delete(oper);
-					operator.setOperatorPass(newPass);
-					operator.setOperatorSex(oper.getOperatorSex());
-					operator.setOperatorType(oper.getOperatorType());//设置operator
-					operDao.merge(operator);//插入新的用户
+					oper.setOperatorPass(newPass);//设置新密码
+					operDao.merge(oper);//修改
 					return true;//修改成功，返回真
 				}
 			}
