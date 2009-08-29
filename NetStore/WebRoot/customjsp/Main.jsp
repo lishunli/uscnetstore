@@ -28,7 +28,7 @@
 		
 		<s:action name="init"></s:action>
 		<s:if test="#request.bookCommonInit">
-			<table width="800" align="center">
+			<table width="75%" align="center" >
 				<tr>
 					图书
 					<p align="right">
