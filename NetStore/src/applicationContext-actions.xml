@@ -16,16 +16,19 @@
 	</bean>
 	<!-- 搜索产品 -->
 	<bean id="FuzzySearchAction" class="com.usc.actions.custom.FuzzySearchAction">
-	<property name="bookDao" ref="BookDAO"/>
-	<property name="digitalDao" ref="DigitalDAO"></property>
-	<property name="sysAdmin" ref="SystemAdminImpl"></property>
+		<property name="bookDao" ref="BookDAO" />
+		<property name="digitalDao" ref="DigitalDAO"></property>
+		<property name="sysAdmin" ref="SystemAdminImpl"></property>
+		<property name="saleDao" ref="SaleDAO"></property>
+		<property name="commodityDao" ref="CommodityDAO"></property>
 	</bean>
 	<!-- 用户信息修改 -->
 	<bean id="UserInforChangeAction" class="com.usc.actions.custom.UserInforChangeAction">
-	<property name="personmanage" ref="PersonManage"/>
+		<property name="personmanage" ref="PersonManage" />
 	</bean>
 	<!--首页面的初始化操作，获得加载页面的数据	-->
-	<bean id="InitAction" class="com.usc.actions.custom.InitAction" scope="prototype">
+	<bean id="InitAction" class="com.usc.actions.custom.InitAction"
+		scope="prototype">
 		<property name="bookDao" ref="BookDAO"></property>
 		<property name="digitalDao" ref="DigitalDAO"></property>
 		<property name="sysAdmin" ref="SystemAdminImpl"></property>
@@ -36,26 +39,26 @@
 	
 	<!-- 用户密码修改 -->
 	<bean id="PersonManagerCPasswordAction" class="com.usc.actions.custom.PersonManagerCPasswordAction">
-	<property name="personmanage" ref="PersonManage"/>
+		<property name="personmanage" ref="PersonManage" />
 	</bean>
 	<!-- 用户Email修改 -->
 	<bean id="PersonManagerCEmailAction" class="com.usc.actions.custom.PersonManagerCEmailAction">
-	<property name="personmanage" ref="PersonManage"/>
+		<property name="personmanage" ref="PersonManage" />
 	</bean>
 	
 	<!-- U币转换 -->
 	<bean id="UTransforAction" class="com.usc.actions.custom.UTransforAction">
-	<property name="personmanage" ref="PersonManage"/>
+		<property name="personmanage" ref="PersonManage" />
 	</bean>
 	
 	<!-- 建议 -->
 	<bean id="PersonManagerSuggestionAction" class="com.usc.actions.custom.PersonManagerSuggestionAction">
-	<property name="personmanage" ref="PersonManage"></property>
+		<property name="personmanage" ref="PersonManage"></property>
 	</bean>
 	
 	<!-- 积分换U币 -->
 	<bean id="PersonManagerBSwapUAction" class="com.usc.actions.custom.PersonManagerBSwapUAction">
-	<property name="personmanage" ref="PersonManage"></property>
+		<property name="personmanage" ref="PersonManage"></property>
 	</bean>
 	
 	
@@ -141,7 +144,8 @@
 		<property name="sysAdmin" ref="SystemAdminImpl"></property>
 	</bean>
 	<!--设置为促销商品-->
-	<bean id="SaleSetAction" class="com.usc.actions.back.SaleSetAction" scope="prototype">
+	<bean id="SaleSetAction" class="com.usc.actions.back.SaleSetAction"
+		scope="prototype">
 		<property name="commodity" ref="Commodity"></property>
 		<property name="commodityDao" ref="CommodityDAO"></property>
 		<property name="sysAdmin" ref="SystemAdminImpl"></property>
@@ -149,14 +153,14 @@
 		<property name="saleDao" ref="SaleDAO"></property>
 	</bean>
 	<!--修改促销商品（促销价或优先级）	-->
-	<bean id="MergeSaleAction" class="com.usc.actions.back.MergeSaleAction" scope="prototype">
+	<bean id="MergeSaleAction" class="com.usc.actions.back.MergeSaleAction"
+		scope="prototype">
 		<property name="sysAdmin" ref="SystemAdminImpl"></property>
 	</bean>
 	
 	<!--设为普通商品-->
-	<bean id="UnSaleAction" class="com.usc.actions.back.UnSaleAction" scope="prototype">
+	<bean id="UnSaleAction" class="com.usc.actions.back.UnSaleAction"
+		scope="prototype">
 		<property name="sysAdmin" ref="SystemAdminImpl"></property>
 	</bean>
-
-
 </beans>

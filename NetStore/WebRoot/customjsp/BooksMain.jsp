@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
+<s:include value="/Top.jsp" ></s:include>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"

@@ -22,7 +22,8 @@
 		
 		<!-- 搜索产品 -->
 		<action name="FuzzySearchAction" class="FuzzySearchAction">
-	      <result>/customjsp/FuzzySearch.jsp</result>
+	      <result name="success">/customjsp/FuzzySearch.jsp</result>
+	      <result name="input">/customjsp/FuzzySearch.jsp</result>
 		</action>
 		
 		<!-- 用户信息修改 -->
