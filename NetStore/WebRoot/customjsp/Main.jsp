@@ -169,7 +169,7 @@
 								</DIV>
 								<p style="color: red">
 									促销价￥
-									<s:property value="#digitalSaleInit.publishedPrice" />
+									<s:property value="#digitalSaleInit.privilegePrice" />
 								</p>
 							</td>
 						</s:if>
