@@ -29,7 +29,7 @@
 				<tr>
 					图书
 					<p align="right">
-						<a href="#">更多</a>
+						<a href="BooksMain.jsp">更多</a>
 					</p>
 				</tr>
 				<tr>

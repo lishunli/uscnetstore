@@ -52,42 +52,42 @@
 		</action>
 		<!--撤销发布		-->
 		<action name="unPublishe" class="UnPublisheAction">
-			<result name="success">/WEB-INF/jsp/back/back.jsp
+			<result name="success" type="redirect">backCommonSerach.action
 			</result>
 			<result name="input">/WEB-INF/jsp/back/commonProductOperate.jsp
 			</result>
 		</action>
 		<!--产品发布		-->
 		<action name="publishe" class="PublisheAction">
-			<result name="success">/WEB-INF/jsp/back/back.jsp
+			<result name="success" type="redirect">backSerach.action
 			</result>
 			<result name="input">/WEB-INF/jsp/back/publishe.jsp
 			</result>
 		</action>
 		<!--修改普通商品的折扣		-->
 		<action name="updateDiscount" class="UpdateDiscountAction">
-			<result name="success">/WEB-INF/jsp/back/back.jsp
+			<result name="success" type="redirect">backCommonSerach.action
 			</result>
 			<result name="input">/WEB-INF/jsp/back/commonProductOperate.jsp
 			</result>
 		</action>
 		<!--设置促销商品		-->
 		<action name="saleSet" class="SaleSetAction">
-			<result name="success">/WEB-INF/jsp/back/back.jsp
+			<result name="success" type="redirect">backCommonSerach.action
 			</result>
 			<result name="input">/WEB-INF/jsp/back/commonProductOperate.jsp
 			</result>
 		</action>
 		<!--修改促销商品（折扣或优先级） -->
 		<action name="mergeSale" class="MergeSaleAction">
-			<result name="success">/WEB-INF/jsp/back/back.jsp
+			<result name="success" type="redirect">backSaleSerach.action
 			</result>
 			<result name="input">/WEB-INF/jsp/back/saleProductOperate.jsp
 			</result>
 		</action>	
 		<!--设为普通商品		-->
 		<action name="unSale" class="UnSaleAction">
-			<result name="success">/WEB-INF/jsp/back/back.jsp
+			<result name="success" type="redirect">backSaleSerach.action
 			</result>
 			<result name="input">/WEB-INF/jsp/back/saleProductOperate.jsp
 			</result>
@@ -101,7 +101,7 @@
 	<package name="uploadImage" extends="struts-default">
 		<!--图书录入	-->
 		<action name="bookEntry" class="BookEntryAction">
-			<result name="success">/WEB-INF/jsp/back/back.jsp
+			<result name="success" type="redirect">bookEntry.action
 			</result>
 			<result name="input">/WEB-INF/jsp/back/bookEntry.jsp
 			</result>
@@ -116,7 +116,7 @@
 		
 		<!--数码录入		-->
 		<action name="digitalEntry" class="DigitalEntryAction">
-			<result name="success">/WEB-INF/jsp/back/back.jsp
+			<result name="success" type="redirect">digitalEntry.action
 			</result>
 			<result name="input">/WEB-INF/jsp/back/digitalEntry.jsp
 			</result>

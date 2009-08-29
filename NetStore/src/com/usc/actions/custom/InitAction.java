@@ -137,6 +137,6 @@ public class InitAction extends ActionSupport
 		}
 		request.put("digitalCommonInit", digitalExtraCommonList);
 		request.put("digitalSaleInit", digitalExtraSaleList);
-		return SUCCESS;
+		return null;
 	}
 }

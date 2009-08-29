@@ -33,8 +33,6 @@
      
 		<!--   首页面的初始化操作，获得加载页面的数据  -->
 		<action name="init" class="InitAction">
-			<result name="success">/customjsp/Main.jsp</result>
-			<result name="input">/customjsp/Main.jsp</result>
 		</action>
      
 
