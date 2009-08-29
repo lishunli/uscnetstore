@@ -23,13 +23,14 @@
 	</head>
 
 	<body>
+		<s:include value="/Top.jsp" ></s:include>
 		<s:action name="init"></s:action>
 		<s:if test="#request.bookCommonInit">
 			<table width="800" align="center">
 				<tr>
 					图书
 					<p align="right">
-						<a href="BooksMain.jsp">更多</a>
+						<a href="BooksMain.jsp" target="_blank">更多</a>
 					</p>
 				</tr>
 				<tr>
@@ -70,7 +71,7 @@
 				<tr>
 					数码
 					<p align="right">
-						<a href="#">更多</a>
+						<a href="DigitalsMain.jsp" target="_blank">更多</a>
 					</p>
 				</tr>
 				<tr>
@@ -111,7 +112,7 @@
 				<tr>
 					图书促销
 					<p align="right">
-						<a href="#">更多</a>
+						<a href="BooksMain.jsp" target="_blank">更多</a>
 					</p>
 				</tr>
 				<tr>
@@ -147,7 +148,7 @@
 				<tr>
 					数码促销
 					<p align="right">
-						<a href="#">更多</a>
+						<a href="DigitalsMain.jsp" target="_blank">更多</a>
 					</p>
 				</tr>
 				<tr>

@@ -12,7 +12,7 @@
 	<head>
 		<base href="<%=basePath%>">
 
-		<title>My JSP 'BooksMain.jsp' starting page</title>
+		<title>图书信息</title>
 
 		<meta http-equiv="pragma" content="no-cache">
 		<meta http-equiv="cache-control" content="no-cache">
@@ -31,9 +31,6 @@
 			<table width="800" align="center">
 				<tr>
 					图书
-					<p align="right">
-						<a href="BooksMain.jsp">更多</a>
-					</p>
 				</tr>
 				<tr>
 					<s:iterator value="#request.bookCommonInit" id="bookCommonInit"
@@ -63,16 +60,57 @@
 						</td>
 						<s:if test="#count.modulus(6)==0">
 							<s:if test="#count.last">
-								</tr>
-							</s:if>
-						<s:else>
-							<tr>
-						</s:else>
-						</s:if>
-
-
+				</tr>
+				</s:if>
+				<s:else>
+					<tr>
+				</s:else>
+				</s:if>
 				</s:iterator>
 			</table>
 		</s:if>
+	<br><br>
+		<s:if test="#request.bookSaleInit">
+			<table width="800" align="center">
+				<tr>
+					图书促销
+				</tr>
+				<tr>
+					<s:iterator value="#request.bookSaleInit" id="bookSaleInit"
+						status="count">
+						<td width="800" height="120"
+							style="width: 200px; word-break: break-all" align="center">
+							<a href="#"> <img
+									src="<%=basePath
+								+ "ShowImage.image?type=1&entityId="%><s:property value="#bookSaleInit.bookId"/>"
+									width="100" height="100" alt="照片"
+									title="<s:property value="#bookSaleInit.bookName" />"
+									onerror="javascript:this.src='../images/custom/NoPhoto.jpg'" />
+							</a>
+							<DIV
+								STYLE="width: 200x; height: 20px; border: 1px; overflow: hidden; text-overflow: ellipsis">
+								<s:property value="#bookSaleInit.bookName" />
+							</DIV>
+							<p style="color: red">
+								促销价￥
+								<s:property value="#bookSaleInit.privilegePrice" />
+							</p>
+						</td>
+						<s:if test="#count.modulus(6)==0">
+							<s:if test="#count.last">
+				</tr>
+				</s:if>
+				<s:else>
+					<tr>
+				</s:else>
+				</s:if>
+				</s:iterator>
+				</tr>
+			</table>
+		</s:if>
+
+
+
+
 	</body>
 </html>
