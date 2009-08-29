@@ -103,11 +103,13 @@ public class CustomDAO extends HibernateDaoSupport
 		getHibernateTemplate().update(custom);
 	}
 	
+
 	public void changeCustomEmail(Custom custom,String email)
 	{
 		custom.setEmail(email);
 		getHibernateTemplate().update(custom);
 	}
+
 
 	/*public void delete(Custom persistentInstance)
 	{

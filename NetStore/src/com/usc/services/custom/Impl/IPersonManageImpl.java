@@ -29,7 +29,7 @@ public class IPersonManageImpl implements IPersonManage {
 
 
 	public void UTransfor(Custom custom1, String custom2Name, float Unumber) {
-		customdao.UTransfor(custom1, custom2Name, Unumber);
+//		customdao.UTransfor(custom1, custom2Name, Unumber);
 		
 	}
 

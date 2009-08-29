@@ -1,6 +1,40 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
+<<<<<<< .mine
+<<<<<<< .mine
+  <head>  
+    <title>修改个人密码</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+
+=======
+  <head>
+    <title>修改密码</title>
+>>>>>>> .r141
+  </head>
+  
+  <body bgcolor="#EEEEEE">
+         <!--右栏开始-->
+         <s:form action="PManagerCPassword" method="post" theme="simple">
+姓名：<%=session.getAttribute("customName")%><br>
+原密码： <s:password name="Custom.customPass"></s:password><br>
+		
+新密码：<s:password name="newPass"></s:password><br>
+			
+重复新密码：<s:password name="reNewPass"></s:password><br>
+			<s:submit value="修改"></s:submit>
+			<s:reset value="重置"></s:reset>
+			<br>
+		</s:form>
+=======
   <head>   
     <title>淇敼瀵嗙爜</title>
   </head> 
@@ -31,5 +65,6 @@
     </tr> 
     </table>
     </form>
+>>>>>>> .r144
   </body>
 </html>
