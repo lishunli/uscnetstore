@@ -15,6 +15,9 @@ import com.usc.daos.CommodityDAO;
 import com.usc.daos.Digital;
 import com.usc.daos.DigitalDAO;
 import com.usc.daos.DigitalExtra;
+import com.usc.daos.ProductsDAO;
+import com.usc.daos.Sale;
+import com.usc.daos.SaleDAO;
 import com.usc.services.back.ISystemAdmin;
 
 /**
@@ -30,6 +33,9 @@ public class InitAction extends ActionSupport
 	private DigitalDAO digitalDao;
 	private ISystemAdmin sysAdmin;
 	private CommodityDAO commodityDao;
+	private ProductsDAO productDao;
+	private SaleDAO saleDao;
+	
 	private List<BookExtra> bookExtraCommonList = new ArrayList<BookExtra>();
 	private List<DigitalExtra> digitalExtraCommonList = new ArrayList<DigitalExtra>();
 	private List<BookExtra> bookExtraSaleList = new ArrayList<BookExtra>();
@@ -53,6 +59,16 @@ public class InitAction extends ActionSupport
 	public void setCommodityDao(CommodityDAO commodityDao)
 	{
 		this.commodityDao = commodityDao;
+	}
+
+	public void setProductDao(ProductsDAO productDao)
+	{
+		this.productDao = productDao;
+	}
+
+	public void setSaleDao(SaleDAO saleDao)
+	{
+		this.saleDao = saleDao;
 	}
 
 	@Override
@@ -81,32 +97,68 @@ public class InitAction extends ActionSupport
 					bookExtra.setPrivilegePrice(bookExtra.getDiscount()
 							* bookExtra.getPublishedPrice() / 100);// 设置会员价
 					bookExtraCommonList.add(bookExtra);
-				} else
-				// 促销商品
-				{
-					BookExtra bookExtra = new BookExtra();// 实例化扩展Book的对象
-					BeanUtils.copyProperties(bookExtra, book);// 类copy
-					// bookExtra.setDiscount(sysAdmin.getDiscount(1,
-					// book.getBookId()));// 设置折扣
-					bookExtra.setSalePrice(sysAdmin.getSalePrice(1, book
-							.getBookId()));// 设置促销价
-					bookExtra.setPriority(sysAdmin.getPriority(1, book
-							.getBookId()));// 设置优先级
-					bookExtra.setPrivilegePrice(bookExtra.getSalePrice());// 设置会员价
-					bookExtraSaleList.add(bookExtra);
-				}
+				} 
+//				else
+//				// 促销商品
+//				{
+//					BookExtra bookExtra = new BookExtra();// 实例化扩展Book的对象
+//					BeanUtils.copyProperties(bookExtra, book);// 类copy
+//					// bookExtra.setDiscount(sysAdmin.getDiscount(1,
+//					// book.getBookId()));// 设置折扣
+//					bookExtra.setSalePrice(sysAdmin.getSalePrice(1, book
+//							.getBookId()));// 设置促销价
+//					bookExtra.setPriority(sysAdmin.getPriority(1, book
+//							.getBookId()));// 设置优先级
+//					bookExtra.setPrivilegePrice(bookExtra.getSalePrice());// 设置会员价
+//					bookExtraSaleList.add(bookExtra);
+//				}
 			}
 		}
-//		for(BookExtra bookE : bookExtraCommonList)
-//		{
-//			System.out.println("bookE.getBookName:"+bookE.getBookName());
-//		}
-//		for(BookExtra bookE : bookExtraSaleList)
-//		{
-//			System.out.println("bookE.getBookName:"+bookE.getBookName());
-//		}
-		request.put("bookCommonInit", bookExtraCommonList);
-		request.put("bookSaleInit", bookExtraSaleList);
+		/**
+		 * 根据优先级顺序查找所有的促销商品
+		 */
+		for(Sale sale :saleDao.findAllBySort())
+		{
+//			System.out.println("ID:"+sale.getSaleCommodityId() + "pro:"+sale.getPriority());
+			/**
+			 * 0.设置优先级和促销价和会员价
+			 * 1.根据促销表获得商品ID
+			 * 2.根据商品ID来查找商品表，获得产品ID
+			 * 3.根据产品ID来获得实物ID和分类类型ID
+			 * 4.判断分类类型ID，在查找相应的表，获得book or digital 对象信息，并类copy
+			 * 
+			 */
+			
+			
+			
+			
+			
+			if(1 == productDao.findById(commodityDao.findById(sale.getCommodityId()).getProductsID()).getProductTypeId())
+			{
+				BookExtra bookExtra = new BookExtra();// 实例化扩展Book的对象
+				bookExtra.setSalePrice(sale.getSalePrice());//设置优先级和促销价和会员价
+				bookExtra.setPublishedPrice(bookExtra.getSalePrice());//设置优先级和促销价和会员价
+				bookExtra.setPriority(sale.getPriority());//设置优先级和促销价和会员价
+				BeanUtils.copyProperties(bookExtra, bookDao.findById(productDao.findById(commodityDao.findById(sale.getCommodityId()).getProductsID()).getEntityId()));
+				bookExtraSaleList.add(bookExtra);
+			}
+			else if(2 == productDao.findById(commodityDao.findById(sale.getCommodityId()).getProductsID()).getProductTypeId())
+			{
+				DigitalExtra digitalExtra = new DigitalExtra();
+				digitalExtra.setSalePrice(sale.getSalePrice());
+				digitalExtra.setPublishedPrice(digitalExtra.getSalePrice());
+				digitalExtra.setPriority(sale.getPriority());
+				BeanUtils.copyProperties(digitalExtra,digitalDao.findById(productDao.findById(commodityDao.findById(sale.getCommodityId()).getProductsID()).getEntityId()));
+				digitalExtraSaleList.add(digitalExtra);
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
 
 		for (Digital digital : digitalDao.findByLikeCommonDigitalName(""))
 		{
@@ -122,19 +174,25 @@ public class InitAction extends ActionSupport
 					digitalExtra.setPrivilegePrice(digitalExtra.getDiscount()
 							* digitalExtra.getPublishedPrice() / 100);// 设置会员价
 					digitalExtraCommonList.add(digitalExtra);
-				} else
-				{
-					DigitalExtra digitalExtra = new DigitalExtra();
-					BeanUtils.copyProperties(digitalExtra, digital);
-					digitalExtra.setSalePrice(sysAdmin.getSalePrice(2,
-							digitalExtra.getDigitalId()));// 设置促销价
-					digitalExtra.setPriority(sysAdmin.getPriority(2,
-							digitalExtra.getDigitalId()));// 设置优先级
-					digitalExtra.setPrivilegePrice(digitalExtra.getSalePrice());// 设置会员价
-					digitalExtraSaleList.add(digitalExtra);
-				}
+				} 
+//				else
+//				{
+//					DigitalExtra digitalExtra = new DigitalExtra();
+//					BeanUtils.copyProperties(digitalExtra, digital);
+//					digitalExtra.setSalePrice(sysAdmin.getSalePrice(2,
+//							digitalExtra.getDigitalId()));// 设置促销价
+//					digitalExtra.setPriority(sysAdmin.getPriority(2,
+//							digitalExtra.getDigitalId()));// 设置优先级
+//					digitalExtra.setPrivilegePrice(digitalExtra.getSalePrice());// 设置会员价
+//					digitalExtraSaleList.add(digitalExtra);
+//				}
 			}
 		}
+		
+		
+		
+		request.put("bookCommonInit", bookExtraCommonList);
+		request.put("bookSaleInit", bookExtraSaleList);
 		request.put("digitalCommonInit", digitalExtraCommonList);
 		request.put("digitalSaleInit", digitalExtraSaleList);
 		return null;

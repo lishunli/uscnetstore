@@ -30,6 +30,8 @@
 		<property name="digitalDao" ref="DigitalDAO"></property>
 		<property name="sysAdmin" ref="SystemAdminImpl"></property>
 		<property name="commodityDao" ref="CommodityDAO"></property>
+		<property name="saleDao" ref="SaleDAO"></property>
+		<property name="productDao" ref="ProductsDAO"></property>
 	</bean>
 	
 	<!-- 用户密码修改 -->

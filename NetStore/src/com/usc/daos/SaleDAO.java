@@ -140,7 +140,26 @@ public class SaleDAO extends HibernateDaoSupport
 			throw re;
 		}
 	}
-
+	
+	/**
+	 * 促销商品按优先级进行查找全部（优先级小数的为高优先级）
+	 * @param detachedInstance
+	 * @return
+	 */
+	public List<Sale> findAllBySort()
+	{
+		log.debug("finding all Sale instances");
+		try
+		{
+			String queryString = "from Sale as s Order by s.priority";
+			return getHibernateTemplate().find(queryString);
+		} catch (RuntimeException re)
+		{
+			log.error("find all failed", re);
+			throw re;
+		}
+	}
+	
 	public Sale merge(Sale detachedInstance)
 	{
 		log.debug("merging Sale instance");

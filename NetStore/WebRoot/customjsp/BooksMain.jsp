@@ -28,7 +28,7 @@
 	<body>
 		<s:action name="init"></s:action>
 		<s:if test="#request.bookCommonInit">
-			<table width="2000" align="center">
+			<table width="800" align="center">
 				<tr>
 					图书
 					<p align="right">
@@ -38,33 +38,40 @@
 				<tr>
 					<s:iterator value="#request.bookCommonInit" id="bookCommonInit"
 						status="count">
-						<s:if test="#count.index < 100">
-							<td width="800" height="120"
-								style="width: 200px; word-break: break-all" align="center">
-								<a href="#"> <img
-										src="<%=basePath
+						<td width="200" height="120"
+							style="width: 200px; word-break: break-all" align="center">
+							<a href="#"> <img
+									src="<%=basePath
 								+ "ShowImage.image?type=1&entityId="%><s:property value="#bookCommonInit.bookId"/>"
-										width="100" height="100" alt="照片"
-										title="<s:property value="#bookCommonInit.bookName" />"
-										onerror="javascript:this.src='../images/custom/NoPhoto.jpg'" />
-								</a>
-								<DIV
-									STYLE="width: 200x; height: 20px; border: 1px; overflow: hidden; text-overflow: ellipsis">
-									<s:property value="#bookCommonInit.bookName" />
-								</DIV>
-								<p style="color: red">
-									￥
-									<s:property value="#bookCommonInit.privilegePrice" />
-								</p>
-								<p>
-									(市场价￥
-									<s:property value="#bookCommonInit.publishedPrice" />
-									)
-								</p>
-							</td>
+									width="100" height="100" alt="照片"
+									title="<s:property value="#bookCommonInit.bookName" />"
+									onerror="javascript:this.src='../images/custom/NoPhoto.jpg'" />
+							</a>
+							<DIV
+								STYLE="width: 200x; height: 20px; border: 1px; overflow: hidden; text-overflow: ellipsis">
+								<s:property value="#bookCommonInit.bookName" />
+							</DIV>
+							<p style="color: red">
+								￥
+								<s:property value="#bookCommonInit.privilegePrice" />
+							</p>
+							<p>
+								(市场价￥
+								<s:property value="#bookCommonInit.publishedPrice" />
+								)
+							</p>
+						</td>
+						<s:if test="#count.modulus(6)==0">
+							<s:if test="#count.last">
+								</tr>
+							</s:if>
+						<s:else>
+							<tr>
+						</s:else>
 						</s:if>
-					</s:iterator>
-				</tr>
+
+
+				</s:iterator>
 			</table>
 		</s:if>
 	</body>
