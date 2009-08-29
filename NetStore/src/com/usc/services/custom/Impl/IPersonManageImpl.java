@@ -3,12 +3,16 @@ package com.usc.services.custom.Impl;
 import com.usc.daos.Custom;
 import com.usc.daos.CustomDAO;
 import com.usc.daos.Suggestion;
+import com.usc.daos.SuggestionDAO;
 import com.usc.services.custom.IPersonManage;
 
 public class IPersonManageImpl implements IPersonManage {
 	
 	private CustomDAO customdao;
 	
+	private SuggestionDAO suggestiondao;
+	
+
 	public void changeCustomInfo(Custom custom,String realName,String sex,String address,String postCode,String mobile,String phone)
 	{
 		customdao.changeCustomInfo(custom, realName, sex, address, postCode, mobile, phone);
@@ -34,7 +38,32 @@ public class IPersonManageImpl implements IPersonManage {
 	}
 
 
+	public void saveSuggestion(Suggestion suggestion) {
+		
+		suggestiondao.save(suggestion);
+	}
 
+
+	public void BswapU(Custom custom,float number)
+	{
+		customdao.BswapU(custom, number);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public CustomDAO getCustomdao() {
 		return customdao;
 	}
@@ -43,11 +72,13 @@ public class IPersonManageImpl implements IPersonManage {
 		this.customdao = customdao;
 	}
 
-
-	public void saveSuggestion(Suggestion suggestion) {
-		// TODO Auto-generated method stub
-		
+	public SuggestionDAO getSuggestiondao() {
+		return suggestiondao;
 	}
 
+
+	public void setSuggestiondao(SuggestionDAO suggestiondao) {
+		this.suggestiondao = suggestiondao;
+	}
 
 }

@@ -58,6 +58,17 @@ public class CustomDAO extends HibernateDaoSupport
 		}
 	}
 	
+	
+	
+	public List findByName(String customName)
+	{
+		String queryString ="from Custom as c where c.customName = ?";
+		return getHibernateTemplate().find(queryString,customName);
+	}
+	
+	
+	
+	
 	public List findByProperty(String propertyName, Object value)
 	{
 		log.debug("finding Custom instance with property: " + propertyName
@@ -110,6 +121,23 @@ public class CustomDAO extends HibernateDaoSupport
 		getHibernateTemplate().update(custom);
 	}
 
+
+	
+	public void UTransfor(Custom custom1,String custom2Name,float Unumber)
+	{
+		custom1.setUcurrency(custom1.getUcurrency()-Unumber);
+		Custom custom2 = (Custom)this.findByName(custom2Name).iterator().next();
+		custom2.setUcurrency(custom2.getUcurrency()+Unumber);
+		getHibernateTemplate().update(custom1);
+		getHibernateTemplate().update(custom2);
+	}
+	
+	public void BswapU(Custom custom,float number)
+	{
+		custom.setBenefits(custom.getBenefits()-number);
+		custom.setUcurrency(custom.getUcurrency()+number*1/10);
+		getHibernateTemplate().update(custom);
+	}
 
 	/*public void delete(Custom persistentInstance)
 	{

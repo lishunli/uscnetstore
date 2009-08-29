@@ -15,14 +15,16 @@
             如果您的建议或意见被采纳，我们会衷心地感谢您提的建议或意见并赠送相应的积分。非常谢谢您的参与！
             </td> </tr>
      </table>
-     <form action="suggestion.action" method="post">
+     <form action="PersonManagerSuggestionAction.action" method="post">
      <table cellspacing=1 cellpadding=4 border="3" width="600" align=center class=tableBorder2 height="210" >
-        <tr><td valign=left align=center><textarea cols="70" rows="10" name="suggestion"></textarea>&nbsp;</td> </tr>
+        <tr><td valign=left align=center><textarea cols="70" rows="10" name="suggestionContents"></textarea>&nbsp;</td> </tr>
         <tr>
 			<td class=tablebody2 valign=middle  align=right>
-			<input type="submit" value="确  定" /><input type="submit" value="取  消" /></td>
+			<input type="submit" value="提 交" /><input type="submit" value="重 置" /></td>
 		</tr>
      </table>
+   
+     
      </form>
    
   </body>

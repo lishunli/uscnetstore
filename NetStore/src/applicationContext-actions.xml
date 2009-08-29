@@ -41,6 +41,21 @@
 	<property name="personmanage" ref="PersonManage"/>
 	</bean>
 	
+	<!-- U币转换 -->
+	<bean id="UTransforAction" class="com.usc.actions.custom.UTransforAction">
+	<property name="personmanage" ref="PersonManage"/>
+	</bean>
+	
+	<!-- 建议 -->
+	<bean id="PersonManagerSuggestionAction" class="com.usc.actions.custom.PersonManagerSuggestionAction">
+	<property name="personmanage" ref="PersonManage"></property>
+	</bean>
+	
+	<!-- 积分换U币 -->
+	<bean id="PersonManagerBSwapUAction" class="com.usc.actions.custom.PersonManagerBSwapUAction">
+	<property name="personmanage" ref="PersonManage"></property>
+	</bean>
+	
 	
 	
 	

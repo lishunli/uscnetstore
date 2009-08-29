@@ -140,6 +140,7 @@
 	</bean>
 	<bean id="PersonManage" class="com.usc.services.custom.Impl.IPersonManageImpl">
 	<property name="customdao" ref="CustomDAO"/>
+	<property name="suggestiondao" ref="SuggestionDAO"></property>
 	</bean>
 	
 	

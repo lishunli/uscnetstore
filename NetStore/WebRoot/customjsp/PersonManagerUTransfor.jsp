@@ -1,54 +1,37 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<% Custom custom4 = (Custom)session.getAttribute("Custom");%>
+<%@ page import="com.usc.daos.Custom" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>   
-    <title>U币转让</title>
+    <title>U币转换</title>
+  </head> 
+  <body bgcolor="#EEEEEE"><br><br><br>
+    <form action="UTransforAction.action" method="post">
     
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
-
-  </head>
- 
-  <body bgcolor="#EEEEEE">
-       <table cellspacing=1 cellpadding=4 align=center class=tableBorder2>
-		<tr><td height=25 valign=middle>U币转让说明：</td></tr>
-		<tr><td height=25 valign=middle>注释：xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-		</td></tr>
-		</table><br>
-  
-  <form action="UTransfor.action" method="post">
-       <table cellpadding=8 cellspacing=1 align=center class=tableborder2 width="500" border="3">
-		<tr>
-			<td valign=middle colspan=2 align=center height=25 background="WebRoot/images/bg2.gif" ><font color="blue"><b>U币转让</b></font></td>
-		</tr>
-		<tr>
-		<td valign=middle class=tablebody1>您的当前U币总额：</td>
-		<td width="6%" class="tablebody1">${user.uCurrency}</td> 
-		</tr>
-
-		<tr>
-			<td valign=middle class=tablebody1>转入的账户：</td>
-			<td valign=middle class=tablebody1>
-			<input name="username" type="text"/> &nbsp; </td>
-		</tr>
-		<tr>
-			<td valign=middle class=tablebody1>转入的金额：</td>
-			<td valign=middle class=tablebody1>
-			<input name="Ucount" type="text"/> &nbsp; </td>
-		</tr>
-		<tr>
-			<td class=tablebody2 valign=middle colspan=2 align=center>
-			<input type="submit" value="确定" /></td>
-
-		</tr>
-		</table>
-     </form>
-         
+    <table width="700" cellspacing="1" cellpadding="3" border="1" align="center" class="tableborder2" height="250"> 
+    <tr> 
+       <td valign="middle" height="25" align="center" colspan="3"><font color="blue"><b>U币转换</b></font><br></td> 
+    </tr> 
+    <tr>
+        <td valign="middle"  align="center" width="25%">您当前的U币总额:</td>
+        <td valign=middle class=tablebody1 width="70%"><%out.print(custom4.getUcurrency()); %> &nbsp;</td>
+        <td></td>
+    </tr>         
+    <tr> 
+       <td valign="middle"  align="center" >转入的帐户（用户名）：</td>
+        <td valign=middle class=tablebody1><input name="Customname" type="text"/> &nbsp;</td>
+        <td></td>
+    </tr>   <tr> 
+       <td valign="middle"  align="center" >转入的金额数:</td>
+        <td valign=middle class=tablebody1><input name="Unumber" type="text"/> &nbsp;</td>
+        <td></td>
+    </tr>
+    <tr>
+       <td class=tablebody2 valign=middle  align=right colspan="1">
+		<input type="submit" value="转 入" />&nbsp;&nbsp;&nbsp;<input type="reset" value="重 置" /></td>
+    </tr> 
+    </table>
+    </form>
   </body>
 </html>

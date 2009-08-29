@@ -50,5 +50,23 @@
      <result name="success">/customjsp/UserEmailChangeSuccess.jsp</result>
      </action>
 
+     
+     <!-- U币转换 -->
+     <action name="UTransforAction" class="UTransforAction">
+     <result name="success">/customjsp/UTransforSuccess.jsp</result>
+     </action>
+     
+     <!-- 建议 -->
+     <action name="PersonManagerSuggestionAction" class="PersonManagerSuggestionAction">
+     <result name="success">/customjsp/SuggestionSuccess.jsp</result>
+     </action>
+     <!-- 积分换U币 -->
+     <action name="PersonManagerBSwapUAction" class="PersonManagerBSwapUAction">
+     <result name="success">/customjsp/BswapUSuccess.jsp</result>
+     </action>
+     
+
+
+
 	</package>
 </struts>

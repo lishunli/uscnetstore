@@ -209,9 +209,9 @@ public class Custom implements java.io.Serializable
 		return this.ucurrency;
 	}
 
-	public void setUcurrency(Float ucurrency)
+	public void setUcurrency(Float d)
 	{
-		this.ucurrency = ucurrency;
+		this.ucurrency = d;
 	}
 
 	public Float getBenefits()
