@@ -23,14 +23,6 @@
 		<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
-<script type="text/javascript">
-
-function Info(entityID,type) {
-	window.self.location = "info.action?entityID=" + entityID+ "&type=" + type;
-}
-
-</script>
 	</head>
 
 	<body>
@@ -45,7 +37,9 @@ function Info(entityID,type) {
 						status="count">
 						<td width="200" height="120"
 							style="width: 200px; word-break: break-all" align="center">
-							<a href="#" onclick="Info(<s:property value="#bookCommonInit.bookId"/>,1)"> <img
+<a
+									href="info.action?type=1&entityID=<s:property value='#bookCommonInit.bookId'/>">
+							 <img
 									src="<%=basePath
 								+ "ShowImage.image?type=1&entityId="%><s:property value="#bookCommonInit.bookId"/>"
 									width="100" height="100" alt="照片"
@@ -88,7 +82,9 @@ function Info(entityID,type) {
 						status="count">
 						<td width="800" height="120"
 							style="width: 200px; word-break: break-all" align="center">
-							<a href="#" onclick="Info(<s:property value="#bookSaleInit.bookId"/>,1)"> <img
+							<a
+									href="info.action?type=1&entityID=<s:property value='#bookSaleInit.bookId'/>">
+							 <img
 									src="<%=basePath
 								+ "ShowImage.image?type=1&entityId="%><s:property value="#bookSaleInit.bookId"/>"
 									width="100" height="100" alt="照片"

@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
-<s:include value="/Top.jsp" ></s:include>
+<s:include value="/Top.jsp"></s:include>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -21,21 +21,14 @@
 		<meta http-equiv="expires" content="0">
 		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 		<meta http-equiv="description" content="This is my page">
-<script type="text/javascript">
-
-function Info(entityID,type) {
-	window.self.location = "info.action?entityID=" + entityID+ "&type=" + type;
-}
-
-</script>
 
 	</head>
 
 	<body>
-		
+
 		<s:action name="init"></s:action>
 		<s:if test="#request.bookCommonInit">
-			<table width="75%" align="center" >
+			<table width="75%" align="center">
 				<tr>
 					图书
 					<p align="right">
@@ -48,7 +41,9 @@ function Info(entityID,type) {
 						<s:if test="#count.index < 6">
 							<td width="800" height="120"
 								style="width: 200px; word-break: break-all" align="center">
-								<a href="#" onclick="Info(<s:property value="#bookCommonInit.bookId"/>,1)"> <img
+								<a
+									href="info.action?type=1&entityID=<s:property value='#bookCommonInit.bookId'/>">
+									<img
 										src="<%=basePath
 								+ "ShowImage.image?type=1&entityId="%><s:property value="#bookCommonInit.bookId"/>"
 										width="100" height="100" alt="照片"
@@ -89,7 +84,9 @@ function Info(entityID,type) {
 						<s:if test="#count.index < 6">
 							<td width="800" height="120"
 								style="width: 200px; word-break: break-all" align="center">
-								<a href="#" onclick="Info(<s:property value="#digitalCommonInit.digitalId"/>,2)"> <img
+								<a
+									href="info.action?type=2&entityID=<s:property value='#digitalCommonInit.digitalId'/>">
+									<img
 										src="<%=basePath
 								+ "ShowImage.image?type=2&entityId="%><s:property value="#digitalCommonInit.digitalId"/>"
 										width="100" height="100" alt="照片"
@@ -130,7 +127,9 @@ function Info(entityID,type) {
 						<s:if test="#count.index < 6">
 							<td width="800" height="120"
 								style="width: 200px; word-break: break-all" align="center">
-								<a href="#" onclick="Info(<s:property value="#bookSaleInit.bookId"/>,1)"> <img
+								<a
+									href="info.action?type=1&entityID=<s:property value='#bookSaleInit.bookId'/>">
+									<img
 										src="<%=basePath
 								+ "ShowImage.image?type=1&entityId="%><s:property value="#bookSaleInit.bookId"/>"
 										width="100" height="100" alt="照片"
@@ -166,7 +165,9 @@ function Info(entityID,type) {
 						<s:if test="#count.index < 6">
 							<td width="800" height="120"
 								style="width: 200px; word-break: break-all" align="center">
-								<a href="#" onclick="Info(<s:property value="#digitalSaleInit.digitalId"/>,2)"> <img
+								<a
+									href="info.action?type=2&entityID=<s:property value='#digitalSaleInit.digitalId'/>">
+									<img
 										src="<%=basePath
 								+ "ShowImage.image?type=2&entityId="%><s:property value="#digitalSaleInit.digitalId"/>"
 										width="100" height="100" alt="照片"

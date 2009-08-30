@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
-<s:include value="/Top.jsp" ></s:include>
+<s:include value="/Top.jsp"></s:include>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -23,14 +23,6 @@
 		<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
-<script type="text/javascript">
-
-function Info(entityID,type) {
-	window.self.location = "info.action?entityID=" + entityID+ "&type=" + type;
-}
-
-</script>
 	</head>
 
 	<body>
@@ -45,9 +37,11 @@ function Info(entityID,type) {
 						id="digitalCommonInit" status="count">
 						<td width="800" height="120"
 							style="width: 200px; word-break: break-all" align="center">
-							<a href="#" onclick="Info(<s:property value="#digitalCommonInit.digitalId"/>,2)"> <img
+							<a
+								href="info.action?type=2&entityID=<s:property value='#digitalCommonInit.digitalId'/>">
+								<img
 									src="<%=basePath
-								+ "ShowImage.image?type=2&entityId="%><s:property value="#digitalCommonInit.digitalId"/>"
+							+ "ShowImage.image?type=2&entityId="%><s:property value="#digitalCommonInit.digitalId"/>"
 									width="100" height="100" alt="照片"
 									title="<s:property value="#digitalCommonInit.digitalName" />"
 									onerror="javascript:this.src='../images/custom/NoPhoto.jpg'" />
@@ -91,9 +85,11 @@ function Info(entityID,type) {
 						status="count">
 						<td width="800" height="120"
 							style="width: 200px; word-break: break-all" align="center">
-							<a href="#" onclick="Info(<s:property value="#digitalSaleInit.digitalId"/>,2)"> <img
+							<a
+								href="info.action?type=2&entityID=<s:property value='#digitalSaleInit.digitalId'/>">
+								<img
 									src="<%=basePath
-								+ "ShowImage.image?type=2&entityId="%><s:property value="#digitalSaleInit.digitalId"/>"
+							+ "ShowImage.image?type=2&entityId="%><s:property value="#digitalSaleInit.digitalId"/>"
 									width="100" height="100" alt="照片"
 									title="<s:property value="#digitalSaleInit.digitalName" />"
 									onerror="javascript:this.src='../images/custom/NoPhoto.jpg'" />

@@ -1,6 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
-<s:include value="/Top.jsp" ></s:include>
+<s:include value="/Top.jsp"></s:include>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -34,18 +34,17 @@
 -->
 </style>
 
-<script type="text/javascript">
-
-function Info(entityID,type) {
-	window.self.location = "info.action?entityID=" + entityID+ "&type=" + type;
-}
-
+		<script type="text/javascript">
+	function Info(entityID, type) {
+		window.self.location = "info.action?entityID=" + entityID + "&type="
+				+ type;
+	}
 </script>
 
 	</head>
 
 	<body>
-		
+
 		<table width="80%" border="1" align="center" cellpadding="0"
 			cellspacing="0" bordercolor="#DBDBDB">
 			<tr>
@@ -93,7 +92,9 @@ function Info(entityID,type) {
 									status="count">
 									<td width="200" height="120"
 										style="width: 200px; word-break: break-all" align="center">
-										<a href="#" onclick="Info(<s:property value="#bookCommonInit.bookId"/>,1)"> <img
+										<a
+											href="info.action?type=1&entityID=<s:property value='#bookCommonInit.bookId'/>">
+											<img
 												src="<%=basePath
 							+ "ShowImage.image?type=1&entityId="%><s:property value="#bookCommonInit.bookId"/>"
 												width="100" height="100" alt="照片"
@@ -137,7 +138,8 @@ function Info(entityID,type) {
 									status="count">
 									<td width="800" height="120"
 										style="width: 200px; word-break: break-all" align="center">
-										<a href="#" onclick="Info(<s:property value="#bookSaleInit.bookId"/>,1)"> <img
+										<a
+											href="info.action?type=1&entityID=<s:property value='#bookSaleInit.bookId'/>"><img
 												src="<%=basePath
 							+ "ShowImage.image?type=1&entityId="%><s:property value="#bookSaleInit.bookId"/>"
 												width="100" height="100" alt="照片"
@@ -175,7 +177,9 @@ function Info(entityID,type) {
 									id="digitalCommonInit" status="count">
 									<td width="800" height="120"
 										style="width: 200px; word-break: break-all" align="center">
-										<a href="#" onclick="Info(<s:property value="#digitalCommonInit.digitalId"/>,2)"> <img
+										<a
+											href="info.action?type=2&entityID=<s:property value='#digitalCommonInit.digitalId'/>">
+											<img
 												src="<%=basePath
 							+ "ShowImage.image?type=2&entityId="%><s:property value="#digitalCommonInit.digitalId"/>"
 												width="100" height="100" alt="照片"
@@ -220,7 +224,9 @@ function Info(entityID,type) {
 									id="digitalSaleInit" status="count">
 									<td width="800" height="120"
 										style="width: 200px; word-break: break-all" align="center">
-										<a href="#" onclick="Info(<s:property value="#digitalSaleInit.digitalId"/>,2)"> <img
+										<a
+											href="info.action?type=2&entityID=<s:property value='#digitalSaleInit.digitalId'/>">
+											<img
 												src="<%=basePath
 							+ "ShowImage.image?type=2&entityId="%><s:property value="#digitalSaleInit.digitalId"/>"
 												width="100" height="100" alt="照片"
