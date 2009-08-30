@@ -198,9 +198,9 @@ function favorite(entityID,productTypeID) {
 							优惠价：￥
 							<span style="color: red"><s:property
 									value="#digitalSaleInit.privilegePrice" /> </span>&nbsp;&nbsp;
-							<input type="submit" value="   购买   " onclick="shop(<s:property value="#digitalCommonInit.digitalId"/>,2)"/>
+							<input type="submit" value="   购买   " onclick="shop(<s:property value="#digitalSaleInit.digitalId"/>,2)"/>
 							&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="submit" value="加入暂存架" onclick="favorite(<s:property value="#digitalCommonInit.digitalId"/>,2)"/>
+							<input type="submit" value="加入暂存架" onclick="favorite(<s:property value="#digitalSaleInit.digitalId"/>,2)"/>
 						</td>
 					</tr>
 					<tr>
