@@ -122,6 +122,7 @@ public class MainImpl implements IMain
 	public List<DigitalExtra> AdvancedSearchDigitalCommon(String digitalName,
 			String brand)
 	{
+		digitalExtraCommonList.clear();
 		for (Digital digital : digitaldao.AdvancedSearchDigital(digitalName,
 				brand))
 		{
@@ -147,7 +148,6 @@ public class MainImpl implements IMain
 				digitalExtraCommonList.add(digitalExtra);
 			}
 		}
-		digitalExtraCommonList.clear();
 		return digitalExtraCommonList;
 	}
 
