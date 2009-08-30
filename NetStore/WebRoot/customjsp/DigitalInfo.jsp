@@ -22,7 +22,15 @@
 		<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+<script type="text/javascript">
 
+function shop(entityID,productTypeID) {
+	window.self.location = "ShoppingcartInsertAction.action?entityID=" + entityID+ "&productTypeID=" + productTypeID;
+}
+function favorite(entityID,productTypeID) {
+	window.self.location = "FavoriteInsertGoodAction.action?entityID=" + entityID+ "&productTypeID=" + productTypeID;
+}
+</script>
 	</head>
 
 	<body>
@@ -80,9 +88,9 @@
 							市场价：￥
 							<s:property value="#digitalCommonInit.publishedPrice" />
 							&nbsp;&nbsp;
-							<input type="submit" value="   购买   " />
+							<input type="submit" value="   购买   " onclick="shop(<s:property value="#digitalCommonInit.digitalId"/>,2)"/>
 							&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="submit" value="加入暂存架" />
+							<input type="submit" value="加入暂存架" onclick="favorite(<s:property value="#digitalCommonInit.digitalId"/>,2)"/>
 						</td>
 					</tr>
 					<tr>
@@ -190,9 +198,9 @@
 							优惠价：￥
 							<span style="color: red"><s:property
 									value="#digitalSaleInit.privilegePrice" /> </span>&nbsp;&nbsp;
-							<input type="submit" value="   购买   " />
+							<input type="submit" value="   购买   " onclick="shop(<s:property value="#digitalCommonInit.digitalId"/>,2)"/>
 							&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="submit" value="加入暂存架" />
+							<input type="submit" value="加入暂存架" onclick="favorite(<s:property value="#digitalCommonInit.digitalId"/>,2)"/>
 						</td>
 					</tr>
 					<tr>

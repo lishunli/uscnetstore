@@ -19,6 +19,15 @@
 		<meta http-equiv="expires" content="0">
 		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 		<meta http-equiv="description" content="This is my page">
+<script type="text/javascript">
+
+function shop(entityID,productTypeID) {
+	window.self.location = "ShoppingcartInsertAction.action?entityID=" + entityID+ "&productTypeID=" + productTypeID;
+}
+function favorite(entityID,productTypeID) {
+	window.self.location = "FavoriteInsertGoodAction.action?entityID=" + entityID+ "&productTypeID=" + productTypeID;
+}
+</script>
 
 	</head>
 
@@ -81,9 +90,9 @@
 									value="#bookCommonInit.privilegePrice" /> </span>&nbsp;&nbsp; 市场价：￥
 							<s:property value="#bookCommonInit.publishedPrice" />
 							&nbsp;&nbsp;
-							<input type="submit" value="   购买   " />
+							<input type="submit" value="   购买   " onclick="shop(<s:property value="#bookCommonInit.bookId"/>,1)"/>
 							&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="submit" value="加入暂存架" />
+							<input type="submit" value="加入暂存架" onclick="favorite(<s:property value="#bookCommonInit.bookId"/>,1)"/>
 						</td>
 					</tr>
 					<tr>
@@ -178,9 +187,9 @@
 							优惠价：￥
 							<span style="color: red"><s:property
 									value="#bookSaleInit.privilegePrice" /> </span>&nbsp;&nbsp;
-							<input type="submit" value="   购买   " />
+							<input type="submit" value="   购买   " onclick="shop(<s:property value="#bookSaleInit.bookId"/>,1)"/>
 							&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="submit" value="加入暂存架" />
+							<input type="submit" value="加入暂存架"  onclick="favorite(<s:property value="#bookCommonInit.bookId"/>,1)"/>
 						</td>
 					</tr>
 					<tr>
