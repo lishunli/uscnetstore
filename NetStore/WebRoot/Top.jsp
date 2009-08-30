@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ page import="com.usc.daos.Custom"%>
+<%Custom custom = (Custom) session.getAttribute("Custom");%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -84,7 +85,7 @@ function AdvancedSearch() {
 				<th bgcolor="#B9C8EC" scope="col">
 					<div align="left">
 						<%
-							Custom custom = (Custom) session.getAttribute("Custom");
+							
 							if (custom == null)
 							{
 						%>
@@ -95,8 +96,18 @@ function AdvancedSearch() {
 								out.print("欢迎您的光临！" + custom.getCustomName());
 							}
 						%>&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="<%=path%>/customjsp/Login.jsp">【登录】</a><a
+				
+				
+				
+				
+						
+						<%if(custom==null){%>
+						<a href="<%=path%>/customjsp/Login.jsp?action=a">【登录】</a><a
 							href="<%=path%>/customjsp/Register.jsp" type="redirect">【注册】</a>
+				<%}else{%>
+				
+				<a href="<%=path%>/customjsp/Login.jsp?action=zhuxiao">【注销】</a>
+				<%} %>			
 					</div>
 				</th>
 				<td bgcolor="#B9C8EC" scope="col">
@@ -121,12 +132,18 @@ function AdvancedSearch() {
 							href="<%=path%>/customjsp/BooksMain.jsp">图书</a>|<a
 							href="<%=path%>/customjsp/DigitalsMain.jsp">数码</a> </strong> </span>
 				</td>
-				<td width="445" bgcolor="#E7E7E7">
-					<span class="STYLE3"><a
-						href="<%=path%>/customjsp/PersonManagerMain.jsp?action=order">我的信息库</a>&nbsp;<a
-						href="ShoppingCartAction.action"> 购物车</a>&nbsp; <a
-						href="<%=path%>/customjsp/NewPeoples.jsp">新手上路</a> &nbsp;<a
-						href="<%=path%>/customjsp/Help.jsp">帮助中心</a> </span>
+				<td width="445" bgcolor="#E7E7E7">				
+					<span class="STYLE3">
+					
+					<% if(custom==null){%>
+					我的信息库&nbsp; 购物车 
+					<%} else{%>
+					<a	href="<%=path%>/customjsp/PersonManagerMain.jsp?action=order">我的信息库</a>&nbsp;				
+					<a	href="ShoppingCartAction.action"> 购物车</a>&nbsp;					 
+					
+					<%} %>					
+					<a	href="<%=path%>/customjsp/NewPeoples.jsp">新手上路</a> &nbsp;
+					<a	href="<%=path%>/customjsp/Help.jsp">帮助中心</a> </span>				
 				</td>
 			</tr>
 			<form action="FuzzySearchAction.action" method="post">

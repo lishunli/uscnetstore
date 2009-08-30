@@ -1,5 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
+<%String path=this.getServletContext().getContextPath(); %>
+<%if(request.getParameter("action").equals("zhuxiao")) session.removeAttribute("Custom"); %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 	<head>
@@ -11,6 +13,7 @@
 				登录
 			</h1>
 			<br>
+			<h2><a href="<%=path%>/customjsp/Main.jsp">南华大学电子商务平台首页</a></h2>
 			<hr color="#3254DD" width="80%">
 			<s:form action="LoginAction" method="post">
 				<table>

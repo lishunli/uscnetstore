@@ -44,7 +44,7 @@ body {
     <td bgcolor="#76946D">&nbsp;</td>
   </tr>
   <tr>
-    <td width="542" bgcolor="#E7E7E7"><span class="STYLE4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="<%=path%>/Top.jsp">首页</a>|<a href="<%=path%>/customjsp/BooksMain.jsp">图书</a>|<a href="<%=path%>/customjsp/DigitalsMain.jsp">数码</a></strong></span></td>
+    <td width="542" bgcolor="#E7E7E7"><span class="STYLE4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><a href="<%=path%>/customjsp/Main.jsp">首页</a>|<a href="<%=path%>/customjsp/BooksMain.jsp">图书</a>|<a href="<%=path%>/customjsp/DigitalsMain.jsp">数码</a></strong></span></td>
     <td width="445" bgcolor="#E7E7E7"><span class="STYLE3"><a href="<%=path%>/customjsp/PersonManagerMain.jsp?action=order">我的信息库</a>&nbsp;<a href="<%=path%>/customjsp/ShoppingCart.jsp"> 购物车</a>&nbsp;<a href="<%=path%>/customjsp/NewPeoples.jsp">新手上路</a> &nbsp;<a href="<%=path%>/customjsp/Help.jsp">帮助中心</a></span></td>
   </tr>
 </table>

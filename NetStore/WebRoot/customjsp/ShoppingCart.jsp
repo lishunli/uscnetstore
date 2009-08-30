@@ -24,7 +24,7 @@
      <td> <s:property value="#cart.quantity"/> </td>
     </tr>
     </s:iterator>
-    
+           
     </table>
   </body>
 </html>
