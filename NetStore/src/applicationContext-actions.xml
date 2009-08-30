@@ -77,9 +77,18 @@
 		<property name="personmanage" ref="PersonManage"></property>
 	</bean>
 	
+	<!-- 购物车表中存入 -->
+	<bean id="ShoppingcartInsertAction" class="com.usc.actions.custom.ShoppingcartInsertAction">
+	<property name="shoppingcartdao" ref="ShoppingcartDAO"></property>
+	<property name="bookdao" ref="BookDAO"></property>
+	<property name="digitaldao" ref="DigitalDAO"></property>
+	<property name="sysAdmin" ref="SystemAdminImpl"></property>
+	</bean>
+	
 	<!-- 购物车显示 -->
 	<bean id="ShoppingCartAction" class="com.usc.actions.custom.ShoppingCartAction">
-	<property name="shoppingcart" ref="ShoppingcartDAO"></property>
+	<property name="shoppingcartdao" ref="ShoppingcartDAO"></property>
+	<property name="sysAdmin" ref="SystemAdminImpl"></property>
 	</bean>
 	
 	

@@ -98,6 +98,11 @@
      <result name="success">/customjsp/BswapUSuccess.jsp</result>
      </action>
      
+     <!-- 购物车表中存入 -->
+     <action name="ShoppingcartInsertAction" class="ShoppingcartInsertAction">
+     <result name="success">ShoppingCartAction.action</result>
+     </action>
+     
      <!-- 购物车显示 -->
      <action name="ShoppingCartAction" class="ShoppingCartAction">
      <result name="success">/customjsp/ShoppingCart.jsp</result>

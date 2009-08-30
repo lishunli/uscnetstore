@@ -121,7 +121,7 @@ public class BookDAO extends HibernateDaoSupport
 	}
 
 	/**
-	 * Í¼ÊéÃûµÄÄ£ºý²éÕÒ ·¢²¼±êÖ¾Î»Îª0
+	 * Í¼ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾Î»Îª0
 	 * 
 	 * @param bookName
 	 * @return
@@ -135,7 +135,7 @@ public class BookDAO extends HibernateDaoSupport
 	}
 
 	/**
-	 * Í¼ÊéÃûµÄÄ£ºý²éÕÒ ÒÑ¾­·¢²¼µÄ²úÆ·Ò²¼´ÆÕÍ¨ÉÌÆ·µÄÄ£ºý²éÕÒ ·¢²¼±êÖ¾Î»Îª0
+	 * Í¼ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½Æ·Ò²ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½Æ·ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾Î»Îª0
 	 * 
 	 * @param bookName
 	 * @return
@@ -149,7 +149,7 @@ public class BookDAO extends HibernateDaoSupport
 	}
 
 	/**
-	 * Í¼ÊéµÄ¸ß¼¶ËÑËÑ
+	 * Í¼ï¿½ï¿½Ä¸ß¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * 
 	 * @param author
 	 * @return
@@ -169,6 +169,13 @@ public class BookDAO extends HibernateDaoSupport
 
 	}
 
+	
+	public Book findByTypeEntityId(int productTypeID ,int entityID)
+	{
+		String queryString="from Book as b where b.productTypeID=productTypeID and b.bookId=entityID and b.productsPflag=1";
+		return (Book)getHibernateTemplate().find(queryString).iterator().next();
+	}
+	
 	public List findByAuthor(Object author)
 	{
 		return findByProperty(AUTHOR, author);

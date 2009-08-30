@@ -233,6 +233,33 @@ public class SystemAdminImpl implements ISystemAdmin
 		return 0;
 	}
 
+	//获得定价
+	public float getPublishedPrice(int commodityID)
+	{
+		int productId = commodityDao.findById(commodityID).getProductsID();
+		int  ProductTypeID = productDao.findById(productId).getProductTypeId();
+		int EntityID = productDao.findById(productId).getEntityId();		 
+		 Book book  = bookDao.findByTypeEntityId(ProductTypeID, EntityID);
+		 Digital digital = digitalDao.findByTypeEntityId(ProductTypeID, EntityID);
+		 if(book!=null)
+			 return book.getPublishedPrice();
+		 else return digital.getPublishedPrice();
+	}
+	
+	public String getCommodityName(int commodityID)
+	{
+		int productId = commodityDao.findById(commodityID).getProductsID();
+		int  ProductTypeID = productDao.findById(productId).getProductTypeId();
+		int EntityID = productDao.findById(productId).getEntityId();		 
+		 Book book  = bookDao.findByTypeEntityId(ProductTypeID, EntityID);
+		 Digital digital = digitalDao.findByTypeEntityId(ProductTypeID, EntityID);
+		 if(book!=null)
+			 return book.getBookName();
+		 else
+			 return digital.getDigitalName();
+	}
+	
+	
 	/**
 	 * 折扣 优先级 修改促销表
 	 */

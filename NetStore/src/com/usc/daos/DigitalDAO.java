@@ -39,6 +39,16 @@ public class DigitalDAO extends HibernateDaoSupport
 	{
 		// do nothing
 	}
+	
+	
+	
+	public Digital findByTypeEntityId(int productTypeID ,int entityID)
+	{
+		String queryString= "from Digital as d where d.productTypeID=productTypeID and d.digitalId=entityID and d.productsPflag=1";
+		return (Digital)getHibernateTemplate().find(queryString).iterator().next();
+	}
+	
+	
 
 	public void save(Digital transientInstance)
 	{
@@ -122,7 +132,7 @@ public class DigitalDAO extends HibernateDaoSupport
 
 	
 	/**
-	 * ÊýÂëÃû³ÆµÄÄ£ºý²éÕÒ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param bookName
 	 * @return
 	 */
@@ -134,8 +144,8 @@ public class DigitalDAO extends HibernateDaoSupport
 	}
 	
 	/**
-	 * ÊýÂëÃû³ÆµÄÄ£ºý²éÕÒ
-	 * ÒÑ¾­·¢²¼µÄ²úÆ·£¬Ò²¼´ÆÕÍ¨ÉÌÆ·µÄÄ£ºý²éÕÒ
+	 * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½
+	 * ï¿½Ñ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½Æ·ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½Í¨ï¿½ï¿½Æ·ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param bookName
 	 * @return
 	 */
@@ -147,7 +157,7 @@ public class DigitalDAO extends HibernateDaoSupport
 	}
 	
 	/**
-	 * ÊýÂëµÄ¸ß¼¶ËÑËÑ
+	 * ï¿½ï¿½ï¿½ï¿½Ä¸ß¼ï¿½ï¿½ï¿½ï¿½ï¿½
 	 * @param author
 	 * @return
 	 */

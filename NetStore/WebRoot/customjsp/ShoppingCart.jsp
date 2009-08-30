@@ -18,9 +18,8 @@
     </tr>
     <s:iterator value="#request.Shoppingcart" id="cart">
     <tr>
-   <td> <s:property value="#cart.shoppingCartId"/></td>
-    <td> <s:property value="#cart.customName"/></td>
-     <td> <s:property value="#cart.commodityId"/></td>
+   <td> <s:property value="#cart.commodityName"/></td>
+    <td> <s:property value="#cart.publishedPrice"/></td>
      <td> <s:property value="#cart.shoppingPrice"/></td>
      <td> <s:property value="#cart.quantity"/> </td>
     </tr>
