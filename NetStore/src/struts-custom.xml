@@ -45,6 +45,15 @@
 			<result name="input">/customjsp/FuzzySearch.jsp
 			</result>
 		</action>
+		<action name="info" class="InformationAction">
+			<result name="bookInfo">/customjsp/BookInfo.jsp
+			</result>
+			<result name="digitalInfo">/customjsp/DigitalInfo.jsp
+			</result>
+			<result name="input">/customjsp/Main.jsp
+			</result>
+		</action>
+		
 		<!-- 用户信息修改 -->
 		<action name="UserInforChangeAction" class="UserInforChangeAction">
 			<result name="success">/customjsp/UserInforChangeSuccess.jsp

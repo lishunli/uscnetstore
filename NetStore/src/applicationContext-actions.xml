@@ -32,6 +32,10 @@
 		<property name="mainImpl" ref="MainImpl"></property>
 	</bean>
 	
+	<!--显示图书或数码的详细信息	-->
+	<bean id="InformationAction" class="com.usc.actions.custom.InformationAction" scope="prototype">
+		<property name="mainImpl" ref="MainImpl"></property>
+	</bean>
 	
 	
 	<!-- 用户信息修改 -->

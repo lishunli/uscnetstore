@@ -24,6 +24,13 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 
+<script type="text/javascript">
+
+function Info(entityID,type) {
+	window.self.location = "info.action?entityID=" + entityID+ "&type=" + type;
+}
+
+</script>
 	</head>
 
 	<body>
@@ -38,7 +45,7 @@
 						id="digitalCommonInit" status="count">
 						<td width="800" height="120"
 							style="width: 200px; word-break: break-all" align="center">
-							<a href="#"> <img
+							<a href="#" onclick="Info(<s:property value="#digitalCommonInit.digitalId"/>,2)"> <img
 									src="<%=basePath
 								+ "ShowImage.image?type=2&entityId="%><s:property value="#digitalCommonInit.digitalId"/>"
 									width="100" height="100" alt="照片"
@@ -84,7 +91,7 @@
 						status="count">
 						<td width="800" height="120"
 							style="width: 200px; word-break: break-all" align="center">
-							<a href="#"> <img
+							<a href="#" onclick="Info(<s:property value="#digitalSaleInit.digitalId"/>,2)"> <img
 									src="<%=basePath
 								+ "ShowImage.image?type=2&entityId="%><s:property value="#digitalSaleInit.digitalId"/>"
 									width="100" height="100" alt="照片"

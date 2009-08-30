@@ -4,8 +4,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 import com.sun.org.apache.commons.beanutils.BeanUtils;
 import com.usc.daos.Book;
 import com.usc.daos.BookDAO;
@@ -181,6 +179,122 @@ public class MainImpl implements IMain
 					digitalExtra.setPrivilegePrice(digitalExtra.getSalePrice());
 					digitalExtraSaleList.add(digitalExtra);
 				}
+			}
+		}
+		return digitalExtraSaleList;
+	}
+
+	public List<BookExtra> BookCommonInfo(int typeId, int bookId)
+	{
+		bookExtraCommonList.clear();
+		if (0 == commodityDao
+				.findById(
+						sysAdmin.getCommodityID(1, bookdao.findById(bookId)
+								.getBookId())).getSaleFlag())
+		{
+			BookExtra bookExtra = new BookExtra();
+			try
+			{
+				BeanUtils.copyProperties(bookExtra, bookdao.findById(bookId));
+			} catch (IllegalAccessException e)
+			{
+			} catch (InvocationTargetException e)
+			{
+			}
+			bookExtra.setDiscount(sysAdmin.getDiscount(1, bookdao.findById(
+					bookId).getBookId()));
+			bookExtra.setPrivilegePrice(bookExtra.getPublishedPrice()
+					* bookExtra.getDiscount() / 100);
+			bookExtraCommonList.add(bookExtra);
+		}
+		return bookExtraCommonList;
+	}
+
+	public List<BookExtra> BookSaleInfo(int typeId, int bookId)
+	{
+		bookExtraSaleList.clear();
+		if (1 == commodityDao
+				.findById(
+						sysAdmin.getCommodityID(1, bookdao.findById(bookId)
+								.getBookId())).getSaleFlag())
+		{
+			for (Sale sale : saleDao.findByCommodityId(commodityDao.findById(
+					sysAdmin.getCommodityID(1, bookdao.findById(bookId)
+							.getBookId())).getCommodityId()))
+			{
+				BookExtra bookExtra = new BookExtra();
+				try
+				{
+					BeanUtils.copyProperties(bookExtra, bookdao
+							.findById(bookId));
+				} catch (IllegalAccessException e)
+				{
+				} catch (InvocationTargetException e)
+				{
+				}
+				bookExtra.setSalePrice(sale.getSalePrice());
+				bookExtra.setPriority(sale.getPriority());
+				bookExtra.setPrivilegePrice(bookExtra.getSalePrice());
+				bookExtraSaleList.add(bookExtra);
+			}
+		}
+
+		return bookExtraSaleList;
+	}
+
+	public List<DigitalExtra> DigitalCommonInfo(int typeId, int digitalId)
+	{
+		digitalExtraCommonList.clear();
+		if (0 == commodityDao.findById(
+				sysAdmin.getCommodityID(2, digitaldao.findById(digitalId)
+						.getDigitalId())).getSaleFlag())
+		{
+			DigitalExtra digitalExtra = new DigitalExtra();
+
+			try
+			{
+				BeanUtils.copyProperties(digitalExtra, digitaldao
+						.findById(digitalId));
+			} catch (IllegalAccessException e)
+			{
+			} catch (InvocationTargetException e)
+			{
+			}
+
+			digitalExtra.setDiscount(sysAdmin.getDiscount(2, digitaldao
+					.findById(digitalId).getDigitalId()));
+			digitalExtra.setPrivilegePrice(digitalExtra.getPublishedPrice()
+					* digitalExtra.getDiscount() / 100);
+			digitalExtraCommonList.add(digitalExtra);
+		}
+		return digitalExtraCommonList;
+	}
+
+	public List<DigitalExtra> DigitalSaleInfo(int typeId, int digitalId)
+	{
+		digitalExtraSaleList.clear();
+		if (1 == commodityDao.findById(
+				sysAdmin.getCommodityID(2, digitaldao.findById(digitalId)
+						.getDigitalId())).getSaleFlag())
+		{
+			for (Sale sale : saleDao.findByCommodityId(commodityDao.findById(
+					sysAdmin.getCommodityID(2, digitaldao.findById(digitalId)
+							.getDigitalId())).getCommodityId()))
+			{
+				DigitalExtra digitalExtra = new DigitalExtra();
+				try
+				{
+					BeanUtils.copyProperties(digitalExtra, digitaldao
+							.findById(digitalId));
+				} catch (IllegalAccessException e)
+				{
+				} catch (InvocationTargetException e)
+				{
+				}
+				digitalExtra.setSalePrice(sale.getSalePrice());
+				digitalExtra.setPriority(sale.getPriority());
+				digitalExtra.setPrivilegePrice(digitalExtra.getSalePrice());
+				digitalExtraSaleList.add(digitalExtra);
 			}
 		}
 		return digitalExtraSaleList;

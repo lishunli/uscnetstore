@@ -21,7 +21,14 @@
 		<meta http-equiv="expires" content="0">
 		<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 		<meta http-equiv="description" content="This is my page">
-		
+<script type="text/javascript">
+
+function Info(entityID,type) {
+	window.self.location = "info.action?entityID=" + entityID+ "&type=" + type;
+}
+
+</script>
+
 	</head>
 
 	<body>
@@ -41,7 +48,7 @@
 						<s:if test="#count.index < 6">
 							<td width="800" height="120"
 								style="width: 200px; word-break: break-all" align="center">
-								<a href="#"> <img
+								<a href="#" onclick="Info(<s:property value="#bookCommonInit.bookId"/>,1)"> <img
 										src="<%=basePath
 								+ "ShowImage.image?type=1&entityId="%><s:property value="#bookCommonInit.bookId"/>"
 										width="100" height="100" alt="照片"
@@ -82,7 +89,7 @@
 						<s:if test="#count.index < 6">
 							<td width="800" height="120"
 								style="width: 200px; word-break: break-all" align="center">
-								<a href="#"> <img
+								<a href="#" onclick="Info(<s:property value="#digitalCommonInit.digitalId"/>,2)"> <img
 										src="<%=basePath
 								+ "ShowImage.image?type=2&entityId="%><s:property value="#digitalCommonInit.digitalId"/>"
 										width="100" height="100" alt="照片"
@@ -123,7 +130,7 @@
 						<s:if test="#count.index < 6">
 							<td width="800" height="120"
 								style="width: 200px; word-break: break-all" align="center">
-								<a href="#"> <img
+								<a href="#" onclick="Info(<s:property value="#bookSaleInit.bookId"/>,1)"> <img
 										src="<%=basePath
 								+ "ShowImage.image?type=1&entityId="%><s:property value="#bookSaleInit.bookId"/>"
 										width="100" height="100" alt="照片"
@@ -159,7 +166,7 @@
 						<s:if test="#count.index < 6">
 							<td width="800" height="120"
 								style="width: 200px; word-break: break-all" align="center">
-								<a href="#"> <img
+								<a href="#" onclick="Info(<s:property value="#digitalSaleInit.digitalId"/>,2)"> <img
 										src="<%=basePath
 								+ "ShowImage.image?type=2&entityId="%><s:property value="#digitalSaleInit.digitalId"/>"
 										width="100" height="100" alt="照片"
