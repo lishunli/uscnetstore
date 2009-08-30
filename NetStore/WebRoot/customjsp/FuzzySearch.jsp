@@ -153,7 +153,6 @@
 							</s:else>
 							</s:if>
 							</s:iterator>
-							</tr>
 						</table>
 					</s:if>
 
