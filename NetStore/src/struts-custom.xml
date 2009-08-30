@@ -85,9 +85,13 @@
 			</result>
 		</action>
      <!-- 积分换U币 -->
-		<action name="PersonManagerBSwapUAction" class="PersonManagerBSwapUAction">
-			<result name="success">/customjsp/BswapUSuccess.jsp
-			</result>
-		</action>
+     <action name="PersonManagerBSwapUAction" class="PersonManagerBSwapUAction">
+     <result name="success">/customjsp/BswapUSuccess.jsp</result>
+     </action>
+     
+     <!-- 购物车显示 -->
+     <action name="ShoppingCartAction" class="ShoppingCartAction">
+     <result name="success">/customjsp/ShoppingCart.jsp</result>
+     </action>
 	</package>
 </struts>
