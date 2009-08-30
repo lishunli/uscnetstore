@@ -99,7 +99,6 @@ public class BookDAO extends HibernateDaoSupport
 		}
 	}
 
-	
 	public List findByProperty(String propertyName, Object value)
 	{
 		log.debug("finding Book instance with property: " + propertyName
@@ -120,33 +119,54 @@ public class BookDAO extends HibernateDaoSupport
 	{
 		return findByProperty(BOOK_NAME, bookName);
 	}
-	
+
 	/**
-	 * 图书名的模糊查找
-	 * 发布标志位为0
+	 * 图书名的模糊查找 发布标志位为0
+	 * 
 	 * @param bookName
 	 * @return
 	 */
 
 	public List<Book> findByLikeBookName(String bookName)
 	{
-		String queryString="from Book as b where b.productsPflag = 0 and b.bookName like '%"+bookName+"%'" ;
+		String queryString = "from Book as b where b.productsPflag = 0 and b.bookName like '%"
+				+ bookName + "%'";
 		return getHibernateTemplate().find(queryString);
 	}
-	
-	
+
 	/**
-	 * 图书名的模糊查找
-	 * 已经发布的产品也即普通商品的模糊查找
-	 * 发布标志位为0
+	 * 图书名的模糊查找 已经发布的产品也即普通商品的模糊查找 发布标志位为0
+	 * 
 	 * @param bookName
 	 * @return
 	 */
 
 	public List<Book> findByLikeCommonBookName(String bookName)
 	{
-		String queryString="from Book as b where b.productsPflag = 1 and b.bookName like '%"+bookName+"%'" ;
+		String queryString = "from Book as b where b.productsPflag = 1 and b.bookName like '%"
+				+ bookName + "%'";
 		return getHibernateTemplate().find(queryString);
+	}
+
+	/**
+	 * 图书的高级搜搜
+	 * 
+	 * @param author
+	 * @return
+	 */
+
+	public List<Book> AdvancedBookSearch(String bookName, String author,
+			String isbn, String publisher)
+	{
+		String queryString = "from Book as b where b.productsPflag = 1 and b.bookName like '%"
+				+ bookName
+				+ "%' and b.author like '%"
+				+ author
+				+ "%' and b.isbn like '%"
+				+ isbn
+				+ "%' and b.publisher like '%" + publisher + "%'";
+		return getHibernateTemplate().find(queryString);
+
 	}
 
 	public List findByAuthor(Object author)

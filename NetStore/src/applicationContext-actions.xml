@@ -15,13 +15,25 @@
 		<property name="beforemainimpl" ref="BeforeMain"></property>
 	</bean>
 	<!-- 搜索产品 -->
-	<bean id="FuzzySearchAction" class="com.usc.actions.custom.FuzzySearchAction">
+	<bean id="FuzzySearchAction" class="com.usc.actions.custom.FuzzySearchAction" scope="prototype">
 		<property name="bookDao" ref="BookDAO" />
 		<property name="digitalDao" ref="DigitalDAO"></property>
 		<property name="sysAdmin" ref="SystemAdminImpl"></property>
 		<property name="saleDao" ref="SaleDAO"></property>
 		<property name="commodityDao" ref="CommodityDAO"></property>
 	</bean>
+	<!--图书高级搜索	-->
+	<bean id="AdvancedBookSearchAction" class="com.usc.actions.custom.AdvancedBookSearchAction" scope="prototype">
+		<property name="mainImpl" ref="MainImpl"></property>
+	</bean>
+
+	<!--数码高级搜索	-->
+	<bean id="AdvancedSearchDigitalAction" class="com.usc.actions.custom.AdvancedSearchDigitalAction" scope="prototype">
+		<property name="mainImpl" ref="MainImpl"></property>
+	</bean>
+	
+	
+	
 	<!-- 用户信息修改 -->
 	<bean id="UserInforChangeAction" class="com.usc.actions.custom.UserInforChangeAction">
 		<property name="personmanage" ref="PersonManage" />

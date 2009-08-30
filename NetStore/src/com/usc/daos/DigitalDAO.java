@@ -146,6 +146,19 @@ public class DigitalDAO extends HibernateDaoSupport
 		return getHibernateTemplate().find(queryString);
 	}
 	
+	/**
+	 * 数码的高级搜搜
+	 * @param author
+	 * @return
+	 */
+	
+	public List<Digital> AdvancedSearchDigital(String digitalName,String brand)
+	{
+		
+		String queryString="from Digital as d where d.productsPflag = 1 and d.digitalName like '%"+digitalName+"%' and d.brand like '%"+brand+"%'";
+		return getHibernateTemplate().find(queryString);
+		
+	}
 	
 	public List findByPublishedPrice(Object publishedPrice)
 	{

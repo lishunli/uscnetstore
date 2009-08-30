@@ -10,7 +10,7 @@
   </head>  
   <body>
    
-    <s:form method="post" action="AdvancedSearchAction.action" theme="simple">
+    <s:form method="post" action="advancedBookSearch.action" theme="simple">
    <table align="center">
    <tr >
      <td align="center"><s:label >书名：</s:label></td>

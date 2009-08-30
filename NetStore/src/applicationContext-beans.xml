@@ -134,16 +134,19 @@
 	<bean id="BeforeMain" class="com.usc.services.custom.Impl.BeforeMainImpl">
 	<property name="customdao" ref="CustomDAO"/>
 	</bean>
-	<bean id="Main" class="com.usc.services.custom.Impl.MainImpl">
-	<property name="bookdao" ref="BookDAO"/>
-	<property name="digitaldao" ref="DigitalDAO"/>
-	</bean>
 	<bean id="PersonManage" class="com.usc.services.custom.Impl.IPersonManageImpl">
 	<property name="customdao" ref="CustomDAO"/>
 	<property name="suggestiondao" ref="SuggestionDAO"></property>
 	</bean>
 	
-	
+	<!--主界面实现	-->
+	<bean id="MainImpl" class="com.usc.services.custom.Impl.MainImpl">
+		<property name="bookdao" ref="BookDAO"></property>
+		<property name="digitaldao" ref="DigitalDAO"></property>
+		<property name="sysAdmin" ref="SystemAdminImpl"></property>
+		<property name="saleDao" ref="SaleDAO"></property>
+		<property name="commodityDao" ref="CommodityDAO"></property>
+	</bean>
 	
 	
 	
