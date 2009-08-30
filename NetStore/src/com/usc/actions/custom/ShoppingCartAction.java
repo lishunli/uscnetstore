@@ -30,11 +30,12 @@ public class ShoppingCartAction extends ActionSupport {
 		for(Shoppingcart shoppingcart:shoppingcartdao.findByCustomName(custom.getCustomName())){
 			ShoppingcartExtra s = new ShoppingcartExtra();
 			BeanUtils.copyProperties(s,shoppingcart );
-			s.setPublishedPrice(admin.getPublishedPrice(shoppingcart.getCommodityId()));
+			s.setPublishedPrice(admin.getPublishedPrice(shoppingcart.getCommodityId()));			
 			s.setCommodityName(admin.getCommodityName(shoppingcart.getCommodityId()));		
 			shoppingcartExtra.add(s);
 		}
-			Map request = (Map)ActionContext.getContext().get("request"); 
+		
+		Map request = (Map)ActionContext.getContext().get("request"); 
 		request.put("Shoppingcart", shoppingcartExtra);
 		return "success";		
 	}

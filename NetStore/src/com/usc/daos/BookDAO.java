@@ -170,11 +170,7 @@ public class BookDAO extends HibernateDaoSupport
 	}
 
 	
-	public Book findByTypeEntityId(int productTypeID ,int entityID)
-	{
-		String queryString="from Book as b where b.productTypeID=productTypeID and b.bookId=entityID and b.productsPflag=1";
-		return (Book)getHibernateTemplate().find(queryString).iterator().next();
-	}
+
 	
 	public List findByAuthor(Object author)
 	{

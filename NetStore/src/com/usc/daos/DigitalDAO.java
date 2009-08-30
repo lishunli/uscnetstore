@@ -42,12 +42,12 @@ public class DigitalDAO extends HibernateDaoSupport
 	
 	
 	
-	public Digital findByTypeEntityId(int productTypeID ,int entityID)
+/*	public Digital findByTypeEntityId(int productTypeID ,int entityID)
 	{
 		String queryString= "from Digital as d where d.productTypeID=productTypeID and d.digitalId=entityID and d.productsPflag=1";
 		return (Digital)getHibernateTemplate().find(queryString).iterator().next();
 	}
-	
+	*/
 	
 
 	public void save(Digital transientInstance)

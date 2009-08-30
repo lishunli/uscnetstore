@@ -14,7 +14,7 @@
 
 		<!-- 登录 -->
 		<action name="LoginAction" class="LoginAction">
-			<result name="success" type="redirect">/Top.jsp</result>
+			<result name="success" type="redirect">/customjsp/Main.jsp</result>
 			<result name="error" type="redirect">/customjsp/Login.jsp
 			</result>
 			<result name="input" type="redirect">/customjsp/Login.jsp

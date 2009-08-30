@@ -232,31 +232,39 @@ public class SystemAdminImpl implements ISystemAdmin
 		}
 		return 0;
 	}
+	
+	
 
-	//获得定价
+	//由商品ID获得定价
 	public float getPublishedPrice(int commodityID)
 	{
 		int productId = commodityDao.findById(commodityID).getProductsID();
 		int  ProductTypeID = productDao.findById(productId).getProductTypeId();
-		int EntityID = productDao.findById(productId).getEntityId();		 
-		 Book book  = bookDao.findByTypeEntityId(ProductTypeID, EntityID);
-		 Digital digital = digitalDao.findByTypeEntityId(ProductTypeID, EntityID);
-		 if(book!=null)
-			 return book.getPublishedPrice();
-		 else return digital.getPublishedPrice();
+		int EntityID = productDao.findById(productId).getEntityId();	
+		if(ProductTypeID==1){
+			Book book = (Book)bookDao.findById(EntityID);
+		 return book.getPublishedPrice();
+		}
+		else{
+			Digital digital = (Digital)digitalDao.findById(EntityID);
+			return digital.getPublishedPrice();
+	}
 	}
 	
+	//又商品Id取得商品名
 	public String getCommodityName(int commodityID)
 	{
 		int productId = commodityDao.findById(commodityID).getProductsID();
 		int  ProductTypeID = productDao.findById(productId).getProductTypeId();
-		int EntityID = productDao.findById(productId).getEntityId();		 
-		 Book book  = bookDao.findByTypeEntityId(ProductTypeID, EntityID);
-		 Digital digital = digitalDao.findByTypeEntityId(ProductTypeID, EntityID);
-		 if(book!=null)
-			 return book.getBookName();
-		 else
-			 return digital.getDigitalName();
+		int EntityID = productDao.findById(productId).getEntityId();	
+		if(ProductTypeID==1){
+			Book book = (Book)bookDao.findById(EntityID);
+		 return book.getBookName();
+		}
+		else{
+			Digital digital = (Digital)digitalDao.findById(EntityID);
+			return digital.getDigitalName();
+	}
 	}
 	
 	

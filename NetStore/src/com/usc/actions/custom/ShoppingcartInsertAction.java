@@ -33,27 +33,16 @@ public class ShoppingcartInsertAction extends ActionSupport {
 	
 	@Override
 	public String execute() throws Exception {
+		
 		Custom custom = (Custom)ActionContext.getContext().getSession().get("Custom");
-		Book book = bookdao.findByTypeEntityId(productTypeID, entityID);
-		Digital digital = digitaldao.findByTypeEntityId(productTypeID, entityID);
-		if(book!=null)
-		{
 			shoppingcart=new Shoppingcart();
 			shoppingcart.setCommodityId(admin.getCommodityID(productTypeID, entityID));
-			shoppingcart.setCustomName(custom.getCustomName());
-			shoppingcart.setShoppingPrice(admin.getDiscount(productTypeID, entityID)*book.getPublishedPrice());
+			shoppingcart.setCustomName(custom.getCustomName());						
+			if(productTypeID==1)
+			shoppingcart.setShoppingPrice(bookdao.findById(entityID).getPublishedPrice()*admin.getDiscount(productTypeID, entityID));
 		    shoppingcart.setQuantity(1);
 		    shoppingcartdao.save(shoppingcart);
-		}
-		else 
-		{
-			shoppingcart=new Shoppingcart();
-			shoppingcart.setCommodityId(admin.getCommodityID(productTypeID, entityID));
-			shoppingcart.setCustomName(custom.getCustomName());
-			shoppingcart.setShoppingPrice(admin.getDiscount(productTypeID, entityID)*digital.getPublishedPrice());
-		    shoppingcart.setQuantity(1);
-		    shoppingcartdao.save(shoppingcart);
-		}
+		
 		return "success";
 	}
 
