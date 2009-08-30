@@ -100,7 +100,7 @@
      
      <!-- 购物车表中存入 -->
      <action name="ShoppingcartInsertAction" class="ShoppingcartInsertAction">
-     <result name="success">ShoppingCartAction.action</result>
+     <result name="success" type="redirect">ShoppingCartAction.action</result>
      </action>
      
      <!-- 购物车显示 -->
