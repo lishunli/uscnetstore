@@ -5,6 +5,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 		<title>无标题文档</title>
+
 		<style type="text/css">
 <!--
 .STYLE3 {
@@ -26,8 +27,45 @@ body {
 }
 -->
 </style>
-		<script src="js/Custom.js"></script>
-	</head>
+<script type="text/javascript">
+function CTime(bgclock){
+	var now=new Date();
+	var year=now.getYear();
+	var month=now.getMonth();
+	var date=now.getDate();
+	var day=now.getDay();
+	var hour=now.getHours();
+	var minu=now.getMinutes();
+	var sec=now.getSeconds();
+	var week;
+	month=month+1;
+	if(month<10) month="0"+month;
+	if(date<10) date="0"+date;
+	if(hour<10) hour="0"+hour;
+	if(minu<10) minu="0"+minu;
+	if(sec<10) sec="0"+sec;
+	var time="";
+	time="当前时间："+year+"年"+month+"月"+date+"日 "+hour+":"+minu+":"+sec;
+	//if(document.all){
+		bgclock.innerHTML="<b>"+time+"</b>"
+//}
+	var timer=setTimeout("CTime(bgclock)",200);
+} 
+
+
+function AdvancedSearch() {
+	var type = document.getElementById("type").value;//类型 
+	if(1 ==  type)
+	{
+		window.self.location = "AdvancedSearchBook.jsp";
+	}
+	else if(2 ==  type)
+	{
+		window.self.location = "AdvancedSearchDigital.jsp";
+	}
+}
+
+</script></head>
 
 	<body onload="CTime(bgclock)">
 		<%
@@ -81,17 +119,14 @@ body {
 					<span class="STYLE4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><a
 							href="<%=path%>/customjsp/Top.jsp">首页</a>|<a
 							href="<%=path%>/customjsp/BooksMain.jsp">图书</a>|<a
-							href="<%=path%>/customjsp/DigitalsMain.jsp">数码</a>
-					</strong>
-					</span>
+							href="<%=path%>/customjsp/DigitalsMain.jsp">数码</a> </strong> </span>
 				</td>
 				<td width="445" bgcolor="#E7E7E7">
 					<span class="STYLE3"><a
 						href="<%=path%>/customjsp/PersonManagerMain.jsp?action=order">我的信息库</a>&nbsp;<a
 						href="<%=path%>/customjsp/ShoppingCart.jsp"> 购物车</a>&nbsp; <a
 						href="<%=path%>/customjsp/NewPeoples.jsp">新手上路</a> &nbsp;<a
-						href="<%=path%>/customjsp/Help.jsp">帮助中心</a>
-					</span>
+						href="<%=path%>/customjsp/Help.jsp">帮助中心</a> </span>
 				</td>
 			</tr>
 			<form action="FuzzySearchAction.action" method="post">
@@ -99,7 +134,7 @@ body {
 					cellpadding="0" cellspacing="0">
 					<tr>
 						<td bgcolor="#E7E7E7" align="left" width="40%">
-							<span class="STYLE3">按产品类型： <select name="s">
+							<span class="STYLE3">按产品类型： <select name="s" id="type">
 									<option value="1">
 										图书
 									</option>
@@ -109,8 +144,9 @@ body {
 								</select> <input name="Search" type="text" size="30" /> </span>
 						</td>
 						<td bgcolor="#E7E7E7" valign="top" align="left">
-							<span class="STYLE7"> <input type="submit" value="搜索" />&nbsp;&nbsp;&nbsp;<a
-								href="<%=path%>/customjsp/AdvancedSearch.jsp">高级搜索</a> </span>
+							<span class="STYLE7"> <input type="submit" value="搜索" />&nbsp;&nbsp;或&nbsp;
+								<input type="button" onclick="AdvancedSearch()" value="高级搜索" />
+							</span>
 						</td>
 					</tr>
 				</table>
