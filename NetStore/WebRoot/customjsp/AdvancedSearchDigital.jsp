@@ -12,6 +12,7 @@
 
 		<s:form method="post" action="advancedDigitalSearch.action"
 			theme="simple">
+			<center><h2>数码高级搜索</h2></center>
 			<table align="center">
 				<tr>
 					<td align="center">

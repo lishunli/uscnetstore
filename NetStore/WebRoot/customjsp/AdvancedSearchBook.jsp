@@ -11,6 +11,7 @@
   <body>
    
     <s:form method="post" action="advancedBookSearch.action" theme="simple">
+    <center><h2>图书高级搜索</h2></center>
    <table align="center">
    <tr >
      <td align="center"><s:label >书名：</s:label></td>
