@@ -12,8 +12,8 @@
     您已经选择的商品：<br>
     <tr>
     <td>商品名</td>
-   <td>定价</td>
-    <td>优惠价</td>
+   <td>市场价</td>
+    <td>促销价/会员价</td>
     <td>数量</td>
     </tr>
     <s:iterator value="#request.Shoppingcart" id="cart">
