@@ -117,7 +117,7 @@ function AdvancedSearch() {
 			<tr>
 				<td width="542" bgcolor="#E7E7E7">
 					<span class="STYLE4"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><a
-							href="<%=path%>/customjsp/Top.jsp">首页</a>|<a
+							href="<%=path%>/customjsp/Main.jsp">首页</a>|<a
 							href="<%=path%>/customjsp/BooksMain.jsp">图书</a>|<a
 							href="<%=path%>/customjsp/DigitalsMain.jsp">数码</a> </strong> </span>
 				</td>
