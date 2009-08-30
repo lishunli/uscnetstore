@@ -10,7 +10,8 @@
             <column name="shoppingCartID" />
             <generator class="native" />
         </id>
-        <many-to-one name="custom" class="com.usc.daos.Custom" fetch="select">
+        
+       <!--  <many-to-one name="custom" class="com.usc.daos.Custom" fetch="select">
             <column name="customName" length="20">
                 <comment>用户名，唯一</comment>
             </column>
@@ -19,7 +20,20 @@
             <column name="commodityID">
                 <comment>商品ID</comment>
             </column>
-        </many-to-one>
+        </many-to-one>   -->
+        
+        <property name="customName" type="java.lang.String">
+         <column name="customName" length="20" not-null="true">
+                <comment>用户名，唯一</comment>
+            </column>
+        </property>
+        
+          <property name="commodityId" type="java.lang.Integer">
+         <column name="commodityID"  not-null="true">
+                <comment>商品ID</comment>
+            </column>
+        </property>
+        
         <property name="shoppingPrice" type="java.lang.Float">
             <column name="shoppingPrice" precision="12" scale="0" not-null="true">
                 <comment>会员价</comment>

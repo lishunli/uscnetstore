@@ -31,6 +31,15 @@ public class ShoppingcartDAO extends HibernateDaoSupport
 		// do nothing
 	}
 
+	
+	public List<Shoppingcart> findByCustomName(String customName)
+	{
+		String queryString = "from Shoppingcart as s where s.customName=?";
+		return getHibernateTemplate().find(queryString,customName);
+	}
+	
+	
+	
 	public void save(Shoppingcart transientInstance)
 	{
 		log.debug("saving Shoppingcart instance");

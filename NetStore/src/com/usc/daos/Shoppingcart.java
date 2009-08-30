@@ -10,8 +10,8 @@ public class Shoppingcart implements java.io.Serializable
 	// Fields
 
 	private Integer shoppingCartId;
-	private Custom custom;
-	private Commodity commodity;
+	private String customName;
+	private Integer commodityId;   
 	private Float shoppingPrice;
 	private Integer quantity;
 
@@ -30,11 +30,11 @@ public class Shoppingcart implements java.io.Serializable
 	}
 
 	/** full constructor */
-	public Shoppingcart(Custom custom, Commodity commodity,
+	public Shoppingcart(String customName, Integer commodityId,
 			Float shoppingPrice, Integer quantity)
 	{
-		this.custom = custom;
-		this.commodity = commodity;
+		this.customName=customName;
+		this.commodityId = commodityId;
 		this.shoppingPrice = shoppingPrice;
 		this.quantity = quantity;
 	}
@@ -51,24 +51,23 @@ public class Shoppingcart implements java.io.Serializable
 		this.shoppingCartId = shoppingCartId;
 	}
 
-	public Custom getCustom()
-	{
-		return this.custom;
+
+
+
+	public String getCustomName() {
+		return customName;
 	}
 
-	public void setCustom(Custom custom)
-	{
-		this.custom = custom;
+	public void setCustomName(String customName) {
+		this.customName = customName;
 	}
 
-	public Commodity getCommodity()
-	{
-		return this.commodity;
+	public Integer getCommodityId() {
+		return commodityId;
 	}
 
-	public void setCommodity(Commodity commodity)
-	{
-		this.commodity = commodity;
+	public void setCommodityId(Integer commodityId) {
+		this.commodityId = commodityId;
 	}
 
 	public Float getShoppingPrice()

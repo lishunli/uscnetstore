@@ -73,6 +73,13 @@
 		<property name="personmanage" ref="PersonManage"></property>
 	</bean>
 	
+	<!-- 购物车显示 -->
+	<bean id="ShoppingCartAction" class="com.usc.actions.custom.ShoppingCartAction">
+	<property name="shoppingcart" ref="ShoppingcartDAO"></property>
+	</bean>
+	
+	
+	
 	
 	
 	
