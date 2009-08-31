@@ -178,13 +178,10 @@ public class SystemAdminImpl implements ISystemAdmin
 	 */
 	public void saveSale(Sale s)
 	{
-		if (!saleDao.findByPriority(s.getPriority()).isEmpty())// 在促销表中有找到该优先级
+		for (Sale sale : saleDao.findByPriority(s.getPriority()))// 在促销表中有找到该优先级
 		{
-			for (Sale sale : saleDao.findByPriority(s.getPriority()))
-			{
-				sale.setPriority(getMaxPriority() + 1);
-				saleDao.merge(sale);
-			}
+			sale.setPriority(getMaxPriority() + 1);
+			saleDao.merge(sale);
 		}
 		saleDao.save(s);
 	}
@@ -199,9 +196,10 @@ public class SystemAdminImpl implements ISystemAdmin
 		{
 			commodity.setSaleFlag(flag);// 设置促销商品标志位
 			commodityDao.merge(commodity);// 更新
-			for(Sale sale :saleDao.findByCommodityId(commodity.getCommodityId()))
+			for (Sale sale : saleDao.findByCommodityId(commodity
+					.getCommodityId()))
 			{
-				saleDao.delete(sale);//从促销表里删除
+				saleDao.delete(sale);// 从促销表里删除
 			}
 		}
 	}
@@ -232,42 +230,41 @@ public class SystemAdminImpl implements ISystemAdmin
 		}
 		return 0;
 	}
-	
-	
 
-	//由商品ID获得定价
+	// 由商品ID获得定价
 	public float getPublishedPrice(int commodityID)
 	{
 		int productId = commodityDao.findById(commodityID).getProductsID();
-		int  ProductTypeID = productDao.findById(productId).getProductTypeId();
-		int EntityID = productDao.findById(productId).getEntityId();	
-		if(ProductTypeID==1){
-			Book book = (Book)bookDao.findById(EntityID);
-		 return book.getPublishedPrice();
-		}
-		else{
-			Digital digital = (Digital)digitalDao.findById(EntityID);
+		int ProductTypeID = productDao.findById(productId).getProductTypeId();
+		int EntityID = productDao.findById(productId).getEntityId();
+		if (ProductTypeID == 1)
+		{
+			Book book = (Book) bookDao.findById(EntityID);
+			return book.getPublishedPrice();
+		} else
+		{
+			Digital digital = (Digital) digitalDao.findById(EntityID);
 			return digital.getPublishedPrice();
+		}
 	}
-	}
-	
-	//又商品Id取得商品名
+
+	// 又商品Id取得商品名
 	public String getCommodityName(int commodityID)
 	{
 		int productId = commodityDao.findById(commodityID).getProductsID();
-		int  ProductTypeID = productDao.findById(productId).getProductTypeId();
-		int EntityID = productDao.findById(productId).getEntityId();	
-		if(ProductTypeID==1){
-			Book book = (Book)bookDao.findById(EntityID);
-		 return book.getBookName();
-		}
-		else{
-			Digital digital = (Digital)digitalDao.findById(EntityID);
+		int ProductTypeID = productDao.findById(productId).getProductTypeId();
+		int EntityID = productDao.findById(productId).getEntityId();
+		if (ProductTypeID == 1)
+		{
+			Book book = (Book) bookDao.findById(EntityID);
+			return book.getBookName();
+		} else
+		{
+			Digital digital = (Digital) digitalDao.findById(EntityID);
 			return digital.getDigitalName();
+		}
 	}
-	}
-	
-	
+
 	/**
 	 * 折扣 优先级 修改促销表
 	 */
