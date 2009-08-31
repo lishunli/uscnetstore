@@ -40,8 +40,39 @@ public class ShoppingcartInsertAction extends ActionSupport {
 			shoppingcart.setCustomName(custom.getCustomName());						
 			if(productTypeID==1)
 			shoppingcart.setShoppingPrice(bookdao.findById(entityID).getPublishedPrice()*admin.getDiscount(productTypeID, entityID));
-		    shoppingcart.setQuantity(1);
+			else
+				shoppingcart.setShoppingPrice(digitaldao.findById(entityID).getPublishedPrice()*admin.getDiscount(productTypeID, entityID));	
+			shoppingcart.setQuantity(1);
 		    shoppingcartdao.save(shoppingcart);
+		
+		  //  Custom custom = (Custom)ActionContext.getContext().getSession().get("Custom");
+	
+		    	//Shoppingcart s = (Shoppingcart)shoppingcartdao.findByIdName(admin.getCommodityID(productTypeID, entityID), custom.getCustomName());
+		    /*	if(shoppingcartdao.findByIdName(admin.getCommodityID(productTypeID, entityID), custom.getCustomName())!=null)
+		    	{
+		    		//Shoppingcart s= new Shoppingcart();
+		    		 //s =(Shoppingcart)shoppingcartdao.findByIdName(admin.getCommodityID(productTypeID, entityID), custom.getCustomName()).iterator().next();
+		    		//s.setQuantity(s.getQuantity()+1);
+		    		//shoppingcartdao.update(s);
+		    		shoppingcartdao.update(shoppingcartdao.findByIdName(admin.getCommodityID(productTypeID, entityID), custom.getCustomName()),shoppingcartdao.findByIdName(admin.getCommodityID(productTypeID, entityID), custom.getCustomName()).getQuantity()+1);
+		    		
+		    	}
+		    	else 
+		    	{
+		    		System.out.print("**********************************************xinde*************************************");
+		    		Shoppingcart shoppingcart =new Shoppingcart();
+					shoppingcart.setCommodityId(admin.getCommodityID(productTypeID, entityID));
+					shoppingcart.setCustomName(custom.getCustomName());						
+					if(productTypeID==1)
+					shoppingcart.setShoppingPrice(bookdao.findById(entityID).getPublishedPrice()*admin.getDiscount(productTypeID, entityID));
+					else 
+						shoppingcart.setShoppingPrice(digitaldao.findById(entityID).getPublishedPrice()*admin.getDiscount(productTypeID, entityID));
+					shoppingcart.setQuantity(1);
+				    shoppingcartdao.save(shoppingcart);
+		    	}
+		    	
+		    
+		*/
 		
 		return "success";
 	}

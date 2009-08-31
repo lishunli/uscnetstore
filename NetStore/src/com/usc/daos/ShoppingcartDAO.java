@@ -31,6 +31,18 @@ public class ShoppingcartDAO extends HibernateDaoSupport
 		// do nothing
 	}
 
+	public void update(Shoppingcart shoppingcart,int  quantity)
+	{
+		shoppingcart.setQuantity(quantity);
+		getHibernateTemplate().update(shoppingcart);
+	}
+	
+/*	public Shoppingcart findByIdName(Integer commodityId,String customName)
+	{
+		String queryString = "from Shoppingcart as s where s.commodityId=commodityId and s.customName='"+customName+"'";
+	return (Shoppingcart)getHibernateTemplate().find(queryString).get(1);
+
+	}*/
 	
 	public List<Shoppingcart> findByCustomName(String customName)
 	{

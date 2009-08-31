@@ -1,40 +1,14 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-<<<<<<< .mine
-<<<<<<< .mine
-  <head>  
-    <title>ÐÞ¸Ä¸öÈËÃÜÂë</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
 
-=======
   <head>
-    <title>ÐÞ¸ÄÃÜÂë</title>
->>>>>>> .r141
+    <title>ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½</title>
+
   </head>
   
   <body bgcolor="#EEEEEE">
-         <!--ÓÒÀ¸¿ªÊ¼-->
-         <s:form action="PManagerCPassword" method="post" theme="simple">
-ÐÕÃû£º<%=session.getAttribute("customName")%><br>
-Ô­ÃÜÂë£º <s:password name="Custom.customPass"></s:password><br>
-		
-ÐÂÃÜÂë£º<s:password name="newPass"></s:password><br>
-			
-ÖØ¸´ÐÂÃÜÂë£º<s:password name="reNewPass"></s:password><br>
-			<s:submit value="ÐÞ¸Ä"></s:submit>
-			<s:reset value="ÖØÖÃ"></s:reset>
-			<br>
-		</s:form>
-=======
+
   <head>   
     <title>ä¿®æ”¹å¯†ç </title>
   </head> 
@@ -64,7 +38,6 @@
 		<input type="submit" value="ä¿® æ”¹" />&nbsp;&nbsp;&nbsp;<input type="reset" value="é‡ ç½®" /></td>
     </tr> 
     </table>
-    </form>
->>>>>>> .r144
+
   </body>
 </html>
