@@ -12,7 +12,7 @@
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<property name="url"
-			value="jdbc:mysql://210.43.118.160:3306/netstore?useUnicode=true&amp;characterEncoding=utf-8"></property>
+			value="jdbc:mysql://localhost:3306/netstore?useUnicode=true&amp;characterEncoding=utf-8"></property>
 		<property name="username" value="root"></property>
 		<property name="password" value="lishunli"></property>
 		<property name="maxActive" value="100"></property>
